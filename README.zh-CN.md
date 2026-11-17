@@ -152,7 +152,7 @@ data/processed/match/
 | players.parquet | UInt64 steamid、选手名和别名、真实队名及冲突信息 |
 | snapshots.parquet | 每个 tick 每名选手一行，含位置、血量、护甲、经济、武器、手雷、装备、阵营、真实队伍及存活状态 |
 
-具体字段和类型以 `src/cs2_pipeline/schema.py` 为准。
+具体字段和类型以 `code/src/cs2_pipeline/schema.py` 为准。
 
 - 保留原始 `round_num`，不根据 MR12、换边或加时重新编号。
   `round_id` 是当前 Demo 内唯一的关联键，用于区分重启前后重复的原始编号；不是游戏原始编号。

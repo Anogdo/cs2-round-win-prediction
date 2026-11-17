@@ -28,7 +28,7 @@ def run(directory: Path) -> dict[str, Any]:
         raise PipelineError("请先安装 gpu 依赖以重读 XGBoost 模型。") from exc
     report = json.loads((directory / "report.json").read_text("utf-8"))
     plan = json.loads((directory / "plan.json").read_text("utf-8"))
-    if sha256_file(ROOT / "src/cs2_pipeline/phase2_gpu.py") != report["code_sha256"]:
+    if sha256_file(ROOT / "code/src/cs2_pipeline/phase2_gpu.py") != report["code_sha256"]:
         raise PipelineError("GPU 训练代码哈希已改变。")
     for filename, expected in report["artifact_sha256"].items():
         if sha256_file(directory / filename) != expected:

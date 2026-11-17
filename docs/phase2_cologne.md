@@ -108,11 +108,11 @@ Brier 差值为 **[-0.00864, 0.00141]**。均跨过 0，所以此次观察到改
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| src/cs2_pipeline/local.py | 本地清单导入、哈希检查、原生多分段校验、可验证缓存复用 |
-| src/cs2_pipeline/calibrate.py | 冻结模型核验、仅校准集拟合、跨赛事评分、比赛聚类区间 |
-| src/cs2_pipeline/split.py | 保留原三集合，新增固定四集合及独立测试赛事规则 |
-| src/cs2_pipeline/dataset.py | 分段身份、重复地图回合检查、冻结策略重读校验 |
-| src/cs2_pipeline/predict.py | 提取未校准 logit，兼容可选 JSON 校准参数 |
+| code/src/cs2_pipeline/local.py | 本地清单导入、哈希检查、原生多分段校验、可验证缓存复用 |
+| code/src/cs2_pipeline/calibrate.py | 冻结模型核验、仅校准集拟合、跨赛事评分、比赛聚类区间 |
+| code/src/cs2_pipeline/split.py | 保留原三集合，新增固定四集合及独立测试赛事规则 |
+| code/src/cs2_pipeline/dataset.py | 分段身份、重复地图回合检查、冻结策略重读校验 |
+| code/src/cs2_pipeline/predict.py | 提取未校准 logit，兼容可选 JSON 校准参数 |
 | tests/test_local_and_calibration.py | 分段、四集合、校准隔离、UInt8 运算、真实语料回归检查 |
 | scripts/audit_cologne.py | 独立重算和质量摘要 |
 | configs/cologne_local.json | 17 文件来源与 SHA256 固定清单 |

@@ -13,7 +13,7 @@ from cs2_pipeline.dataset import held_out_event
 from cs2_pipeline.parse import sha256_file
 from cs2_pipeline.schema import PipelineError
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 DATASETS = ("mirage_expanded_2026_v1", "mirage_holdout_50_v1")
 
 

@@ -261,10 +261,10 @@ def run(dataset: Path, out: Path, reporter: ProgressReporter | None = None) -> d
             "code_sha256": {
                 name: sha256_file(ROOT / name)
                 for name in (
-                    "src/cs2_pipeline/phase2_compare.py",
-                    "src/cs2_pipeline/phase2_data.py",
-                    "src/cs2_pipeline/features.py",
-                    "src/cs2_pipeline/context.py",
+                    "code/src/cs2_pipeline/phase2_compare.py",
+                    "code/src/cs2_pipeline/phase2_data.py",
+                    "code/src/cs2_pipeline/features.py",
+                    "code/src/cs2_pipeline/context.py",
                 )
             },
             "versions": {name: version(name) for name in ("scikit-learn", "numpy", "polars")},

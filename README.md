@@ -1,12 +1,12 @@
 # CS2 Round Win Prediction
 
-A Counter-Strike 2 replay pipeline and empirical study for STAT UN3108, Applied Deep Learning and AI. Given a snapshot from a professional Mirage round, the model estimates the probability that the Counter-Terrorist (CT) side wins the round.
+A Counter-Strike 2 replay pipeline and empirical study for STAT UN3108, Applied Deep Learning and AI. Given a snapshot from a professional Mirage round, the model estimates the probability that the Counter-Terrorist (CT) side wins. This lets a replay analyst track how the outlook changes during the round.
 
 [中文项目文档](README.zh-CN.md) · [Data and setup](data/README.md) · [Experiment results](results/README.md)
 
-## Research question
+## Study target
 
-How much do equipment, health, and other observed player states improve win probability estimates over a baseline that uses only the alive-player difference and elapsed time? We also compare added clock, bomb, and weapon context, tree models, and probability calibration.
+Table II of Xenopoulos, Doraiswamy, and Silva (2020) compares round win probability models in CS:GO. Figure 6 measures predictive performance as rounds progress. We investigate both questions on CS2 Mirage, beginning with a baseline that uses alive-player difference and elapsed time. [Original paper](https://arxiv.org/abs/2011.01324)
 
 ## Approach
 
@@ -18,7 +18,11 @@ How much do equipment, health, and other observed player states improve win prob
 
 In a retrospective evaluation on 50 additional Mirage matches (1,099 rounds), the fixed V1 model achieved **0.4321 log loss**, **0.1448 Brier score**, and **0.8714 ROC AUC**. The alive-player difference and elapsed-time baseline, trained on the same 34 maps, scored **0.5125 log loss**. See the model comparison, calibration results, and match-level uncertainty in the [results summary](results/README.md).
 
-Among models fitted on the same 18 maps, the extra V2 features and the shallow tree models did not improve log loss on this set. These matches have been examined during development. Generalization to a new event remains to be evaluated. Performance here is for Mirage rounds with usable recordings.
+The paper's XGBoost model led on log loss. On this CS2 dataset, the 34-map logistic model had lower log loss than the 34-map XGBoost model (0.4321 versus 0.4435). The studies use different games, features, and evaluation designs. The [results summary](results/README.md) shows the feature comparisons and the matched analysis by round time.
+
+## Conclusion
+
+Player state helped estimate Mirage round outcomes beyond the alive-player and time baseline. The 50-match set was examined during development. Prospective evaluation on an independent event remains open.
 
 ## Reproduce the single-demo pipeline
 
@@ -35,7 +39,7 @@ uv run --frozen cs2-predict --model models/sample_v1/model.json --features data/
 uv run --frozen python -m pytest -q
 ```
 
-Expect 18 rounds and 295 sampled ticks, a JSON model, and a Parquet file of win probabilities. The one-match run tests the pipeline. Reproducing the reported scores requires the [multi-match data sources and manifests](data/README.md). The optional CUDA experiments use the `gpu` extra and require a supported NVIDIA GPU and driver.
+Expect 18 rounds and 295 sampled ticks, a JSON model, and a Parquet file of win probabilities. The [public Rio benchmark](data/README.md#public-rio-benchmark) runs a scored train, validation, and test split on nine pinned replays. The CUDA experiments use the `gpu` extra and require a supported NVIDIA GPU and driver.
 
 ## Local demo
 
@@ -45,13 +49,17 @@ Run `uv run --frozen --extra ml python -m cs2_pipeline.monitor` and open [the tr
 
 | Path | Contents |
 | --- | --- |
-| [`code/`](code/README.md) | Guide to the Python package in `src/`, experiment manifests in `configs/`, and scripts and tests |
+| [`code/`](code/README.md) | Python implementation and links to the experiment manifests, scripts, and tests |
 | [`data/`](data/README.md) | Source attribution, download and import instructions, and dataset layout |
 | [`results/`](results/README.md) | Model comparison and links to the machine-readable results under `reports/` |
 | [`docs/`](docs/) | Detailed experiment notes, source provenance, and monitor documentation |
 | [`poster/`](poster/) and [`report/`](report/) | Locations for the course presentation and summary PDFs |
 
-## References and acknowledgements
+## References
 
 - Xenopoulos, Doraiswamy, and Silva (2020) used changes in win probability to value actions in CS:GO. This project studies the round-probability estimation step on a separate CS2 corpus. [Valuing Player Actions in Counter-Strike: Global Offensive](https://arxiv.org/abs/2011.01324)
-- Demo parsing uses Awpy. Thanks to the Awpy maintainers for the public test fixture and to OpenCS2 and HLTV for the documented demo sources. [Awpy documentation](https://awpy.readthedocs.io/en/latest/), [demo attribution](docs/DATA_SOURCES.md)
+- Demo parsing uses Awpy, Polars, and PyArrow. The supervised baselines use scikit-learn and XGBoost. [Dependencies](pyproject.toml), [Awpy documentation](https://awpy.readthedocs.io/en/latest/)
+
+## Acknowledgements
+
+This work was prepared for STAT UN3108, Applied Deep Learning and AI, at Columbia University. OpenAI Codex assisted with implementation, debugging, tests, and repository documentation. The project uses a public Awpy fixture and replay sources documented by OpenCS2 and HLTV. [Data attribution](docs/DATA_SOURCES.md)

@@ -17,6 +17,19 @@ All models below were scored on 20,180 observations from the same 1,099 Mirage r
 
 The 95% match-bootstrap interval for the log-loss reduction of fixed V1 over alive difference and elapsed time was **[0.0646, 0.0962]**. The interval describes variation among these matches. It does not estimate performance variation across new events. The [audit and comparison notes](../docs/phase2_mirage_audit_20261117.md#同一批-50-场上的结果) document the paired comparisons, reliability bins, and performance by time, alive counts, and bomb state.
 
+## Timing and error analysis
+
+Among the same 906 rounds with observations at both 0 and 60 seconds, fixed V1 log loss fell from **0.6392** to **0.4021**. This matches the direction reported in Figure 6 of the CS:GO study and applies to rounds that lasted long enough to be sampled at both times. In the 50-match set, log loss was **0.5970** on snapshots with equal alive counts, which identifies a game state where the model's probabilities were less accurate. [Model and error analysis](../reports/phase2_exploration_final.json), [Original paper](https://arxiv.org/abs/2011.01324)
+
+## Public Rio benchmark
+
+The locked Awpy 3.3 run parsed all nine pinned Rio demos and fit the 47-feature logistic regression on seven matches. The validation and test splits each represent one match from the same tournament. [Reproduction steps](../data/README.md#public-rio-benchmark)
+
+| Split | Rounds | Model log loss ↓ | Training prior log loss ↓ | Brier ↓ | ROC AUC ↑ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Validation | 17 | 0.4362 | 0.7380 | 0.1406 | 0.8862 |
+| Test | 24 | 0.5407 | 0.7440 | 0.1842 | 0.8214 |
+
 ## Detailed results
 
 | Experiment | Documentation | Machine-readable evidence |

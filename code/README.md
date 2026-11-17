@@ -2,7 +2,7 @@
 
 | Location | Purpose |
 | --- | --- |
-| [`src/cs2_pipeline/`](../src/cs2_pipeline/) | Demo parsing, validation, feature extraction, grouped splits, training, calibration, prediction, and the local monitor |
+| [`src/cs2_pipeline/`](src/cs2_pipeline/) | Demo parsing, validation, feature extraction, grouped splits, training, calibration, prediction, and the local monitor |
 | [`configs/`](../configs/) | Source manifests and experiment settings |
 | [`scripts/`](../scripts/) | Sample download, batch import, context extraction, and audit scripts |
 | [`tests/`](../tests/) | Unit and integration tests |
