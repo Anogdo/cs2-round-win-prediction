@@ -243,5 +243,6 @@ def test_real_phase1_dataset_builds_without_label_leakage(tmp_path: Path) -> Non
     _, tables = read_dataset(tmp_path / "real_dataset")
     assert metadata["sample_count"] == 295 and metadata["node_count"] == 2950
     assert not metadata["split_policy"]["evaluation_ready"]
-    assert tables["nodes"].filter(pl.col("state_source") == "death_event").height == 499
+    # Awpy 3.3 supplies dead-player snapshots that older parses recover from events.
+    assert tables["nodes"].filter(~pl.col("is_alive")).height == 540
     assert tables["labels"]["y_ct_win"].is_in([0, 1]).all()
