@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-11-17",
+  "purpose": "Additional unseen-match, retrospective held-out evaluation of the fixed model; no fitting, calibration, or tuning on these matches. Previously observed test results influenced this collection request, so not a fully prospective blind test.",
+  "training_cutoff": "2026-09-06",
+  "frozen_model": "models/monitor_runs/20261117T052929-9d7d1b12/model.json",
+  "frozen_model_sha256": "166cdac8ae4225c48245ca845f3ac262a5e306ef79588aa5eb7c70f7ab3e622e",
+  "map_name": "de_mirage",
+  "match_count": 50,
+  "source": "HLTV results filtered by played Mirage; each match page showed Demo download and map order.",
+  "excluded_event": "pgl-masters-bucharest-2026",
+  "matches": [
+    {
+      "match_id": "hltv:2397623",
+      "event": "fissure-playground-3",
+      "matchup": "Legacy vs G2",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2397623/legacy-vs-g2-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397621",
+      "event": "fissure-playground-3",
+      "matchup": "BETBOOM vs G2",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2397621/betboom-vs-g2-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397613",
+      "event": "fissure-playground-3",
+      "matchup": "MIBR vs BETBOOM",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2397613/mibr-vs-betboom-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397617",
+      "event": "fissure-playground-3",
+      "matchup": "Legacy vs FURIA",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2397617/legacy-vs-furia-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397609",
+      "event": "fissure-playground-3",
+      "matchup": "TYLOO vs GamerLegion",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2397609/tyloo-vs-gamerlegion-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397605",
+      "event": "fissure-playground-3",
+      "matchup": "BIG vs G2",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2397605/big-vs-g2-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397604",
+      "event": "fissure-playground-3",
+      "matchup": "9z vs MIBR",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2397604/9z-vs-mibr-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397599",
+      "event": "fissure-playground-3",
+      "matchup": "G2 vs Astralis",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2397599/g2-vs-astralis-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397602",
+      "event": "fissure-playground-3",
+      "matchup": "FURIA vs GamerLegion",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2397602/furia-vs-gamerlegion-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397597",
+      "event": "fissure-playground-3",
+      "matchup": "The MongolZ vs MIBR",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2397597/the-mongolz-vs-mibr-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2397596",
+      "event": "fissure-playground-3",
+      "matchup": "Legacy vs magic",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2397596/legacy-vs-magic-fissure-playground-3",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398108",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "Aurora vs Vitality",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2398108/aurora-vs-vitality-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398106",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "MIBR vs FURIA",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398106/mibr-vs-furia-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398103",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "MOUZ vs FURIA",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398103/mouz-vs-furia-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398102",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "Vitality vs FURIA",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398102/vitality-vs-furia-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398101",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "NRG vs Aurora",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398101/nrg-vs-aurora-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398100",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "magic vs MIBR",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398100/magic-vs-mibr-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398099",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "MOUZ vs Natus Vincere",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2398099/mouz-vs-natus-vincere-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398090",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "Natus Vincere vs Aurora",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398090/natus-vincere-vs-aurora-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398089",
+      "event": "starladder-starseries-fall-2026",
+      "matchup": "Vitality vs magic",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398089/vitality-vs-magic-starladder-starseries-fall-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399417",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "FURIA vs BETBOOM",
+      "map_index": 4,
+      "url": "https://www.hltv.org/matches/2399417/furia-vs-betboom-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399415",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "Falcons vs BETBOOM",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2399415/falcons-vs-betboom-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399413",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "BETBOOM vs Legacy",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2399413/betboom-vs-legacy-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399411",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "Legacy vs FURIA",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2399411/legacy-vs-furia-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399410",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "PARIVISION vs BETBOOM",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2399410/parivision-vs-betboom-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399409",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "9z vs Falcons",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2399409/9z-vs-falcons-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399387",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "FURIA vs BETBOOM",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2399387/furia-vs-betboom-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2399386",
+      "event": "thunderpick-world-championship-2026",
+      "matchup": "Legacy vs PARIVISION",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2399386/legacy-vs-parivision-thunderpick-world-championship-2026",
+      "selection_group": "new_event"
+    },
+    {
+      "match_id": "hltv:2398756",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Aurora vs Spirit",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398756/aurora-vs-spirit-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398748",
+      "event": "esl-pro-league-season-24",
+      "matchup": "PARIVISION vs Natus Vincere",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2398748/parivision-vs-natus-vincere-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398745",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Falcons vs Natus Vincere",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2398745/falcons-vs-natus-vincere-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398746",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Legacy vs M80",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398746/legacy-vs-m80-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398743",
+      "event": "esl-pro-league-season-24",
+      "matchup": "FURIA vs Aurora",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398743/furia-vs-aurora-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398744",
+      "event": "esl-pro-league-season-24",
+      "matchup": "9z vs BETBOOM",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398744/9z-vs-betboom-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398740",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Aurora vs BETBOOM",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398740/aurora-vs-betboom-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398739",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Vitality vs Falcons",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2398739/vitality-vs-falcons-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398738",
+      "event": "esl-pro-league-season-24",
+      "matchup": "M80 vs TYLOO",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398738/m80-vs-tyloo-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398737",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Spirit vs MOUZ",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398737/spirit-vs-mouz-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398733",
+      "event": "esl-pro-league-season-24",
+      "matchup": "PARIVISION vs FURIA",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398733/parivision-vs-furia-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398730",
+      "event": "esl-pro-league-season-24",
+      "matchup": "G2 vs 1win",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2398730/g2-vs-1win-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398729",
+      "event": "esl-pro-league-season-24",
+      "matchup": "FURIA vs MOUZ",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398729/furia-vs-mouz-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398728",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Falcons vs Aurora",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398728/falcons-vs-aurora-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398727",
+      "event": "esl-pro-league-season-24",
+      "matchup": "9z vs TYLOO",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398727/9z-vs-tyloo-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398726",
+      "event": "esl-pro-league-season-24",
+      "matchup": "ShindeN vs Legacy",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398726/shinden-vs-legacy-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398724",
+      "event": "esl-pro-league-season-24",
+      "matchup": "FURIA vs BETBOOM",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2398724/furia-vs-betboom-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398721",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Aurora vs 9z",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2398721/aurora-vs-9z-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2398720",
+      "event": "esl-pro-league-season-24",
+      "matchup": "Spirit vs ShindeN",
+      "map_index": 3,
+      "url": "https://www.hltv.org/matches/2398720/spirit-vs-shinden-esl-pro-league-season-24",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2400206",
+      "event": "blast-rivals-2026-season-2",
+      "matchup": "Spirit vs MOUZ",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2400206/spirit-vs-mouz-blast-rivals-2026-season-2",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2400205",
+      "event": "blast-rivals-2026-season-2",
+      "matchup": "G2 vs Falcons",
+      "map_index": 2,
+      "url": "https://www.hltv.org/matches/2400205/g2-vs-falcons-blast-rivals-2026-season-2",
+      "selection_group": "event_previously_evaluated"
+    },
+    {
+      "match_id": "hltv:2400204",
+      "event": "blast-rivals-2026-season-2",
+      "matchup": "Vitality vs MOUZ",
+      "map_index": 1,
+      "url": "https://www.hltv.org/matches/2400204/vitality-vs-mouz-blast-rivals-2026-season-2",
+      "selection_group": "event_previously_evaluated"
+    }
+  ]
+}

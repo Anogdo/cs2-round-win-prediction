@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "map_name": "de_mirage",
+  "sources": [
+    {
+      "path": "../data/processed/rio_additional/hltv-2393085-de_mirage",
+      "match_id": "hltv:2393085",
+      "match_date": "2026-04-13",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/rio_additional/hltv-2393225-de_mirage",
+      "match_id": "hltv:2393225",
+      "match_date": "2026-04-14",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/rio_additional/hltv-2393229-de_mirage",
+      "match_id": "hltv:2393229",
+      "match_date": "2026-04-14",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/rio_additional/hltv-2393230-de_mirage",
+      "match_id": "hltv:2393230",
+      "match_date": "2026-04-14",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/rio_additional/hltv-2393232-de_mirage",
+      "match_id": "hltv:2393232",
+      "match_date": "2026-04-15",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/rio_additional/hltv-2393234-de_mirage",
+      "match_id": "hltv:2393234",
+      "match_date": "2026-04-15",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/rio_additional/hltv-2393239-de_mirage",
+      "match_id": "hltv:2393239",
+      "match_date": "2026-04-15",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/rio_additional/hltv-2393238-de_mirage",
+      "match_id": "hltv:2393238",
+      "match_date": "2026-04-15",
+      "event": "iem-rio-2026"
+    }
+  ]
+}

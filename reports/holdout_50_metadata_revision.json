@@ -1,0 +1,18 @@
+{
+  "reason": "Clarify round provenance of two recovered first parts; no source Demo, Parquet, model or predictions changed.",
+  "metadata": [
+    {
+      "match_id": "hltv:2398745",
+      "metadata_before": "0107de949ad9ed4e0c9cf3eaf3d966e6cdde25c240e939d6e7fdc3eba76098ff",
+      "metadata_after": "d9d840e4e71c07f0b83eb27c25a9827b8fd32765862ab1e317564c65a182b438"
+    },
+    {
+      "match_id": "hltv:2398721",
+      "metadata_before": "73e594094deeb607db0727fbe46f789a8ef726f0ca72f1f364a7b65bee14b12d",
+      "metadata_after": "1950afdf860c803c7e1c9057e1c74c1edcc51d045009aee8de7b782e6021e84a"
+    }
+  ],
+  "dataset_before": "22b0b8cae6e007a7a592c2382aabb5d4f88aab200d50f44416e319e04e487b4f",
+  "dataset_after": "be039c540e6138ce3a8e785fe5a0657ce355388898d4a37252a10ea2bb019424",
+  "prediction_sha256_unchanged": "be7ccf7829cd74b13d9023584a096eafa6cb309a81fefa25af71ded31b90599c"
+}

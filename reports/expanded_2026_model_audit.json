@@ -1,0 +1,1187 @@
+{
+  "passed": true,
+  "dataset_sha256": "2362f69b53c05560b128d9b91c66afc1a67fb8bc6fcd90d2ac7a7d6f1212d045",
+  "model_sha256": "166cdac8ae4225c48245ca845f3ac262a5e306ef79588aa5eb7c70f7ab3e622e",
+  "previous_model_sha256": "38cb411037c9e84b93868b5615d04c0c921b7e64e5791175be0b2d6287c3524e",
+  "training": {
+    "optimizer_iterations": 39,
+    "sample_count": 13208,
+    "round_count": 730,
+    "match_count": 34,
+    "sample_weight": "1 / samples_in_same_round; each round totals one",
+    "scaling": "two-pass weighted variance; constant columns use unit scale",
+    "all_missing_training_features": []
+  },
+  "partitions": {
+    "validation": {
+      "events": [
+        "iem-beijing-2026"
+      ],
+      "matches": 2,
+      "rounds": 40,
+      "samples": 729,
+      "expanded": {
+        "log_loss": 0.441146153533325,
+        "brier_score": 0.14980267265373481,
+        "accuracy_at_0_5": 0.7547960621371492,
+        "roc_auc": 0.8712732746216173,
+        "sample_count": 729,
+        "round_weight_sum": 40.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 138,
+            "weight": 7.562690427048012,
+            "mean_probability": 0.03873579578733688,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 68,
+            "weight": 3.2791173105397764,
+            "mean_probability": 0.1491369537932851,
+            "ct_win_frequency": 0.06629567769627652
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 47,
+            "weight": 2.2464684569479965,
+            "mean_probability": 0.2508150290454807,
+            "ct_win_frequency": 0.1295799669869798
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 59,
+            "weight": 3.3806247182320677,
+            "mean_probability": 0.3630312737970447,
+            "ct_win_frequency": 0.29666340247367495
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 90,
+            "weight": 4.864354640961856,
+            "mean_probability": 0.4504877778983705,
+            "ct_win_frequency": 0.42334707106817654
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 74,
+            "weight": 3.72473783903687,
+            "mean_probability": 0.5491444970711468,
+            "ct_win_frequency": 0.5448165977120288
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 70,
+            "weight": 3.3062852123721687,
+            "mean_probability": 0.6463716941691713,
+            "ct_win_frequency": 0.3059875276286707
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 43,
+            "weight": 2.4495759753176634,
+            "mean_probability": 0.7505975260895217,
+            "ct_win_frequency": 0.3927244107824599
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 36,
+            "weight": 1.9477253410205355,
+            "mean_probability": 0.8486564060073635,
+            "ct_win_frequency": 0.868222350830953
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 104,
+            "weight": 7.2384200785230535,
+            "mean_probability": 0.9673998008757949,
+            "ct_win_frequency": 0.9304855758969336
+          }
+        ],
+        "ece_10_bins": 0.08792013232325824
+      },
+      "previous": {
+        "log_loss": 0.5120638763123052,
+        "brier_score": 0.17343903561679186,
+        "accuracy_at_0_5": 0.7215485709643403,
+        "roc_auc": 0.8465133628395353,
+        "sample_count": 729,
+        "round_weight_sum": 40.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 79,
+            "weight": 4.392265590446705,
+            "mean_probability": 0.05196933144207902,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 61,
+            "weight": 3.0796729942930643,
+            "mean_probability": 0.1523677432917128,
+            "ct_win_frequency": 0.028235634724943
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 51,
+            "weight": 2.503082087144545,
+            "mean_probability": 0.25065203550176685,
+            "ct_win_frequency": 0.07113383581872967
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 73,
+            "weight": 3.689924315263863,
+            "mean_probability": 0.35164343607470006,
+            "ct_win_frequency": 0.18912402243261392
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 84,
+            "weight": 4.656252377728014,
+            "mean_probability": 0.4579153172976168,
+            "ct_win_frequency": 0.3794389648337504
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 97,
+            "weight": 5.117042598261134,
+            "mean_probability": 0.5467999151272114,
+            "ct_win_frequency": 0.407959460931217
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 72,
+            "weight": 3.4568046875500773,
+            "mean_probability": 0.6504788247148237,
+            "ct_win_frequency": 0.4161686512655634
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 72,
+            "weight": 3.909328122483998,
+            "mean_probability": 0.7507283535792856,
+            "ct_win_frequency": 0.49158330243170834
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 61,
+            "weight": 3.5216183409776085,
+            "mean_probability": 0.8509198608291789,
+            "ct_win_frequency": 0.7466442595893172
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 79,
+            "weight": 5.674008885850991,
+            "mean_probability": 0.9496857291287202,
+            "ct_win_frequency": 0.9152358780840634
+          }
+        ],
+        "ece_10_bins": 0.1280293982242769
+      },
+      "constant_prior": {
+        "log_loss": 0.7283244326316554,
+        "brier_score": 0.26747419778570086,
+        "accuracy_at_0_5": 0.4,
+        "roc_auc": 0.5,
+        "sample_count": 729,
+        "round_weight_sum": 40.0,
+        "calibration_bins": [
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 729,
+            "weight": 40.0,
+            "mean_probability": 0.5657534246575342,
+            "ct_win_frequency": 0.4
+          }
+        ]
+      },
+      "per_match": [
+        {
+          "match_id": "hltv:2400003",
+          "rounds": 22,
+          "expanded": {
+            "log_loss": 0.49896630436198564,
+            "brier_score": 0.16993491885497736,
+            "accuracy_at_0_5": 0.7135572020223386,
+            "roc_auc": 0.8227036900868315,
+            "sample_count": 435,
+            "round_weight_sum": 22.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 86,
+                "weight": 4.155757653938768,
+                "mean_probability": 0.040176201447570656,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 52,
+                "weight": 2.5087858446200753,
+                "mean_probability": 0.15059166460602155,
+                "ct_win_frequency": 0.08665199734525261
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 34,
+                "weight": 1.5845636950432347,
+                "mean_probability": 0.253533401002655,
+                "ct_win_frequency": 0.12059932275767479
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 36,
+                "weight": 2.095568086883876,
+                "mean_probability": 0.3665925824179575,
+                "ct_win_frequency": 0.3924820452919098
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 54,
+                "weight": 2.726188590615499,
+                "mean_probability": 0.4441354009714317,
+                "ct_win_frequency": 0.35043109452095333
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 50,
+                "weight": 2.3483818882243974,
+                "mean_probability": 0.5398546168676093,
+                "ct_win_frequency": 0.3904100689530319
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 43,
+                "weight": 1.7892028985507247,
+                "mean_probability": 0.6511468494959332,
+                "ct_win_frequency": 0.17685256436218322
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 22,
+                "weight": 1.3360179434092476,
+                "mean_probability": 0.7550851084173572,
+                "ct_win_frequency": 0.5850022470284986
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 16,
+                "weight": 0.8193233082706767,
+                "mean_probability": 0.8322859043264066,
+                "ct_win_frequency": 0.6867333516870086
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 42,
+                "weight": 2.6362100904435,
+                "mean_probability": 0.9666374146649874,
+                "ct_win_frequency": 0.8482670249044125
+              }
+            ],
+            "ece_10_bins": 0.12299199523757211
+          },
+          "previous": {
+            "log_loss": 0.5823544226029905,
+            "brier_score": 0.19957308970821688,
+            "accuracy_at_0_5": 0.6593328730840509,
+            "roc_auc": 0.7793261198244089,
+            "sample_count": 435,
+            "round_weight_sum": 22.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 46,
+                "weight": 2.352419652071355,
+                "mean_probability": 0.0561884784933061,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 46,
+                "weight": 2.087025935469535,
+                "mean_probability": 0.15164452417504465,
+                "ct_win_frequency": 0.0416652808483509
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 40,
+                "weight": 1.8669943187038354,
+                "mean_probability": 0.2451979311607833,
+                "ct_win_frequency": 0.09536924051882359
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 44,
+                "weight": 2.09839263012604,
+                "mean_probability": 0.3590513231360923,
+                "ct_win_frequency": 0.25935572435561033
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 56,
+                "weight": 3.182274842049711,
+                "mean_probability": 0.45790830655216896,
+                "ct_win_frequency": 0.38703495263051546
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 67,
+                "weight": 3.1878390723184773,
+                "mean_probability": 0.5446058389975158,
+                "ct_win_frequency": 0.2865581114483239
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 45,
+                "weight": 2.137456658483378,
+                "mean_probability": 0.6422550787792888,
+                "ct_win_frequency": 0.40505507052666356
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 36,
+                "weight": 1.7363309789625578,
+                "mean_probability": 0.7567155096208825,
+                "ct_win_frequency": 0.373519339943059
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 19,
+                "weight": 1.097495121202215,
+                "mean_probability": 0.8396407581773742,
+                "ct_win_frequency": 0.647682564417138
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 36,
+                "weight": 2.253770790612896,
+                "mean_probability": 0.9435223938548477,
+                "ct_win_frequency": 0.8077296346468792
+              }
+            ],
+            "ece_10_bins": 0.16308501866311628
+          }
+        },
+        {
+          "match_id": "hltv:2400011",
+          "rounds": 18,
+          "expanded": {
+            "log_loss": 0.3704770802982953,
+            "brier_score": 0.12519659396332727,
+            "accuracy_at_0_5": 0.8051991133885847,
+            "roc_auc": 0.9069355256531657,
+            "sample_count": 294,
+            "round_weight_sum": 18.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 52,
+                "weight": 3.4069327731092436,
+                "mean_probability": 0.03697879697170416,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 16,
+                "weight": 0.7703314659197011,
+                "mean_probability": 0.144399307654617,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 13,
+                "weight": 0.6619047619047619,
+                "mean_probability": 0.24430739568057422,
+                "ct_win_frequency": 0.1510791366906475
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 23,
+                "weight": 1.2850566313481915,
+                "mean_probability": 0.357223775114516,
+                "ct_win_frequency": 0.14040998521551235
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 36,
+                "weight": 2.1381660503463573,
+                "mean_probability": 0.45858713832863474,
+                "ct_win_frequency": 0.5163158577086839
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 24,
+                "weight": 1.3763559508124725,
+                "mean_probability": 0.5649951833713611,
+                "ct_win_frequency": 0.8082698819784857
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 27,
+                "weight": 1.5170823138214442,
+                "mean_probability": 0.640740014415321,
+                "ct_win_frequency": 0.4582855594992303
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 21,
+                "weight": 1.1135580319084155,
+                "mean_probability": 0.7452134416137095,
+                "ct_win_frequency": 0.16203446739050192
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 20,
+                "weight": 1.1284020327498587,
+                "mean_probability": 0.8605428907938241,
+                "ct_win_frequency": 1.0
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 62,
+                "weight": 4.6022099880795535,
+                "mean_probability": 0.9678365063340317,
+                "ct_win_frequency": 0.9775815090050558
+              }
+            ],
+            "ece_10_bins": 0.12023479395974597
+          },
+          "previous": {
+            "log_loss": 0.4261532086236898,
+            "brier_score": 0.14149741394949453,
+            "accuracy_at_0_5": 0.7975899794846938,
+            "roc_auc": 0.898481249639421,
+            "sample_count": 294,
+            "round_weight_sum": 18.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 33,
+                "weight": 2.03984593837535,
+                "mean_probability": 0.047103667691908505,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 15,
+                "weight": 0.9926470588235294,
+                "mean_probability": 0.15388830091599331,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 11,
+                "weight": 0.6360877684407096,
+                "mean_probability": 0.2666604895602311,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 29,
+                "weight": 1.5915316851378232,
+                "mean_probability": 0.3418763319952827,
+                "ct_win_frequency": 0.09652537228154126
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 28,
+                "weight": 1.473977535678303,
+                "mean_probability": 0.45793045329414483,
+                "ct_win_frequency": 0.36303944701135815
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 30,
+                "weight": 1.9292035259426563,
+                "mean_probability": 0.5504254328705853,
+                "ct_win_frequency": 0.6085645086151598
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 27,
+                "weight": 1.319348029066699,
+                "mean_probability": 0.6638019965544931,
+                "ct_win_frequency": 0.43417360267081034
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 36,
+                "weight": 2.17299714352144,
+                "mean_probability": 0.7459443231253565,
+                "ct_win_frequency": 0.5859221818818242
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 42,
+                "weight": 2.4241232197753937,
+                "mean_probability": 0.8560263504790908,
+                "ct_win_frequency": 0.7914480784510626
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 43,
+                "weight": 3.420238095238095,
+                "mean_probability": 0.9537470677332892,
+                "ct_win_frequency": 0.9860772711451445
+              }
+            ],
+            "ece_10_bins": 0.10993242916097361
+          }
+        }
+      ]
+    },
+    "test": {
+      "events": [
+        "blast-rivals-2026-season-2"
+      ],
+      "matches": 2,
+      "rounds": 41,
+      "samples": 693,
+      "expanded": {
+        "log_loss": 0.5327119427994604,
+        "brier_score": 0.18398566006168837,
+        "accuracy_at_0_5": 0.6682869962943767,
+        "roc_auc": 0.7994539375542389,
+        "sample_count": 693,
+        "round_weight_sum": 41.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 78,
+            "weight": 4.992201336675021,
+            "mean_probability": 0.030392128648524145,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 47,
+            "weight": 2.8174958228905598,
+            "mean_probability": 0.14562328927979284,
+            "ct_win_frequency": 0.023661673648293535
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 31,
+            "weight": 1.9456663998769261,
+            "mean_probability": 0.2502393415932281,
+            "ct_win_frequency": 0.38914320419510273
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 50,
+            "weight": 2.8064422859213543,
+            "mean_probability": 0.3464304773276119,
+            "ct_win_frequency": 0.4415642598551088
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 54,
+            "weight": 3.4150295347478683,
+            "mean_probability": 0.4476891932626027,
+            "ct_win_frequency": 0.7980897686742551
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 96,
+            "weight": 5.5205695173544145,
+            "mean_probability": 0.5467143860362894,
+            "ct_win_frequency": 0.47149423694195386
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 83,
+            "weight": 4.142808122651641,
+            "mean_probability": 0.6469942643283348,
+            "ct_win_frequency": 0.38659821098773206
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 64,
+            "weight": 3.610757423566348,
+            "mean_probability": 0.7503096117495086,
+            "ct_win_frequency": 0.6261658884005393
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 64,
+            "weight": 3.3997988747416663,
+            "mean_probability": 0.8505645775739805,
+            "ct_win_frequency": 0.7085106126812891
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 126,
+            "weight": 8.3492306815742,
+            "mean_probability": 0.9680067283475169,
+            "ct_win_frequency": 0.8787899603440142
+          }
+        ],
+        "ece_10_bins": 0.13169157157861008
+      },
+      "previous": {
+        "log_loss": 0.5464004261763293,
+        "brier_score": 0.19274480462176405,
+        "accuracy_at_0_5": 0.6664037484800299,
+        "roc_auc": 0.7904580226107654,
+        "sample_count": 693,
+        "round_weight_sum": 41.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 49,
+            "weight": 3.1770069112174375,
+            "mean_probability": 0.0464326090586384,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 28,
+            "weight": 1.6891009721272878,
+            "mean_probability": 0.14928299449819216,
+            "ct_win_frequency": 0.03946872790127243
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 40,
+            "weight": 2.2835813000209284,
+            "mean_probability": 0.24894171511441945,
+            "ct_win_frequency": 0.14327095266734777
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 46,
+            "weight": 2.8303580413245237,
+            "mean_probability": 0.35249294899433886,
+            "ct_win_frequency": 0.4315606645309474
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 76,
+            "weight": 4.062653706304265,
+            "mean_probability": 0.45191189258044134,
+            "ct_win_frequency": 0.5525366058113057
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 83,
+            "weight": 4.777312714406536,
+            "mean_probability": 0.548447805490359,
+            "ct_win_frequency": 0.5311332148345588
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 87,
+            "weight": 4.801335593570417,
+            "mean_probability": 0.65660269086612,
+            "ct_win_frequency": 0.3533741264433764
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 113,
+            "weight": 6.147036184215818,
+            "mean_probability": 0.7464506007295216,
+            "ct_win_frequency": 0.49031062178809354
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 88,
+            "weight": 5.206146139012271,
+            "mean_probability": 0.8467048893527482,
+            "ct_win_frequency": 0.7700658120983718
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 83,
+            "weight": 6.025468437800515,
+            "mean_probability": 0.9485154709248699,
+            "ct_win_frequency": 0.9763285493203191
+          }
+        ],
+        "ece_10_bins": 0.11918554352315158
+      },
+      "constant_prior": {
+        "log_loss": 0.6986436821978684,
+        "brier_score": 0.25271977078937613,
+        "accuracy_at_0_5": 0.5121951219512195,
+        "roc_auc": 0.5,
+        "sample_count": 693,
+        "round_weight_sum": 41.0,
+        "calibration_bins": [
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 693,
+            "weight": 41.0,
+            "mean_probability": 0.5657534246575342,
+            "ct_win_frequency": 0.5121951219512195
+          }
+        ]
+      },
+      "per_match": [
+        {
+          "match_id": "hltv:2399851",
+          "rounds": 20,
+          "expanded": {
+            "log_loss": 0.5534706319394106,
+            "brier_score": 0.1911791795632177,
+            "accuracy_at_0_5": 0.672362423001237,
+            "roc_auc": 0.747923198402497,
+            "sample_count": 346,
+            "round_weight_sum": 20.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 21,
+                "weight": 1.2880555555555555,
+                "mean_probability": 0.024259285530581393,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 22,
+                "weight": 1.07015873015873,
+                "mean_probability": 0.14419799698403107,
+                "ct_win_frequency": 0.062296054583209734
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 10,
+                "weight": 0.7776190476190477,
+                "mean_probability": 0.24498456295149335,
+                "ct_win_frequency": 0.5756276791181874
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 26,
+                "weight": 1.4453842406527828,
+                "mean_probability": 0.3538998425826062,
+                "ct_win_frequency": 0.5535871520595211
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 33,
+                "weight": 1.9872482517034273,
+                "mean_probability": 0.4492151129465092,
+                "ct_win_frequency": 0.8786908337371603
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 61,
+                "weight": 3.2503002070393374,
+                "mean_probability": 0.5482626861431645,
+                "ct_win_frequency": 0.6415715700731578
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 41,
+                "weight": 2.040752648885641,
+                "mean_probability": 0.6400118017573573,
+                "ct_win_frequency": 0.6016875718372798
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 28,
+                "weight": 1.6038622475922248,
+                "mean_probability": 0.7546151050301331,
+                "ct_win_frequency": 0.6802361651525483
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 32,
+                "weight": 1.6106323501060342,
+                "mean_probability": 0.8519886059052865,
+                "ct_win_frequency": 0.7294762608700857
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 72,
+                "weight": 4.925986720687218,
+                "mean_probability": 0.9644154484640517,
+                "ct_win_frequency": 0.8851571638757151
+              }
+            ],
+            "ece_10_bins": 0.13033214362479933
+          },
+          "previous": {
+            "log_loss": 0.542664412956857,
+            "brier_score": 0.19073841864450586,
+            "accuracy_at_0_5": 0.6681546072662474,
+            "roc_auc": 0.7415699520892162,
+            "sample_count": 346,
+            "round_weight_sum": 20.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 15,
+                "weight": 0.9944444444444445,
+                "mean_probability": 0.03416216676026763,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 3,
+                "weight": 0.15666666666666668,
+                "mean_probability": 0.17363097360166838,
+                "ct_win_frequency": 0.42553191489361697
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 20,
+                "weight": 1.023639122315593,
+                "mean_probability": 0.25634365056283864,
+                "ct_win_frequency": 0.31961543987029306
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 25,
+                "weight": 1.448614054317379,
+                "mean_probability": 0.34740938244784275,
+                "ct_win_frequency": 0.596658811541737
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 48,
+                "weight": 2.3594959478833486,
+                "mean_probability": 0.4521926353800408,
+                "ct_win_frequency": 0.6576481606156529
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 45,
+                "weight": 2.561925465838509,
+                "mean_probability": 0.5530581632680094,
+                "ct_win_frequency": 0.6408950954008776
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 42,
+                "weight": 2.258985249618242,
+                "mean_probability": 0.6595767744592019,
+                "ct_win_frequency": 0.47748346605777187
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 61,
+                "weight": 3.3205951333182453,
+                "mean_probability": 0.7440815953497406,
+                "ct_win_frequency": 0.5931595612493763
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 43,
+                "weight": 2.4805129462452116,
+                "mean_probability": 0.858437926558975,
+                "ct_win_frequency": 0.8646593293445773
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 44,
+                "weight": 3.3951209693523596,
+                "mean_probability": 0.9409009835867072,
+                "ct_win_frequency": 0.9882183873973627
+              }
+            ],
+            "ece_10_bins": 0.11488256824484452
+          }
+        },
+        {
+          "match_id": "hltv:2400208",
+          "rounds": 21,
+          "expanded": {
+            "log_loss": 0.5129417626661747,
+            "brier_score": 0.1771346891078509,
+            "accuracy_at_0_5": 0.6644056375259383,
+            "roc_auc": 0.8453297731982675,
+            "sample_count": 347,
+            "round_weight_sum": 21.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 57,
+                "weight": 3.704145781119465,
+                "mean_probability": 0.032524723615407286,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 25,
+                "weight": 1.7473370927318295,
+                "mean_probability": 0.1464962112818965,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 21,
+                "weight": 1.1680473522578785,
+                "mean_probability": 0.25373767233721367,
+                "ct_win_frequency": 0.26499251843299726
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 24,
+                "weight": 1.3610580452685717,
+                "mean_probability": 0.33849833742749624,
+                "ct_win_frequency": 0.32260083757677904
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 21,
+                "weight": 1.427781283044441,
+                "mean_probability": 0.4455653517050098,
+                "ct_win_frequency": 0.6859056915093307
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 35,
+                "weight": 2.270269310315077,
+                "mean_probability": 0.5444977150294312,
+                "ct_win_frequency": 0.22799784266953588
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 42,
+                "weight": 2.102055473766,
+                "mean_probability": 0.6537730954131009,
+                "ct_win_frequency": 0.17778156062862874
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 36,
+                "weight": 2.0068951759741234,
+                "mean_probability": 0.746868765305347,
+                "ct_win_frequency": 0.5829542266069346
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 32,
+                "weight": 1.789166524635632,
+                "mean_probability": 0.8492826476550558,
+                "ct_win_frequency": 0.6896370473932875
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 54,
+                "weight": 3.4232439608869814,
+                "mean_probability": 0.9731745157498608,
+                "ct_win_frequency": 0.8696276685519491
+              }
+            ],
+            "ece_10_bins": 0.16393096056583387
+          },
+          "previous": {
+            "log_loss": 0.5499585340043982,
+            "brier_score": 0.19465564840962898,
+            "accuracy_at_0_5": 0.6647362639217277,
+            "roc_auc": 0.8381313216453931,
+            "sample_count": 347,
+            "round_weight_sum": 21.0,
+            "calibration_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "count": 34,
+                "weight": 2.182562466772993,
+                "mean_probability": 0.0520234104035055,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "count": 25,
+                "weight": 1.532434305460621,
+                "mean_probability": 0.14679380673163098,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "count": 20,
+                "weight": 1.2599421777053355,
+                "mean_probability": 0.24292801794646218,
+                "ct_win_frequency": 0.0
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "count": 21,
+                "weight": 1.3817439870071448,
+                "mean_probability": 0.35782253683011617,
+                "ct_win_frequency": 0.25847252494033135
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "count": 28,
+                "weight": 1.7031577584209163,
+                "mean_probability": 0.45152296120002333,
+                "ct_win_frequency": 0.4069186873241076
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "count": 38,
+                "weight": 2.2153872485680264,
+                "mean_probability": 0.5431162802661239,
+                "ct_win_frequency": 0.4042020170573125
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.7,
+                "count": 45,
+                "weight": 2.5423503439521746,
+                "mean_probability": 0.653960092459537,
+                "ct_win_frequency": 0.24309775631377867
+              },
+              {
+                "lower": 0.7,
+                "upper": 0.8,
+                "count": 52,
+                "weight": 2.8264410508975724,
+                "mean_probability": 0.7492337855167677,
+                "ct_win_frequency": 0.3694803332053459
+              },
+              {
+                "lower": 0.8,
+                "upper": 0.9,
+                "count": 45,
+                "weight": 2.72563319276706,
+                "mean_probability": 0.8360270216315692,
+                "ct_win_frequency": 0.6839792305353273
+              },
+              {
+                "lower": 0.9,
+                "upper": 1.0,
+                "count": 39,
+                "weight": 2.630347468448155,
+                "mean_probability": 0.9583438703826482,
+                "ct_win_frequency": 0.9609817409378546
+              }
+            ],
+            "ece_10_bins": 0.17642078662159047
+          }
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Only two validation and two test matches; no robust cross-event claim.",
+    "Old model used older parser during fitting; both were scored on Awpy 3.3 data.",
+    "This BLAST test is now observed and cannot be reused for further tuning.",
+    "Current new model is uncalibrated; no calibration was fit on the test set."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "map_name": "de_mirage",
+  "sources": [
+    {
+      "path": "../data/processed/esl24_holdout/hltv-2398717-m1-p1",
+      "match_id": "hltv:2398717",
+      "match_date": "2026-10-03",
+      "event": "esl-pro-league-season-24",
+      "map_id": "hltv:2398717:m1",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/esl24_holdout/hltv-2398722-m2-p1",
+      "match_id": "hltv:2398722",
+      "match_date": "2026-10-03",
+      "event": "esl-pro-league-season-24",
+      "map_id": "hltv:2398722:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/esl24_holdout/hltv-2398731-m3-p1",
+      "match_id": "hltv:2398731",
+      "match_date": "2026-10-04",
+      "event": "esl-pro-league-season-24",
+      "map_id": "hltv:2398731:m3",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/esl24_holdout/hltv-2398753-m1-p1",
+      "match_id": "hltv:2398753",
+      "match_date": "2026-10-09",
+      "event": "esl-pro-league-season-24",
+      "map_id": "hltv:2398753:m1",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/esl24_holdout/hltv-2398754-m3-p1",
+      "match_id": "hltv:2398754",
+      "match_date": "2026-10-10",
+      "event": "esl-pro-league-season-24",
+      "map_id": "hltv:2398754:m3",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/esl24_holdout/hltv-2398755-m2-p1",
+      "match_id": "hltv:2398755",
+      "match_date": "2026-10-10",
+      "event": "esl-pro-league-season-24",
+      "map_id": "hltv:2398755:m2",
+      "part_index": "1"
+    }
+  ]
+}

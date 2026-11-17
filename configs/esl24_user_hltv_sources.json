@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "description": "HLTV archives supplied by user, local hashes not official; teams/dates/scores checked on HLTV.",
+  "maps": [
+    {
+      "archive": "../data/raw/esl24_holdout/esl-pro-league-season-24-falcons-vs-tyloo-bo3-5ZfD4B6g-DyOqiEF6XebhD.rar",
+      "archive_sha256": "c40b4a2abb5a982652d2de938cc03d32a96147c64952373177e86c40d0334bac",
+      "match_id": "hltv:2398717",
+      "match_date": "2026-10-03",
+      "event": "esl-pro-league-season-24",
+      "map_index": 1,
+      "expected_rounds": 24,
+      "expected_score": {
+        "Falcons": 13,
+        "TYLOO": 11
+      },
+      "entry": "falcons-vs-tyloo-m1-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2398717/falcons-vs-tyloo-esl-pro-league-season-24"
+    },
+    {
+      "archive": "../data/raw/esl24_holdout/esl-pro-league-season-24-mouz-vs-m80-bo3-_aBGdI5aLEO4sdGnjzfcZT.rar",
+      "archive_sha256": "69e0d24c1adad9031e8b27fa670e6a459fb293cce696c90476250f6347be58e3",
+      "match_id": "hltv:2398722",
+      "match_date": "2026-10-03",
+      "event": "esl-pro-league-season-24",
+      "map_index": 2,
+      "expected_rounds": 19,
+      "expected_score": {
+        "MOUZ": 13,
+        "M80": 6
+      },
+      "entry": "mouz-vs-m80-m2-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2398722/mouz-vs-m80-esl-pro-league-season-24"
+    },
+    {
+      "archive": "../data/raw/esl24_holdout/esl-pro-league-season-24-vitality-vs-natus-vincere-bo3-rAyrt8Fnq-0Skx1b2XM0hC.rar",
+      "archive_sha256": "24dd0ea9786afb021b12b7188d0da18eedd68855826854b3e2b1a8739530776b",
+      "match_id": "hltv:2398731",
+      "match_date": "2026-10-04",
+      "event": "esl-pro-league-season-24",
+      "map_index": 3,
+      "expected_rounds": 17,
+      "expected_score": {
+        "Vitality": 13,
+        "Natus Vincere": 4
+      },
+      "entry": "vitality-vs-natus-vincere-m3-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2398731/vitality-vs-natus-vincere-esl-pro-league-season-24"
+    },
+    {
+      "archive": "../data/raw/esl24_holdout/esl-pro-league-season-24-falcons-vs-spirit-bo3-7qoiS3mfVYinuAhEY9FtFF.rar",
+      "archive_sha256": "5aad20d47159cb82b1d569c681e82fe27e0ccf0e2371292b3299bceb1b1f38d2",
+      "match_id": "hltv:2398753",
+      "match_date": "2026-10-09",
+      "event": "esl-pro-league-season-24",
+      "map_index": 1,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Falcons": 8,
+        "Spirit": 13
+      },
+      "entry": "falcons-vs-spirit-m1-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2398753/falcons-vs-spirit-esl-pro-league-season-24"
+    },
+    {
+      "archive": "../data/raw/esl24_holdout/esl-pro-league-season-24-aurora-vs-vitality-bo3-jz97l79s_ZddmLmtUQ37rg.rar",
+      "archive_sha256": "bf833efa32ef07fd54f1b4e8144dd35d2a3401d563528f2aee10d35072953051",
+      "match_id": "hltv:2398754",
+      "match_date": "2026-10-10",
+      "event": "esl-pro-league-season-24",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Aurora": 8,
+        "Vitality": 13
+      },
+      "entry": "aurora-vs-vitality-m3-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2398754/aurora-vs-vitality-esl-pro-league-season-24"
+    },
+    {
+      "archive": "../data/raw/esl24_holdout/esl-pro-league-season-24-mouz-vs-spirit-bo3-sqctTxs0ADRlg-g18Xysab.rar",
+      "archive_sha256": "c60c61a2719bfd3101262f200a30b4f1728fab779271bbb2c480f9c57f0e93f0",
+      "match_id": "hltv:2398755",
+      "match_date": "2026-10-10",
+      "event": "esl-pro-league-season-24",
+      "map_index": 2,
+      "expected_rounds": 18,
+      "expected_score": {
+        "MOUZ": 5,
+        "Spirit": 13
+      },
+      "entry": "mouz-vs-spirit-m2-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2398755/mouz-vs-spirit-esl-pro-league-season-24"
+    }
+  ]
+}

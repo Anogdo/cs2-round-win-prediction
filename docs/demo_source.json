@@ -1,0 +1,17 @@
+{
+  "description": "B8 vs Team Vitality, IEM Atlanta 2026, map 1 Mirage",
+  "event": "IEM Atlanta 2026",
+  "match_date": "2026-05-13",
+  "map": "de_mirage",
+  "event_class": "HLTV MVP event",
+  "event_url": "https://www.hltv.org/events/8243/iem-atlanta-2026",
+  "match_url": "https://www.hltv.org/matches/2394170/b8-vs-vitality-iem-atlanta-2026",
+  "download_url": "https://github.com/pnxenopoulos/awpy-fixtures/releases/download/hltv-de_mirage-2394170/hltv-de_mirage-2394170.dem",
+  "manifest_url": "https://raw.githubusercontent.com/pnxenopoulos/awpy-fixtures/main/manifest.json",
+  "sha256": "321cfe8bd30501f9040a9ae0cfaca900b6db1cc6cc6ab026f56b86a5b3e20ddc",
+  "size_bytes": 347294410,
+  "expected_map_score": {"B8 Esports": 5, "Team Vitality": 13},
+  "provenance": "Public real-demo fixture used by the Awpy maintainers; external event facts are not inferred from demo state.",
+  "selection_as_of": "2026-10-27",
+  "excluded_event": "pgl-masters-bucharest-2026"
+}

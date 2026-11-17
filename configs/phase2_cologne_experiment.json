@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "map_name": "de_mirage",
+  "feature_version": 1,
+  "sources": [
+    {
+      "path": "../data/processed/corpus/hltv-2393087-de_mirage",
+      "match_id": "hltv:2393087",
+      "match_date": "2026-04-13",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393088-de_mirage",
+      "match_id": "hltv:2393088",
+      "match_date": "2026-04-13",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393226-de_mirage",
+      "match_id": "hltv:2393226",
+      "match_date": "2026-04-14",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393228-de_mirage",
+      "match_id": "hltv:2393228",
+      "match_date": "2026-04-14",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393236-de_mirage",
+      "match_id": "hltv:2393236",
+      "match_date": "2026-04-15",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393237-de_mirage",
+      "match_id": "hltv:2393237",
+      "match_date": "2026-04-15",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393240-de_mirage",
+      "match_id": "hltv:2393240",
+      "match_date": "2026-04-17",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393242-de_mirage",
+      "match_id": "hltv:2393242",
+      "match_date": "2026-04-18",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/corpus/hltv-2393244-de_mirage",
+      "match_id": "hltv:2393244",
+      "match_date": "2026-04-19",
+      "event": "iem-rio-2026"
+    },
+    {
+      "path": "../data/processed/match",
+      "match_id": "hltv:2394170",
+      "match_date": "2026-05-13",
+      "event": "iem-atlanta-2026"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394997-m2-p1",
+      "match_id": "hltv:2394997",
+      "match_date": "2026-06-18",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394997:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394997-m2-p2",
+      "match_id": "hltv:2394997",
+      "match_date": "2026-06-18",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394997:m2",
+      "part_index": "2"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394980-m2-p1",
+      "match_id": "hltv:2394980",
+      "match_date": "2026-06-13",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394980:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394994-m1-p1",
+      "match_id": "hltv:2394994",
+      "match_date": "2026-06-15",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394994:m1",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394982-m3-p1",
+      "match_id": "hltv:2394982",
+      "match_date": "2026-06-13",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394982:m3",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2395002-m1-p1",
+      "match_id": "hltv:2395002",
+      "match_date": "2026-06-21",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2395002:m1",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394973-m3-p1",
+      "match_id": "hltv:2394973",
+      "match_date": "2026-06-12",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394973:m3",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394998-m3-p1",
+      "match_id": "hltv:2394998",
+      "match_date": "2026-06-19",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394998:m3",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394998-m3-p2",
+      "match_id": "hltv:2394998",
+      "match_date": "2026-06-19",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394998:m3",
+      "part_index": "2"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394991-m2-p1",
+      "match_id": "hltv:2394991",
+      "match_date": "2026-06-14",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394991:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394995-m3-p1",
+      "match_id": "hltv:2394995",
+      "match_date": "2026-06-15",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394995:m3",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394995-m3-p2",
+      "match_id": "hltv:2394995",
+      "match_date": "2026-06-15",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394995:m3",
+      "part_index": "2"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394979-m3-p1",
+      "match_id": "hltv:2394979",
+      "match_date": "2026-06-13",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394979:m3",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394986-m2-p1",
+      "match_id": "hltv:2394986",
+      "match_date": "2026-06-13",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394986:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2395001-m2-p1",
+      "match_id": "hltv:2395001",
+      "match_date": "2026-06-20",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2395001:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394978-m2-p1",
+      "match_id": "hltv:2394978",
+      "match_date": "2026-06-12",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394978:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/cologne/hltv-2394983-m1-p1",
+      "match_id": "hltv:2394983",
+      "match_date": "2026-06-13",
+      "event": "iem-cologne-major-2026",
+      "map_id": "hltv:2394983:m1",
+      "part_index": "1"
+    }
+  ],
+  "split_plan": {
+    "plan_version": 1,
+    "declared_at": "2026-10-28",
+    "assignments": {
+      "hltv:2393087": "train",
+      "hltv:2393088": "train",
+      "hltv:2393226": "train",
+      "hltv:2393228": "train",
+      "hltv:2393236": "train",
+      "hltv:2393237": "train",
+      "hltv:2393240": "train",
+      "hltv:2393242": "validation",
+      "hltv:2393244": "calibration",
+      "hltv:2394170": "calibration",
+      "hltv:2394997": "test",
+      "hltv:2394980": "test",
+      "hltv:2394994": "test",
+      "hltv:2394982": "test",
+      "hltv:2395002": "test",
+      "hltv:2394973": "test",
+      "hltv:2394998": "test",
+      "hltv:2394991": "test",
+      "hltv:2394995": "test",
+      "hltv:2394979": "test",
+      "hltv:2394986": "test",
+      "hltv:2395001": "test",
+      "hltv:2394978": "test",
+      "hltv:2394983": "test"
+    },
+    "test_events": [
+      "iem-cologne-major-2026"
+    ],
+    "base_model_sha256": "dcf4f494fa676f7fc01b3d09cd0cb9d70dedfe15a84f230bf91ef8e78e922610",
+    "reference_dataset_sha256": "16c7933b10897faeb1bdbb032805475c4cdf2427d1acd8ab60215703781c4ef7",
+    "feature_version": 1,
+    "calibrator": {
+      "method": "sigmoid_logit",
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 2000,
+      "random_state": 42
+    },
+    "bootstrap": {
+      "unit": "match_id",
+      "draws": 1000,
+      "seed": 42
+    },
+    "note": "Frozen V1 selected previously on Rio validation. Rio former test and Atlanta are now calibration only; all Cologne maps are new-event test. No new test-driven model selection."
+  }
+}

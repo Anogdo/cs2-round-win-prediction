@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "Exploratory comparisons on the already observed 50 Mirage maps; no blind-test claim.",
+  "original_training_dataset": "data/datasets/mirage_expanded_2026_v1",
+  "exploratory_dataset": "data/datasets/mirage_holdout_50_v1",
+  "frozen_v1": "models/monitor_runs/20261117T052929-9d7d1b12/model.json",
+  "frozen_v1_sha256": "166cdac8ae4225c48245ca845f3ac262a5e306ef79588aa5eb7c70f7ab3e622e",
+  "full_baseline_fit_events": ["iem-rio-2026", "iem-atlanta-2026", "iem-cologne-major-2026", "blast-open-porto-2026"],
+  "candidate_fit_events": ["iem-rio-2026", "iem-atlanta-2026"],
+  "candidate_calibration_events": ["iem-cologne-major-2026"],
+  "candidate_validation_events": ["blast-open-porto-2026"],
+  "excluded_event": "pgl-masters-bucharest-2026",
+  "model_specs": {
+    "simple": {"algorithm": "logistic", "features": ["ct_minus_t_alive_count", "elapsed_since_freeze_end_seconds"], "C": 1.0},
+    "v1_logistic": {"algorithm": "logistic", "feature_version": 1, "C": 1.0},
+    "v2_logistic": {"algorithm": "logistic", "feature_version": 2, "C": 1.0},
+    "v1_tree": {"algorithm": "hist_gradient_boosting", "feature_version": 1, "max_iter": 100, "max_depth": 2, "max_leaf_nodes": 7, "min_samples_leaf": 200, "learning_rate": 0.05, "l2_regularization": 1.0, "early_stopping": false}
+  },
+  "calibration": {"method": "sigmoid_logit", "C": 1.0, "prediction_clip": 1e-12},
+  "seed": 42,
+  "bootstrap": {"unit": "match", "draws": 2000, "seed": 42},
+  "weighting": "Each round has total weight 1, calculated within each analysis subset.",
+  "selection_policy": "These observed matches may inform selection; freeze all choices before scoring a new independent event."
+}

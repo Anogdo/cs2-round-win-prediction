@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "map_name": "de_mirage",
+  "sources": [
+    {
+      "path": "../data/processed/new_hltv/hltv-2396950-m2-p1",
+      "match_id": "hltv:2396950",
+      "match_date": "2026-09-05",
+      "event": "blast-open-porto-2026",
+      "map_id": "hltv:2396950:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/new_hltv/hltv-2396951-m2-p1",
+      "match_id": "hltv:2396951",
+      "match_date": "2026-09-06",
+      "event": "blast-open-porto-2026",
+      "map_id": "hltv:2396951:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/new_hltv/hltv-2400003-m2-p1",
+      "match_id": "hltv:2400003",
+      "match_date": "2026-11-04",
+      "event": "iem-beijing-2026",
+      "map_id": "hltv:2400003:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/new_hltv/hltv-2400011-m1-p1",
+      "match_id": "hltv:2400011",
+      "match_date": "2026-11-08",
+      "event": "iem-beijing-2026",
+      "map_id": "hltv:2400011:m1",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/new_hltv/hltv-2399851-m2-p1",
+      "match_id": "hltv:2399851",
+      "match_date": "2026-11-11",
+      "event": "blast-rivals-2026-season-2",
+      "map_id": "hltv:2399851:m2",
+      "part_index": "1"
+    },
+    {
+      "path": "../data/processed/new_hltv/hltv-2400208-m3-p1",
+      "match_id": "hltv:2400208",
+      "match_date": "2026-11-15",
+      "event": "blast-rivals-2026-season-2",
+      "map_id": "hltv:2400208:m3",
+      "part_index": "1"
+    }
+  ]
+}

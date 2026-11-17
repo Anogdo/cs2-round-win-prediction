@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "description": "User-provided HLTV archives; archive hashes record locally received bytes, not independent official checksums. Scores/dates checked on HLTV.",
+  "maps": [
+    {
+      "archive": "../data/raw/new_hltv/blast-open-porto-2026-mouz-vs-vitality-bo3-V3i93ufoKzBC0MBPii8PGf.rar",
+      "archive_sha256": "954f50a5f8926b7b7da0ca364aa5efe31b3efdf3a6dd2734c1f33c9448eda3cd",
+      "match_id": "hltv:2396950",
+      "match_date": "2026-09-05",
+      "event": "blast-open-porto-2026",
+      "map_index": 2,
+      "expected_rounds": 20,
+      "expected_score": {
+        "MOUZ": 13,
+        "Vitality": 7
+      },
+      "entry": "mouz-vs-vitality-m2-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2396950/mouz-vs-vitality-blast-open-porto-2026"
+    },
+    {
+      "archive": "../data/raw/new_hltv/blast-open-porto-2026-spirit-vs-mouz-bo5-sZmuJNNeP4vy0G6o8VuS_u.rar",
+      "archive_sha256": "a40fbeb82617d754c20c4e1bb25dff04d1337a44fbc38d37cd9115fc3e7010ee",
+      "match_id": "hltv:2396951",
+      "match_date": "2026-09-06",
+      "event": "blast-open-porto-2026",
+      "map_index": 2,
+      "expected_rounds": 24,
+      "expected_score": {
+        "Spirit": 11,
+        "MOUZ": 13
+      },
+      "entry": "spirit-vs-mouz-m2-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2396951/spirit-vs-mouz-blast-open-porto-2026"
+    },
+    {
+      "archive": "../data/raw/new_hltv/iem-beijing-2026-parivision-vs-mouz-bo3-WrJih87cFo_hp4SiAvreL6.rar",
+      "archive_sha256": "685303c964657a260b0ce0e3330ace16358ea37dd0ac102bcf28b4801169a1ca",
+      "match_id": "hltv:2400003",
+      "match_date": "2026-11-04",
+      "event": "iem-beijing-2026",
+      "map_index": 2,
+      "expected_rounds": 22,
+      "expected_score": {
+        "PARIVISION": 9,
+        "MOUZ": 13
+      },
+      "entry": "parivision-vs-mouz-m2-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2400003/parivision-vs-mouz-iem-beijing-2026"
+    },
+    {
+      "archive": "../data/raw/new_hltv/iem-beijing-2026-the-mongolz-vs-mouz-bo5-yNqSGDwcunB28Re5Y5H0JS.rar",
+      "archive_sha256": "c289b9bb45fb8f51e478afbdeeba7413f847e64e85a1fcb4655b92bd51dbc5bb",
+      "match_id": "hltv:2400011",
+      "match_date": "2026-11-08",
+      "event": "iem-beijing-2026",
+      "map_index": 1,
+      "expected_rounds": 18,
+      "expected_score": {
+        "The MongolZ": 5,
+        "MOUZ": 13
+      },
+      "entry": "the-mongolz-vs-mouz-m1-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2400011/the-mongolz-vs-mouz-iem-beijing-2026"
+    },
+    {
+      "archive": "../data/raw/new_hltv/blast-rivals-2026-season-2-legacy-vs-furia-bo3-ZOS3sELI-AcKuNOeUvuc4J.rar",
+      "archive_sha256": "2a1c748bb380b093305955d3fa4ce1270f74a9ea12355e1e37f80c1b4b74e569",
+      "match_id": "hltv:2399851",
+      "match_date": "2026-11-11",
+      "event": "blast-rivals-2026-season-2",
+      "map_index": 2,
+      "expected_rounds": 20,
+      "expected_score": {
+        "Legacy": 7,
+        "FURIA": 13
+      },
+      "entry": "legacy-vs-furia-m2-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2399851/legacy-vs-furia-blast-rivals-2026-season-2"
+    },
+    {
+      "archive": "../data/raw/new_hltv/blast-rivals-2026-season-2-spirit-vs-furia-bo5-xxlTTki6qFsMGpfMmMNQB2.rar",
+      "archive_sha256": "b99085f218bf3ffac13ded4ff96e18d76c111bc1c437a7afadc754115e5844b1",
+      "match_id": "hltv:2400208",
+      "match_date": "2026-11-15",
+      "event": "blast-rivals-2026-season-2",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Spirit": 8,
+        "FURIA": 13
+      },
+      "entry": "spirit-vs-furia-m3-mirage.dem",
+      "match_url": "https://www.hltv.org/matches/2400208/spirit-vs-furia-blast-rivals-2026-season-2"
+    }
+  ]
+}

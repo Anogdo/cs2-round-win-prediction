@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cs2-predictor"
+version = "0.1.0"
+description = "CS2 demo parsing, leakage-aware datasets and a round-win baseline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["awpy==3.3.0", "polars==2.1.0", "pyarrow==26.0.0"]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "ruff==0.17.3"]
+ml = ["scikit-learn==1.9.1", "numpy>=2.3,<3"]
+gpu = [
+  "scikit-learn==1.9.1",
+  "numpy>=2.3,<3",
+  "xgboost==3.2.0; python_version < '3.12'",
+  "xgboost==3.4.1; python_version >= '3.12'",
+]
+context = ["demoparser2==0.42.1"]
+
+[project.scripts]
+cs2-parse = "cs2_pipeline.parse:main"
+cs2-validate = "cs2_pipeline.validate:main"
+cs2-build-dataset = "cs2_pipeline.dataset:main"
+cs2-train = "cs2_pipeline.train:main"
+cs2-predict = "cs2_pipeline.predict:main"
+cs2-acquire = "cs2_pipeline.acquire:main"
+cs2-enrich = "cs2_pipeline.context:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cs2_pipeline"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: requires a real local CS2 demo"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

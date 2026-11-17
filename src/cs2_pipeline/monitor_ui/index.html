@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="cs2-token" content="__CS2_TOKEN__">
+  <title>CS2 · 训练监控</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-icon">C<span>2</span></span><span>CS2<span class="brand-sub">PREDICTION LAB</span></span></a>
+    <div class="nav-label">工作空间</div>
+    <a class="nav active" href="#monitor"><span>◉</span>训练监控</a>
+    <a class="nav" href="#history"><span>▤</span>实验记录</a>
+    <a class="nav" href="#corpus"><span>▦</span>数据概览</a>
+    <div class="side-bottom"><span class="side-dot"></span>本地工作空间<div>CS2_Prediction<br>数据保存在本机</div></div>
+  </aside>
+  <main>
+    <header><div class="breadcrumb">工作空间 <span>/</span> <b>训练监控</b></div><div class="connection"><i id="connection-dot"></i><span id="connection">正在连接</span><span class="separator">|</span><span id="updated">—</span></div></header>
+    <section class="heading" id="monitor"><div><div class="eyebrow">MODEL TRAINING</div><h1>训练监控</h1><p>查看真实训练阶段、运行日志与评估结果。</p></div><div class="local-tag">⌁ &nbsp; LOCALHOST ONLY</div></section>
+    <div id="error" role="alert" hidden></div>
+    <section class="workspace-grid">
+      <article class="panel training-panel">
+        <div class="panel-head"><h2><span class="title-icon">◈</span> 当前任务</h2><span id="run-status" class="badge idle">空闲</span></div>
+        <div class="run-title" id="run-name">准备开始一次训练</div><div class="run-sub" id="run-description">从已验证的数据集启动，原有模型会保留。</div>
+        <div class="run-facts"><div><span>运行耗时</span><b id="elapsed">00:00</b></div><div><span>已完成阶段</span><b id="stage-count">0 / 4</b></div><div><span>优化迭代</span><b id="iterations">—</b></div></div>
+        <div class="progress-track" aria-label="已完成阶段"><div id="progress"></div></div>
+        <div id="stage-message" class="stage-message" aria-live="polite">当前没有正在运行的任务。</div>
+        <div id="stages" class="stages"></div>
+        <div class="fit-note">拟合期间显示进行中与实际耗时；迭代数在拟合完成后更新。</div>
+      </article>
+      <article class="panel config-panel"><div class="panel-head"><h2>训练配置</h2><span class="small-label">固定参数</span></div>
+        <label for="preset">数据与特征</label><select id="preset"><option>加载配置…</option></select>
+        <div class="config-detail"><div><span>算法</span><b id="algorithm">Logistic Regression</b></div><div><span>特征数</span><b id="features">—</b></div><div><span id="regularization-label">逻辑回归 C</span><b id="regularization-value">1.0</b></div><div><span>随机种子</span><b>42</b></div><div><span>样本权重</span><b>每回合总权重为 1</b></div></div>
+        <button id="start" class="primary" disabled><span>▶</span> 开始训练</button><button id="cancel" class="secondary" hidden>停止当前任务</button><button id="archive" class="secondary" hidden>归档未知记录（不会终止原进程）</button>
+        <p id="config-note" class="config-note">加载数据集说明…</p>
+      </article>
+    </section>
+    <section class="panel batch-panel" id="batch-panel" hidden>
+      <div class="panel-head"><h2>Mirage 测试数据处理</h2><span id="batch-status" class="badge idle">等待</span></div>
+      <div class="run-title" id="batch-count">0 / 50</div>
+      <div class="run-sub" id="batch-current">等待处理</div>
+      <div class="progress-track batch-track" aria-label="已处理比赛"><div id="batch-progress"></div></div>
+      <div class="stage-message" id="batch-detail" aria-live="polite"></div>
+    </section>
+    <section class="panel batch-panel" id="context-panel" hidden>
+      <div class="panel-head"><h2>因果上下文补充与核对</h2><span id="context-status" class="badge idle">等待</span></div>
+      <div class="run-title" id="context-count">0 / 0</div>
+      <div class="run-sub" id="context-current">等待读取</div>
+      <div class="progress-track batch-track" aria-label="已检查的录制文件"><div id="context-progress"></div></div>
+      <div class="stage-message" id="context-detail" aria-live="polite"></div>
+    </section>
+    <section class="metric-section"><div class="section-label"><h2 id="metric-title">Cologne · 已完成参考结果</h2><span id="metric-subtitle">校准模型 · 独立赛事评估</span></div>
+      <div class="metrics"><div class="metric"><div>Log Loss <span>↓</span></div><strong id="metric-loss">—</strong><small>回合加权</small></div><div class="metric"><div>Brier Score <span>↓</span></div><strong id="metric-brier">—</strong><small>概率误差</small></div><div class="metric"><div>ROC AUC <span>↑</span></div><strong id="metric-auc">—</strong><small>胜负区分能力</small></div><div class="metric"><div>ECE <span>↓</span></div><strong id="metric-ece">—</strong><small>10 个固定概率箱</small></div></div>
+    </section>
+    <section class="panel logs-panel"><div class="panel-head"><h2><span class="title-icon">›_</span> 运行日志</h2><div class="log-tools"><label><input id="autoscroll" type="checkbox" checked>自动滚动</label><span class="small-label">每秒刷新</span></div></div><pre id="logs" tabindex="0">等待启动训练。这里会显示实际进程输出。</pre><div class="log-footer"><span id="output-path">模型会保存到独立的新目录</span><span id="log-state">READY</span></div></section>
+    <section class="panel history-panel" id="history"><div class="panel-head"><h2>实验记录</h2><span class="small-label">本次任务与历史模型</span></div><div class="table-wrap"><table><thead><tr><th>实验 / 运行</th><th>状态</th><th>测试 Log Loss</th><th>测试 Brier</th><th>时间</th></tr></thead><tbody id="history-rows"></tbody></table></div></section>
+    <section class="panel corpus-panel" id="corpus"><div class="panel-head"><h2>所选数据集</h2><span class="badge">MIRAGE</span></div><div id="corpus-counts" class="corpus-counts"></div><div class="split-summary" id="split-summary"></div><div class="corpus-note">最终胜方独立保存为监督标签；Steam ID 与真实战队身份保留。测试赛事结果一经观察，后续调参需另设未见赛事测试集。</div></section>
+    <footer><span>CS2 Prediction Lab <span>·</span> Phase 2</span><span>训练事件与产物持久保存在项目目录</span></footer>
+  </main><script src="/app.js"></script>
+</body></html>

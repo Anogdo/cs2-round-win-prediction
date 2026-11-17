@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "map_name": "de_mirage",
+  "sources": [
+    {
+      "path": "../data/processed/match",
+      "match_id": "hltv:2394170",
+      "match_date": "2026-05-13",
+      "event": "iem-atlanta-2026"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "parser_version": "3.3.0",
+  "recordings": 41,
+  "matches": 38,
+  "rounds": 811,
+  "samples": 14630,
+  "nodes": 146300,
+  "steamids": 108,
+  "counts": {
+    "train": {
+      "matches": 34,
+      "rounds": 730,
+      "samples": 13208,
+      "events": [
+        "blast-open-porto-2026",
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026"
+      ]
+    },
+    "validation": {
+      "matches": 2,
+      "rounds": 40,
+      "samples": 729,
+      "events": [
+        "iem-beijing-2026"
+      ]
+    },
+    "test": {
+      "matches": 2,
+      "rounds": 41,
+      "samples": 693,
+      "events": [
+        "blast-rivals-2026-season-2"
+      ]
+    }
+  },
+  "warnings": [
+    {
+      "match_id": "hltv:2394986",
+      "code": "missing_sample_ticks",
+      "count": 1,
+      "message": "部分请求 tick 无状态，可能录制缺失或异常回合；请检查 Demo。"
+    }
+  ],
+  "verified_hltv_map_scores": [
+    {
+      "match_id": "hltv:2396950",
+      "score": {
+        "MOUZ": 13,
+        "Vitality": 7
+      },
+      "rounds": 20,
+      "match_url": "https://www.hltv.org/matches/2396950/mouz-vs-vitality-blast-open-porto-2026"
+    },
+    {
+      "match_id": "hltv:2396951",
+      "score": {
+        "Spirit": 11,
+        "MOUZ": 13
+      },
+      "rounds": 24,
+      "match_url": "https://www.hltv.org/matches/2396951/spirit-vs-mouz-blast-open-porto-2026"
+    },
+    {
+      "match_id": "hltv:2400003",
+      "score": {
+        "PARIVISION": 9,
+        "MOUZ": 13
+      },
+      "rounds": 22,
+      "match_url": "https://www.hltv.org/matches/2400003/parivision-vs-mouz-iem-beijing-2026"
+    },
+    {
+      "match_id": "hltv:2400011",
+      "score": {
+        "MOUZ": 13,
+        "The MongolZ": 5
+      },
+      "rounds": 18,
+      "match_url": "https://www.hltv.org/matches/2400011/the-mongolz-vs-mouz-iem-beijing-2026"
+    },
+    {
+      "match_id": "hltv:2399851",
+      "score": {
+        "FURIA": 13,
+        "Legacy": 7
+      },
+      "rounds": 20,
+      "match_url": "https://www.hltv.org/matches/2399851/legacy-vs-furia-blast-rivals-2026-season-2"
+    },
+    {
+      "match_id": "hltv:2400208",
+      "score": {
+        "FURIA": 13,
+        "Spirit": 8
+      },
+      "rounds": 21,
+      "match_url": "https://www.hltv.org/matches/2400208/spirit-vs-furia-blast-rivals-2026-season-2"
+    }
+  ],
+  "dataset_manifest_sha256": "2362f69b53c05560b128d9b91c66afc1a67fb8bc6fcd90d2ac7a7d6f1212d045",
+  "source_manifest_sha256": "d76938b3c041ad5233964e843df7b9672a6f3642794726c83b27caa10a73f3b1"
+}

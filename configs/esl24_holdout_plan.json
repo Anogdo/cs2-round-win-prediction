@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "event": "esl-pro-league-season-24",
+  "map_name": "de_mirage",
+  "selection": "Six available Mirage matches across group and playoffs, selected by availability and team variety before observing this event model scores.",
+  "training_cutoff": "2026-09-06",
+  "frozen_model": "models/monitor_runs/20261117T052929-9d7d1b12/model.json",
+  "frozen_model_sha256": "166cdac8ae4225c48245ca845f3ac262a5e306ef79588aa5eb7c70f7ab3e622e",
+  "usage": "Additional independent event evaluation only; no fitting, calibration, model selection or tuning on this event.",
+  "matches": [
+    {
+      "match_id": "hltv:2398717",
+      "match_date": "2026-10-03",
+      "map_index": 1,
+      "expected_rounds": 24,
+      "url": "https://www.hltv.org/matches/2398717/falcons-vs-tyloo-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398722",
+      "match_date": "2026-10-03",
+      "map_index": 2,
+      "expected_rounds": 19,
+      "url": "https://www.hltv.org/matches/2398722/mouz-vs-m80-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398731",
+      "match_date": "2026-10-04",
+      "map_index": 3,
+      "expected_rounds": 17,
+      "url": "https://www.hltv.org/matches/2398731/vitality-vs-natus-vincere-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398753",
+      "match_date": "2026-10-09",
+      "map_index": 1,
+      "expected_rounds": 21,
+      "url": "https://www.hltv.org/matches/2398753/falcons-vs-spirit-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398754",
+      "match_date": "2026-10-10",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "url": "https://www.hltv.org/matches/2398754/aurora-vs-vitality-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398755",
+      "match_date": "2026-10-10",
+      "map_index": 2,
+      "expected_rounds": 18,
+      "url": "https://www.hltv.org/matches/2398755/mouz-vs-spirit-esl-pro-league-season-24"
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-17",
+  "description": "Public HLTV match-page local-date, played map index and Mirage final score transcribed before decoding. Archives and demo SHA256 are locally computed, not HLTV-provided.",
+  "maps": [
+    {
+      "match_id": "hltv:2397623",
+      "match_date": "2026-09-13",
+      "map_index": 2,
+      "expected_rounds": 23,
+      "expected_score": {
+        "Legacy": 13,
+        "G2": 10
+      },
+      "source_url": "https://www.hltv.org/matches/2397623/legacy-vs-g2-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397621",
+      "match_date": "2026-09-12",
+      "map_index": 1,
+      "expected_rounds": 20,
+      "expected_score": {
+        "BETBOOM": 13,
+        "G2": 7
+      },
+      "source_url": "https://www.hltv.org/matches/2397621/betboom-vs-g2-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397613",
+      "match_date": "2026-09-10",
+      "map_index": 1,
+      "expected_rounds": 22,
+      "expected_score": {
+        "MIBR": 9,
+        "BETBOOM": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2397613/mibr-vs-betboom-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397617",
+      "match_date": "2026-09-10",
+      "map_index": 1,
+      "expected_rounds": 20,
+      "expected_score": {
+        "Legacy": 13,
+        "FURIA": 7
+      },
+      "source_url": "https://www.hltv.org/matches/2397617/legacy-vs-furia-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397609",
+      "match_date": "2026-09-09",
+      "map_index": 2,
+      "expected_rounds": 19,
+      "expected_score": {
+        "TYLOO": 13,
+        "GamerLegion": 6
+      },
+      "source_url": "https://www.hltv.org/matches/2397609/tyloo-vs-gamerlegion-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397605",
+      "match_date": "2026-09-09",
+      "map_index": 2,
+      "expected_rounds": 20,
+      "expected_score": {
+        "BIG": 7,
+        "G2": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2397605/big-vs-g2-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397604",
+      "match_date": "2026-09-09",
+      "map_index": 1,
+      "expected_rounds": 19,
+      "expected_score": {
+        "9z": 6,
+        "MIBR": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2397604/9z-vs-mibr-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397599",
+      "match_date": "2026-09-08",
+      "map_index": 2,
+      "expected_rounds": 36,
+      "expected_score": {
+        "G2": 19,
+        "Astralis": 17
+      },
+      "source_url": "https://www.hltv.org/matches/2397599/g2-vs-astralis-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397602",
+      "match_date": "2026-09-08",
+      "map_index": 2,
+      "expected_rounds": 23,
+      "expected_score": {
+        "FURIA": 13,
+        "GamerLegion": 10
+      },
+      "source_url": "https://www.hltv.org/matches/2397602/furia-vs-gamerlegion-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397597",
+      "match_date": "2026-09-08",
+      "map_index": 2,
+      "expected_rounds": 23,
+      "expected_score": {
+        "The MongolZ": 10,
+        "MIBR": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2397597/the-mongolz-vs-mibr-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2397596",
+      "match_date": "2026-09-08",
+      "map_index": 3,
+      "expected_rounds": 30,
+      "expected_score": {
+        "Legacy": 16,
+        "magic": 14
+      },
+      "source_url": "https://www.hltv.org/matches/2397596/legacy-vs-magic-fissure-playground-3"
+    },
+    {
+      "match_id": "hltv:2398108",
+      "match_date": "2026-09-20",
+      "map_index": 3,
+      "expected_rounds": 17,
+      "expected_score": {
+        "Aurora": 4,
+        "Vitality": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398108/aurora-vs-vitality-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398106",
+      "match_date": "2026-09-19",
+      "map_index": 1,
+      "expected_rounds": 21,
+      "expected_score": {
+        "MIBR": 8,
+        "FURIA": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398106/mibr-vs-furia-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398103",
+      "match_date": "2026-09-19",
+      "map_index": 2,
+      "expected_rounds": 35,
+      "expected_score": {
+        "MOUZ": 19,
+        "FURIA": 16
+      },
+      "source_url": "https://www.hltv.org/matches/2398103/mouz-vs-furia-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398102",
+      "match_date": "2026-09-18",
+      "map_index": 1,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Vitality": 13,
+        "FURIA": 8
+      },
+      "source_url": "https://www.hltv.org/matches/2398102/vitality-vs-furia-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398101",
+      "match_date": "2026-09-18",
+      "map_index": 2,
+      "expected_rounds": 36,
+      "expected_score": {
+        "NRG": 17,
+        "Aurora": 19
+      },
+      "source_url": "https://www.hltv.org/matches/2398101/nrg-vs-aurora-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398100",
+      "match_date": "2026-09-18",
+      "map_index": 2,
+      "expected_rounds": 24,
+      "expected_score": {
+        "magic": 13,
+        "MIBR": 11
+      },
+      "source_url": "https://www.hltv.org/matches/2398100/magic-vs-mibr-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398099",
+      "match_date": "2026-09-18",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "expected_score": {
+        "MOUZ": 13,
+        "Natus Vincere": 8
+      },
+      "source_url": "https://www.hltv.org/matches/2398099/mouz-vs-natus-vincere-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398090",
+      "match_date": "2026-09-17",
+      "map_index": 2,
+      "expected_rounds": 20,
+      "expected_score": {
+        "Natus Vincere": 7,
+        "Aurora": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398090/natus-vincere-vs-aurora-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2398089",
+      "match_date": "2026-09-17",
+      "map_index": 1,
+      "expected_rounds": 19,
+      "expected_score": {
+        "Vitality": 13,
+        "magic": 6
+      },
+      "source_url": "https://www.hltv.org/matches/2398089/vitality-vs-magic-starladder-starseries-fall-2026"
+    },
+    {
+      "match_id": "hltv:2399417",
+      "match_date": "2026-10-18",
+      "map_index": 4,
+      "expected_rounds": 24,
+      "expected_score": {
+        "FURIA": 13,
+        "BETBOOM": 11
+      },
+      "source_url": "https://www.hltv.org/matches/2399417/furia-vs-betboom-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2399415",
+      "match_date": "2026-10-17",
+      "map_index": 3,
+      "expected_rounds": 20,
+      "expected_score": {
+        "Falcons": 7,
+        "BETBOOM": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2399415/falcons-vs-betboom-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2399413",
+      "match_date": "2026-10-16",
+      "map_index": 3,
+      "expected_rounds": 24,
+      "expected_score": {
+        "BETBOOM": 13,
+        "Legacy": 11
+      },
+      "source_url": "https://www.hltv.org/matches/2399413/betboom-vs-legacy-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2399411",
+      "match_date": "2026-10-15",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Legacy": 8,
+        "FURIA": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2399411/legacy-vs-furia-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2399410",
+      "match_date": "2026-10-15",
+      "map_index": 3,
+      "expected_rounds": 20,
+      "expected_score": {
+        "PARIVISION": 7,
+        "BETBOOM": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2399410/parivision-vs-betboom-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2399409",
+      "match_date": "2026-10-15",
+      "map_index": 2,
+      "expected_rounds": 21,
+      "expected_score": {
+        "9z": 13,
+        "Falcons": 8
+      },
+      "source_url": "https://www.hltv.org/matches/2399409/9z-vs-falcons-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2399387",
+      "match_date": "2026-10-14",
+      "map_index": 2,
+      "expected_rounds": 22,
+      "expected_score": {
+        "FURIA": 13,
+        "BETBOOM": 9
+      },
+      "source_url": "https://www.hltv.org/matches/2399387/furia-vs-betboom-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2399386",
+      "match_date": "2026-10-14",
+      "map_index": 2,
+      "expected_rounds": 30,
+      "expected_score": {
+        "Legacy": 16,
+        "PARIVISION": 14
+      },
+      "source_url": "https://www.hltv.org/matches/2399386/legacy-vs-parivision-thunderpick-world-championship-2026"
+    },
+    {
+      "match_id": "hltv:2398756",
+      "match_date": "2026-10-11",
+      "map_index": 1,
+      "expected_rounds": 22,
+      "expected_score": {
+        "Aurora": 13,
+        "Spirit": 9
+      },
+      "source_url": "https://www.hltv.org/matches/2398756/aurora-vs-spirit-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398748",
+      "match_date": "2026-10-07",
+      "map_index": 3,
+      "expected_rounds": 24,
+      "expected_score": {
+        "PARIVISION": 13,
+        "Natus Vincere": 11
+      },
+      "source_url": "https://www.hltv.org/matches/2398748/parivision-vs-natus-vincere-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398745",
+      "match_date": "2026-10-06",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Falcons": 13,
+        "Natus Vincere": 8
+      },
+      "source_url": "https://www.hltv.org/matches/2398745/falcons-vs-natus-vincere-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398746",
+      "match_date": "2026-10-06",
+      "map_index": 2,
+      "expected_rounds": 22,
+      "expected_score": {
+        "Legacy": 13,
+        "M80": 9
+      },
+      "source_url": "https://www.hltv.org/matches/2398746/legacy-vs-m80-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398743",
+      "match_date": "2026-10-06",
+      "map_index": 2,
+      "expected_rounds": 22,
+      "expected_score": {
+        "FURIA": 9,
+        "Aurora": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398743/furia-vs-aurora-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398744",
+      "match_date": "2026-10-06",
+      "map_index": 2,
+      "expected_rounds": 22,
+      "expected_score": {
+        "9z": 13,
+        "BETBOOM": 9
+      },
+      "source_url": "https://www.hltv.org/matches/2398744/9z-vs-betboom-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398740",
+      "match_date": "2026-10-05",
+      "map_index": 1,
+      "expected_rounds": 17,
+      "expected_score": {
+        "Aurora": 13,
+        "BETBOOM": 4
+      },
+      "source_url": "https://www.hltv.org/matches/2398740/aurora-vs-betboom-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398739",
+      "match_date": "2026-10-05",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Vitality": 13,
+        "Falcons": 8
+      },
+      "source_url": "https://www.hltv.org/matches/2398739/vitality-vs-falcons-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398738",
+      "match_date": "2026-10-05",
+      "map_index": 1,
+      "expected_rounds": 23,
+      "expected_score": {
+        "M80": 10,
+        "TYLOO": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398738/m80-vs-tyloo-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398737",
+      "match_date": "2026-10-05",
+      "map_index": 2,
+      "expected_rounds": 24,
+      "expected_score": {
+        "Spirit": 11,
+        "MOUZ": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398737/spirit-vs-mouz-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398733",
+      "match_date": "2026-10-05",
+      "map_index": 2,
+      "expected_rounds": 18,
+      "expected_score": {
+        "PARIVISION": 5,
+        "FURIA": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398733/parivision-vs-furia-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398730",
+      "match_date": "2026-10-04",
+      "map_index": 3,
+      "expected_rounds": 21,
+      "expected_score": {
+        "G2": 8,
+        "1win": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398730/g2-vs-1win-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398729",
+      "match_date": "2026-10-04",
+      "map_index": 2,
+      "expected_rounds": 20,
+      "expected_score": {
+        "FURIA": 7,
+        "MOUZ": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398729/furia-vs-mouz-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398728",
+      "match_date": "2026-10-04",
+      "map_index": 1,
+      "expected_rounds": 17,
+      "expected_score": {
+        "Falcons": 13,
+        "Aurora": 4
+      },
+      "source_url": "https://www.hltv.org/matches/2398728/falcons-vs-aurora-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398727",
+      "match_date": "2026-10-04",
+      "map_index": 2,
+      "expected_rounds": 15,
+      "expected_score": {
+        "9z": 13,
+        "TYLOO": 2
+      },
+      "source_url": "https://www.hltv.org/matches/2398727/9z-vs-tyloo-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398726",
+      "match_date": "2026-10-04",
+      "map_index": 2,
+      "expected_rounds": 24,
+      "expected_score": {
+        "ShindeN": 11,
+        "Legacy": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2398726/shinden-vs-legacy-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398724",
+      "match_date": "2026-10-03",
+      "map_index": 1,
+      "expected_rounds": 18,
+      "expected_score": {
+        "FURIA": 13,
+        "BETBOOM": 5
+      },
+      "source_url": "https://www.hltv.org/matches/2398724/furia-vs-betboom-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398721",
+      "match_date": "2026-10-03",
+      "map_index": 2,
+      "expected_rounds": 24,
+      "expected_score": {
+        "Aurora": 13,
+        "9z": 11
+      },
+      "source_url": "https://www.hltv.org/matches/2398721/aurora-vs-9z-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2398720",
+      "match_date": "2026-10-03",
+      "map_index": 3,
+      "expected_rounds": 17,
+      "expected_score": {
+        "Spirit": 13,
+        "ShindeN": 4
+      },
+      "source_url": "https://www.hltv.org/matches/2398720/spirit-vs-shinden-esl-pro-league-season-24"
+    },
+    {
+      "match_id": "hltv:2400206",
+      "match_date": "2026-11-14",
+      "map_index": 1,
+      "expected_rounds": 20,
+      "expected_score": {
+        "Spirit": 13,
+        "MOUZ": 7
+      },
+      "source_url": "https://www.hltv.org/matches/2400206/spirit-vs-mouz-blast-rivals-2026-season-2"
+    },
+    {
+      "match_id": "hltv:2400205",
+      "match_date": "2026-11-13",
+      "map_index": 2,
+      "expected_rounds": 15,
+      "expected_score": {
+        "G2": 2,
+        "Falcons": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2400205/g2-vs-falcons-blast-rivals-2026-season-2"
+    },
+    {
+      "match_id": "hltv:2400204",
+      "match_date": "2026-11-13",
+      "map_index": 1,
+      "expected_rounds": 21,
+      "expected_score": {
+        "Vitality": 8,
+        "MOUZ": 13
+      },
+      "source_url": "https://www.hltv.org/matches/2400204/vitality-vs-mouz-blast-rivals-2026-season-2"
+    }
+  ]
+}

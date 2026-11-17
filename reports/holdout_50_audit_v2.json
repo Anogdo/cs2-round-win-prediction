@@ -1,0 +1,28 @@
+{
+  "checked_at_utc": "2026-11-17T06:47:34.801292+00:00",
+  "passed": true,
+  "matches": 50,
+  "recordings": 52,
+  "rounds": 1099,
+  "samples": 20180,
+  "nodes": 201800,
+  "model_sha256": "166cdac8ae4225c48245ca845f3ac262a5e306ef79588aa5eb7c70f7ab3e622e",
+  "dataset_sha256": "be039c540e6138ce3a8e785fe5a0657ce355388898d4a37252a10ea2bb019424",
+  "predictions_sha256": "be7ccf7829cd74b13d9023584a096eafa6cb309a81fefa25af71ded31b90599c",
+  "source_score_checks_passed": 50,
+  "predictions_reproduced_exactly": true,
+  "non_null_team_side_consistency_checked": true,
+  "quality_warning_counts": {
+    "missing_sample_ticks": 4
+  },
+  "recovered_companion_rounds_checked": {
+    "hltv:2398745": 9,
+    "hltv:2398721": 8
+  },
+  "overall_model": {
+    "log_loss": 0.43211243730899407,
+    "brier_score": 0.1447567362104301,
+    "roc_auc": 0.8713603731904717,
+    "ece_10_bins": 0.02125631733749659
+  }
+}

@@ -1,0 +1,645 @@
+{
+  "audit_passed": true,
+  "map_name": "de_mirage",
+  "local_recordings": 17,
+  "local_maps": 14,
+  "local_rounds": 333,
+  "local_player_rows": 60870,
+  "local_valid_ticks": 6087,
+  "local_unique_players": 65,
+  "local_anomalies": 0,
+  "local_event_derived_dead_rows": 11001,
+  "missing_values_snapshots": {
+    "tick": 0,
+    "steamid": 0,
+    "name": 0,
+    "side": 0,
+    "x": 11001,
+    "y": 11001,
+    "z": 11001,
+    "health": 11001,
+    "armor": 11001,
+    "money": 11001,
+    "equipment_value": 11001,
+    "primary_weapon": 20585,
+    "secondary_weapon": 11823,
+    "has_helmet": 11001,
+    "has_defuser": 11001,
+    "has_bomb": 11001,
+    "smoke_grenades": 11001,
+    "flashbangs": 11001,
+    "he_grenades": 11001,
+    "fire_grenades": 11001,
+    "round_id": 0,
+    "round_num": 0,
+    "team": 0,
+    "is_alive": 0,
+    "death_observed": 0,
+    "state_source": 0,
+    "is_valid_round": 0
+  },
+  "source_quality": [
+    {
+      "recording": "../data/datasets/mirage demo/9z-vs-furia-m2-mirage-p1.dem",
+      "sha256": "cccda9fe46163e46c87f2c7e1dcae36672a73ef15a6bdb96201cae8d01ede571",
+      "map_id": "hltv:2394997:m2",
+      "round_count": 7,
+      "snapshot_count": 1170,
+      "valid_sample_tick_count": 117,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 308,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/9z-vs-furia-m2-mirage-p2.dem",
+      "sha256": "9ee341c25eb2e94186e927f0254c63998234f24bf2d1800b1c1315f121541adf",
+      "map_id": "hltv:2394997:m2",
+      "round_count": 15,
+      "snapshot_count": 2920,
+      "valid_sample_tick_count": 292,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 591,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/b8-vs-fut-m2-mirage.dem",
+      "sha256": "ccac2b282793dafb57d206ce4d2bcf10da7acbad78cd6bfbed0ac8486e529866",
+      "map_id": "hltv:2394980:m2",
+      "round_count": 22,
+      "snapshot_count": 3840,
+      "valid_sample_tick_count": 384,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 712,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/betboom-vs-fut-m1-mirage.dem",
+      "sha256": "f8aa64ac8ce329374808355ed653162929f103d51ee65e03f710976a168d91e0",
+      "map_id": "hltv:2394994:m1",
+      "round_count": 20,
+      "snapshot_count": 3030,
+      "valid_sample_tick_count": 303,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 525,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/falcons-vs-monte-m3-mirage.dem",
+      "sha256": "bae10bd341debfa0eb6788e7d996f981299399b9e4df5cefb0a2bea116f94e8b",
+      "map_id": "hltv:2394982:m3",
+      "round_count": 23,
+      "snapshot_count": 4380,
+      "valid_sample_tick_count": 438,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 646,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/furia-vs-falcons-m1-mirage.dem",
+      "sha256": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697",
+      "map_id": "hltv:2395002:m1",
+      "round_count": 21,
+      "snapshot_count": 3580,
+      "valid_sample_tick_count": 358,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 535,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/fut-vs-g2-m3-mirage.dem",
+      "sha256": "059520af6158bc2c4802b94f2080e28eb5b9d078732df3c2323c165d38b582f3",
+      "map_id": "hltv:2394973:m3",
+      "round_count": 22,
+      "snapshot_count": 3900,
+      "valid_sample_tick_count": 390,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 622,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/g2-vs-spirit-m3-mirage-p1.dem",
+      "sha256": "63b64ac04c411dcb549fc129e0bdca1dc9b4693e526cfd7b6bfdb650bce9cdca",
+      "map_id": "hltv:2394998:m3",
+      "round_count": 13,
+      "snapshot_count": 2310,
+      "valid_sample_tick_count": 231,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 449,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/g2-vs-spirit-m3-mirage-p2.dem",
+      "sha256": "841939b0473c0baef62c56aa54017465add2e3aecc2de8a9b17fc51943ccaa46",
+      "map_id": "hltv:2394998:m3",
+      "round_count": 34,
+      "snapshot_count": 7040,
+      "valid_sample_tick_count": 704,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 1310,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/natus-vincere-vs-falcons-m2-mirage.dem",
+      "sha256": "585dc788768f6100b762e4560a88ee517ded5f0939945b549934f1dfd16aa732",
+      "map_id": "hltv:2394991:m2",
+      "round_count": 20,
+      "snapshot_count": 3610,
+      "valid_sample_tick_count": 361,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 617,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/natus-vincere-vs-g2-m3-mirage-p1.dem",
+      "sha256": "8a5dbe37d2424ea60b834c56ac67e8366247c71965cc06f770ca43306ac6c63e",
+      "map_id": "hltv:2394995:m3",
+      "round_count": 22,
+      "snapshot_count": 4440,
+      "valid_sample_tick_count": 444,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 812,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/natus-vincere-vs-g2-m3-mirage-p2.dem",
+      "sha256": "5cc5334b1d255c8661e44a6bba059ad9f87df5585f1aedb5a3b70f634f4e309f",
+      "map_id": "hltv:2394995:m3",
+      "round_count": 1,
+      "snapshot_count": 200,
+      "valid_sample_tick_count": 20,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 38,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/natus-vincere-vs-the-mongolz-m3-mirage.dem",
+      "sha256": "5d30f5c0e9f01373a85417a4cb69c0ba47256167c61cbec683d1da4de47979c4",
+      "map_id": "hltv:2394979:m3",
+      "round_count": 19,
+      "snapshot_count": 3260,
+      "valid_sample_tick_count": 326,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 612,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/spirit-vs-9z-m2-mirage.dem",
+      "sha256": "416e409951c458dd86e88c5fe522cbd5d6548be6ac8756382aa8d9be420cba7e",
+      "map_id": "hltv:2394986:m2",
+      "round_count": 29,
+      "snapshot_count": 5240,
+      "valid_sample_tick_count": 524,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 878,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        },
+        {
+          "code": "missing_sample_ticks",
+          "count": 1,
+          "message": "部分请求 tick 无状态，可能录制缺失或异常回合；请检查 Demo。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/spirit-vs-falcons-m2-mirage.dem",
+      "sha256": "016036e5b8c3b9229d9e09adfeeef958fd911d6e1bad54c006fa757beeda023a",
+      "map_id": "hltv:2395001:m2",
+      "round_count": 21,
+      "snapshot_count": 3920,
+      "valid_sample_tick_count": 392,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 760,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/vitality-vs-9z-m2-mirage.dem",
+      "sha256": "3b820c246afc4aeacafe912aed446745786111ca19e9cee2a0eebf91c9ee2566",
+      "map_id": "hltv:2394978:m2",
+      "round_count": 22,
+      "snapshot_count": 3830,
+      "valid_sample_tick_count": 383,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 704,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    },
+    {
+      "recording": "../data/datasets/mirage demo/vitality-vs-mouz-m1-mirage.dem",
+      "sha256": "b125077bb02e251fcc31a8fefa459bdbf4c5a674ef560fac6e9ea4df4be3e1f4",
+      "map_id": "hltv:2394983:m1",
+      "round_count": 22,
+      "snapshot_count": 4200,
+      "valid_sample_tick_count": 420,
+      "anomaly_count": 0,
+      "warnings": [
+        {
+          "code": "event_derived_dead_states",
+          "count": 882,
+          "message": "部分死亡玩家状态由此前死亡事件保留；当前坐标、血量和装备未知，保持 null。"
+        }
+      ],
+      "passed": true,
+      "files_readable": true
+    }
+  ],
+  "counts": {
+    "train": {
+      "matches": 7,
+      "rounds": 132,
+      "samples": 2281
+    },
+    "validation": {
+      "matches": 1,
+      "rounds": 17,
+      "samples": 315
+    },
+    "calibration": {
+      "matches": 2,
+      "rounds": 42,
+      "samples": 737
+    },
+    "test": {
+      "matches": 14,
+      "rounds": 333,
+      "samples": 6087
+    }
+  },
+  "test": {
+    "base": {
+      "log_loss": 0.47313186388110756,
+      "brier_score": 0.15671625451656745,
+      "accuracy_at_0_5": 0.7609462117670729,
+      "roc_auc": 0.8545640921936966,
+      "sample_count": 6087,
+      "round_weight_sum": 333.0,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 1043,
+          "weight": 51.60542154059312,
+          "mean_probability": 0.030100369605462102,
+          "ct_win_frequency": 0.08235790758377866
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 374,
+          "weight": 18.789033199037625,
+          "mean_probability": 0.14356132262091084,
+          "ct_win_frequency": 0.2599145741429643
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "count": 290,
+          "weight": 14.388153095039563,
+          "mean_probability": 0.24874737968485947,
+          "ct_win_frequency": 0.34238963563706987
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "count": 350,
+          "weight": 17.965990084383943,
+          "mean_probability": 0.354338730413067,
+          "ct_win_frequency": 0.3771612139230232
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 398,
+          "weight": 21.556121808721475,
+          "mean_probability": 0.4525695211499254,
+          "ct_win_frequency": 0.5158037460322499
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 509,
+          "weight": 27.557893220882796,
+          "mean_probability": 0.5515996800089046,
+          "ct_win_frequency": 0.5532122413019355
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "count": 503,
+          "weight": 26.50264037152064,
+          "mean_probability": 0.6528299927601809,
+          "ct_win_frequency": 0.5258418128723134
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "count": 523,
+          "weight": 28.671277723002813,
+          "mean_probability": 0.7503115757741634,
+          "ct_win_frequency": 0.6472691155240656
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 539,
+          "weight": 30.587716884485985,
+          "mean_probability": 0.8537518536642525,
+          "ct_win_frequency": 0.7669114500321037
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 1558,
+          "weight": 95.37575207233203,
+          "mean_probability": 0.9680984370275063,
+          "ct_win_frequency": 0.9420373546546448
+        }
+      ],
+      "ece_10_bins": 0.058587250824573625
+    },
+    "calibrated": {
+      "log_loss": 0.4591190899296193,
+      "brier_score": 0.15283274977413253,
+      "accuracy_at_0_5": 0.759088608403512,
+      "roc_auc": 0.8545640921936966,
+      "sample_count": 6087,
+      "round_weight_sum": 333.0,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 681,
+          "weight": 33.24024122353821,
+          "mean_probability": 0.045967829364324496,
+          "ct_win_frequency": 0.01725773275087013
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 437,
+          "weight": 22.085789342146796,
+          "mean_probability": 0.15036111729501786,
+          "ct_win_frequency": 0.2060348525403497
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "count": 393,
+          "weight": 19.713675643237153,
+          "mean_probability": 0.24795462593996404,
+          "ct_win_frequency": 0.27141743315078326
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "count": 444,
+          "weight": 22.59304037238409,
+          "mean_probability": 0.35315724879395477,
+          "ct_win_frequency": 0.3703056810694009
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 672,
+          "weight": 35.94660574800629,
+          "mean_probability": 0.45238348634109793,
+          "ct_win_frequency": 0.5024219254119086
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "count": 760,
+          "weight": 40.74531971383964,
+          "mean_probability": 0.5493246309879034,
+          "ct_win_frequency": 0.5419597522037348
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "count": 670,
+          "weight": 36.51796878156258,
+          "mean_probability": 0.6475714328343838,
+          "ct_win_frequency": 0.6350218660849388
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "count": 550,
+          "weight": 31.0919055485811,
+          "mean_probability": 0.7506927879177607,
+          "ct_win_frequency": 0.7952719122499532
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 690,
+          "weight": 41.78596062389473,
+          "mean_probability": 0.853260761480507,
+          "ct_win_frequency": 0.9113154115598227
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 790,
+          "weight": 49.279493002809396,
+          "mean_probability": 0.9529537974336634,
+          "ct_win_frequency": 0.9744385152342131
+        }
+      ],
+      "ece_10_bins": 0.03141639229494637
+    },
+    "constant_training_prior": {
+      "log_loss": 0.6840630772952558,
+      "brier_score": 0.2454003590367227,
+      "accuracy_at_0_5": 0.5795795795795796,
+      "roc_auc": 0.5,
+      "sample_count": 6087,
+      "round_weight_sum": 333.0,
+      "calibration_bins": [
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "count": 6087,
+          "weight": 333.0,
+          "mean_probability": 0.6212121212121212,
+          "ct_win_frequency": 0.5795795795795796
+        }
+      ],
+      "ece_10_bins": 0.0416325416325416
+    }
+  },
+  "calibration": {
+    "method": "sigmoid_logit",
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "random_state": 42,
+    "slope": 0.6324044126749107,
+    "intercept": -0.08987624676986845,
+    "match_ids": [
+      "hltv:2393244",
+      "hltv:2394170"
+    ],
+    "sample_count": 737,
+    "round_count": 42,
+    "weighting": "one total weight per round; no base-model refitting"
+  },
+  "paired_match_bootstrap": {
+    "unit": "match_id",
+    "match_count": 14,
+    "draws": 1000,
+    "seed": 42,
+    "percentile_95_intervals": {
+      "base": {
+        "log_loss": [
+          0.419598338015682,
+          0.5199954670259747
+        ],
+        "brier_score": [
+          0.13776112336046514,
+          0.17414762764496397
+        ]
+      },
+      "calibrated": {
+        "log_loss": [
+          0.4215460707204661,
+          0.4915739074116408
+        ],
+        "brier_score": [
+          0.13775414750051934,
+          0.1660135714526466
+        ]
+      },
+      "calibrated_minus_base": {
+        "log_loss": [
+          -0.030263357611823777,
+          0.0030237731778969034
+        ],
+        "brier_score": [
+          -0.008639486810814802,
+          0.0014131551075530979
+        ]
+      }
+    },
+    "interpretation": "Within-event match uncertainty; not between-event variation."
+  },
+  "base_model_sha256": "dcf4f494fa676f7fc01b3d09cd0cb9d70dedfe15a84f230bf91ef8e78e922610",
+  "calibrated_model_sha256": "38cb411037c9e84b93868b5615d04c0c921b7e64e5791175be0b2d6287c3524e",
+  "dataset_manifest_sha256": "a2b29d94f386d9281baef9fa34bd33f67a74aaf0407500f40b6b4a0d11d4dfcf",
+  "split_plan_sha256": "2aa4c60d16dd08508431190d26aa2e52580d1f3c59d590535939644e892049c6",
+  "limitations": [
+    "Test was used once for reporting, never choosing model/features/calibration.",
+    "Calibration reuses the former Rio pilot test; old Rio scores are historical.",
+    "Two calibration matches and one test event do not establish market readiness.",
+    "V1 demo elapsed time includes pauses; no bomb context/rating/Elo inputs.",
+    "This Cologne test is now observed; further tuning needs another unseen event."
+  ]
+}

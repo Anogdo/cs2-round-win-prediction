@@ -1,0 +1,417 @@
+{
+  "comparison_schema_version": 1,
+  "selection_rule": "lower validation round-weighted log loss; baseline wins ties",
+  "selected_by_validation": "baseline",
+  "baseline": {
+    "model": "models/logistic_rio_v1_stable",
+    "feature_count": 47,
+    "metrics": {
+      "validation": {
+        "log_loss": 0.4292319601508718,
+        "brier_score": 0.14112056995998795,
+        "accuracy_at_0_5": 0.76144065469325,
+        "roc_auc": 0.888216775014786,
+        "sample_count": 315,
+        "round_weight_sum": 17.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 60,
+            "weight": 3.076107085346216,
+            "mean_probability": 0.029419060138379784,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 33,
+            "weight": 1.5730383022774328,
+            "mean_probability": 0.14312291680294315,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 14,
+            "weight": 0.6052093397745572,
+            "mean_probability": 0.2504070849340615,
+            "ct_win_frequency": 0.16064230313834527
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 19,
+            "weight": 0.8773535501156984,
+            "mean_probability": 0.3542947689958058,
+            "ct_win_frequency": 0.5419596193754815
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 26,
+            "weight": 1.3214196403198961,
+            "mean_probability": 0.44600962220109525,
+            "ct_win_frequency": 0.5158134137908046
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 23,
+            "weight": 1.2136134453781513,
+            "mean_probability": 0.5455997562357242,
+            "ct_win_frequency": 0.436420009540076
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 22,
+            "weight": 1.1824486461251167,
+            "mean_probability": 0.6576049388590526,
+            "ct_win_frequency": 0.33608982926044445
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 34,
+            "weight": 1.8412441643323996,
+            "mean_probability": 0.7511433687966608,
+            "ct_win_frequency": 0.6170851774048574
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 27,
+            "weight": 1.603015873015873,
+            "mean_probability": 0.856760313314886,
+            "ct_win_frequency": 0.7674027131399147
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 57,
+            "weight": 3.706549953314659,
+            "mean_probability": 0.9556321288845067,
+            "ct_win_frequency": 0.9313955787758063
+          }
+        ]
+      },
+      "test": {
+        "log_loss": 0.5336477444828084,
+        "brier_score": 0.18108789297283145,
+        "accuracy_at_0_5": 0.7194091556591555,
+        "roc_auc": 0.8264845777106535,
+        "sample_count": 442,
+        "round_weight_sum": 24.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 81,
+            "weight": 3.9469253097002457,
+            "mean_probability": 0.033739193127701454,
+            "ct_win_frequency": 0.08143771320896434
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 61,
+            "weight": 2.8702814288108405,
+            "mean_probability": 0.15226902908579953,
+            "ct_win_frequency": 0.21290982304975398
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 34,
+            "weight": 1.5530381695599087,
+            "mean_probability": 0.2592687864721701,
+            "ct_win_frequency": 0.21207790369918145
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 29,
+            "weight": 1.4843948965688096,
+            "mean_probability": 0.3496289385425926,
+            "ct_win_frequency": 0.29941119136948074
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 43,
+            "weight": 2.31988233988234,
+            "mean_probability": 0.4557021045638372,
+            "ct_win_frequency": 0.5379591785957966
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 24,
+            "weight": 1.34990120990121,
+            "mean_probability": 0.5608617987994579,
+            "ct_win_frequency": 0.4562438431544099
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 29,
+            "weight": 1.687615995115995,
+            "mean_probability": 0.6500759484484433,
+            "ct_win_frequency": 0.49881254488001553
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 36,
+            "weight": 1.8442341430499325,
+            "mean_probability": 0.7514793901398573,
+            "ct_win_frequency": 0.5067556236900822
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 32,
+            "weight": 1.5655443094916779,
+            "mean_probability": 0.8496217373445039,
+            "ct_win_frequency": 0.4468486770175895
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 73,
+            "weight": 5.37818219791904,
+            "mean_probability": 0.9753278393841984,
+            "ct_win_frequency": 0.9210962070933242
+          }
+        ]
+      }
+    }
+  },
+  "candidate": {
+    "model": "models/logistic_rio_v2_stable",
+    "feature_count": 96,
+    "metrics": {
+      "validation": {
+        "log_loss": 0.5797374702160946,
+        "brier_score": 0.16685471685147107,
+        "accuracy_at_0_5": 0.7502077835965305,
+        "roc_auc": 0.8336507067983825,
+        "sample_count": 315,
+        "round_weight_sum": 17.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 67,
+            "weight": 3.4892954911433174,
+            "mean_probability": 0.02738811286911358,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 10,
+            "weight": 0.57385955831608,
+            "mean_probability": 0.13679026097121522,
+            "ct_win_frequency": 0.0
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 12,
+            "weight": 0.5869806763285024,
+            "mean_probability": 0.2566536110687803,
+            "ct_win_frequency": 0.21295419941566193
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 22,
+            "weight": 1.1459500805152978,
+            "mean_probability": 0.3629094086224713,
+            "ct_win_frequency": 0.44843915771427767
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 21,
+            "weight": 1.0368115942028986,
+            "mean_probability": 0.4456775416058009,
+            "ct_win_frequency": 0.3865636274079103
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 26,
+            "weight": 1.4431872555785599,
+            "mean_probability": 0.5546521246283217,
+            "ct_win_frequency": 0.4124468899910497
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 22,
+            "weight": 1.0892195767195767,
+            "mean_probability": 0.6531093780677973,
+            "ct_win_frequency": 0.3406399902847774
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 20,
+            "weight": 1.1200925925925926,
+            "mean_probability": 0.7512043484583092,
+            "ct_win_frequency": 0.6678161055279349
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 38,
+            "weight": 2.076064425770308,
+            "mean_probability": 0.8619496105586372,
+            "ct_win_frequency": 0.9119212580364431
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 77,
+            "weight": 4.438538748832866,
+            "mean_probability": 0.9610107396402048,
+            "ct_win_frequency": 0.7553892514738596
+          }
+        ]
+      },
+      "test": {
+        "log_loss": 0.6786672754553553,
+        "brier_score": 0.2162868640581972,
+        "accuracy_at_0_5": 0.6898392291594045,
+        "roc_auc": 0.7815339453633422,
+        "sample_count": 442,
+        "round_weight_sum": 24.0,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "count": 84,
+            "weight": 4.291761708027693,
+            "mean_probability": 0.025940088450616093,
+            "ct_win_frequency": 0.07489431923197012
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "count": 47,
+            "weight": 2.012635395295242,
+            "mean_probability": 0.1474576258493625,
+            "ct_win_frequency": 0.30758060823868616
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "count": 19,
+            "weight": 0.9636724344141223,
+            "mean_probability": 0.2606007362410611,
+            "ct_win_frequency": 0.30472054939427895
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "count": 20,
+            "weight": 1.0918214209774313,
+            "mean_probability": 0.3607331458148013,
+            "ct_win_frequency": 0.40244121515822684
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "count": 41,
+            "weight": 2.1240245215167817,
+            "mean_probability": 0.4533819063411878,
+            "ct_win_frequency": 0.3721077881518288
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "count": 44,
+            "weight": 2.2754138892296787,
+            "mean_probability": 0.5518069688626334,
+            "ct_win_frequency": 0.5610203472922659
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "count": 46,
+            "weight": 2.6911422787738575,
+            "mean_probability": 0.6465093937982056,
+            "ct_win_frequency": 0.5028641709449836
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "count": 22,
+            "weight": 1.2315632028789922,
+            "mean_probability": 0.7445158529089758,
+            "ct_win_frequency": 0.53981075804534
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "count": 19,
+            "weight": 0.939508547008547,
+            "mean_probability": 0.8517405554545452,
+            "ct_win_frequency": 0.3030544247083172
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "count": 100,
+            "weight": 6.378456601877654,
+            "mean_probability": 0.9799010417650271,
+            "ct_win_frequency": 0.7771076154549853
+          }
+        ]
+      }
+    }
+  },
+  "split_policy": {
+    "group_by": "match",
+    "chronological_blocks": 6,
+    "match_count": 9,
+    "evaluation_ready": true,
+    "reason": null,
+    "requested_fractions": {
+      "train": 0.7,
+      "validation": 0.15
+    },
+    "match_counts": {
+      "train": 7,
+      "validation": 1,
+      "test": 1
+    }
+  },
+  "round_count": 173,
+  "sample_count": 3038,
+  "node_count": 30380,
+  "demo_sha256": [
+    "1176a135d631ef202d09f3cba4992441cffd25fce5b90b396537e8d9fe121b0c",
+    "1bfb43118089c78331bd7b517e849fe12941a0ce9f1619b34b7b1c91c47dfa6d",
+    "48b723bfccb58e469a2d5cb7940fe6d6fb1125e3d59f7bf182f15e3d47940388",
+    "71929eee06347f82bc0ae760216485e4ce206ab72d27c72e0d1f4a876eed7852",
+    "7e37b7b21bda9371770f6c2d14c7bbf4410122789a9aa35f7d29674aaf3d7b44",
+    "ac1e6e2db058801158bcac922552811d15b88eb9cdcf183e2ce74e2b3e2e5b14",
+    "c4c177360014ece917df19f7e3543d29ed510e575ec97e71bdfd6f3245f4c096",
+    "da6e9103c69e54aa2760ab1524a330ca7cee7d12490fe299500cbf60b30c5e4a",
+    "e373a910e73d471e58ca6a7568923fa1586e8b150172d09d21332eb48c9756b2"
+  ],
+  "context_non_null_counts": {
+    "round_elapsed_game_seconds": 3038,
+    "bomb_seconds_since_plant": 441,
+    "bomb_time_remaining_seconds": 0
+  },
+  "limitations": [
+    "Pilot within one MVP event; validation and test each contain one match.",
+    "Fixed candidates; no tuning, probability calibration, rating or Elo.",
+    "No statistical claim of cross-event or trading reliability."
+  ]
+}
