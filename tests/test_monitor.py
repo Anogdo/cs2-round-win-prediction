@@ -168,6 +168,18 @@ def test_gpu_preset_uses_the_cuda_comparison_module(manager: tuple):
     assert "--progress-file" in spawned[0][1]
 
 
+def test_temporal_preset_launches_full_experiment_with_progress(manager: tuple):
+    monitor, spawned = manager
+    dataset = monitor.root / "data/datasets/mirage_expanded_2026_v1/dataset.json"
+    dataset.parent.mkdir(parents=True)
+    dataset.write_text("{}", encoding="utf-8")
+    job = monitor.start("phase2_temporal")
+    command = spawned[0][1]
+    assert command[1:4] == ["-u", "-m", "cs2_pipeline.phase2_temporal"]
+    progress = command[command.index("--progress-file") + 1]
+    assert job["id"] in progress and "--smoke-test" not in command
+
+
 def test_two_monitors_cannot_listen_on_same_port(tmp_path: Path):
     first = make_server(tmp_path, 0)
     try:

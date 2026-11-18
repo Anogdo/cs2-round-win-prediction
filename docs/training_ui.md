@@ -14,7 +14,7 @@ macOS/Linux 使用 `.venv/bin/python -m cs2_pipeline.monitor`。没有新增运�
 
 ## 页面可以做什么
 
-- **开始训练**：选择多赛事 V1（47 特征）或历史 Rio V1/V2，启动真实 Python 子进程。
+- **开始训练**：可选时序 Transformer、多赛事 V1、GPU 树模型或历史 Rio V1/V2，启动对应的 Python 子进程。
 - **真实阶段进度**：数据校验 → 模型拟合 → 验证与评估 → 保存并重读。每秒自动刷新。
 - **运行耗时和迭代数**：拟合时显示实际耗时，结束后显示 sklearn 返回的真实优化迭代数。
 - **实时日志与指标**：流式落盘的进程输出、验证集 Log Loss / Brier / AUC / ECE。
@@ -33,6 +33,10 @@ macOS/Linux 使用 `.venv/bin/python -m cs2_pipeline.monitor`。没有新增运�
 所有这些旧评估均已被观察，页面复跑不构成新的独立测试。
 
 ## 数据与模型边界
+
+时序预设使用 Rio 和 Atlanta 拟合，在 Porto 选取检查点，再评估已经看过的 50 场比赛。
+该预设依赖 `temporal` extra 和归档数据。页面会显示真实的 epoch、耗时与验证指标。
+[时序实验与环境说明](mirage_temporal_experiment.md)
 
 多赛事配置使用 Rio、Atlanta、Cologne、Porto 训练，Beijing 验证、BLAST Rivals 测试。
 ESL 24 的 6 场只用于固定模型的补充回顾性评估，显示在历史记录中，不在训练预设里。

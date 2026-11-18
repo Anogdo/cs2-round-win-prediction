@@ -1,28 +1,38 @@
-# CS2 Round Win Prediction
+# CS2 Mirage Round Win Prediction
 
-A Counter-Strike 2 replay pipeline and empirical study for STAT UN3108, Applied Deep Learning and AI. Given a snapshot from a professional Mirage round, the model estimates the probability that the Counter-Terrorist (CT) side wins. This lets a replay analyst track how the outlook changes during the round.
+A STAT UN3108 project on estimating the Counter-Terrorist (CT) side's chance of winning a round from professional Counter-Strike 2 replays. The current study tests whether recent game states improve predictions at a given tick.
 
-[中文项目文档](README.zh-CN.md) · [Data and setup](data/README.md) · [Experiment results](results/README.md)
+[中文项目文档](README.zh-CN.md) · [Temporal experiment](docs/mirage_temporal_experiment.md) · [Data and setup](data/README.md) · [Results](results/README.md)
 
 ## Study target
 
-Table II of Xenopoulos, Doraiswamy, and Silva (2020) compares round win probability models in CS:GO. Figure 6 measures predictive performance as rounds progress. We investigate both questions on CS2 Mirage, beginning with a baseline that uses alive-player difference and elapsed time. [Original paper](https://arxiv.org/abs/2011.01324)
+Do recent snapshots help a small Transformer estimate CT round win probabilities? We compare the same architecture with one or up to eight snapshots, alongside a logistic regression baseline. Table II and Figure 6 of the earlier CS:GO study motivate the probability estimates and analysis by round time. [Xenopoulos, Doraiswamy, and Silva (2020)](https://arxiv.org/abs/2011.01324)
 
 ## Approach
 
-- Awpy, Polars, and PyArrow parse and validate five-second snapshots from professional demos. Each model input uses information available at its sampled tick. The final round winner is stored separately as the training label.
-- The main historical corpus contains 38 Mirage maps, 811 rounds, and 14,630 snapshots. The fixed logistic regression model fits 34 maps. Event-level splits keep all snapshots from a match in the same set, and each round receives equal total weight.
-- Experiments compare a 47-feature logistic regression (V1), a 96-feature logistic regression (V2), and shallow boosted trees. The comparison with 18 fit maps uses a dedicated Cologne calibration set and a separate Porto validation set.
+- Awpy, Polars, and PyArrow parse professional demos into five-second snapshots. The expanded corpus contains 38 Mirage maps, 811 rounds, and 14,630 snapshots.
+- The temporal models use the same 47 V1 features and target ticks. Windows contain observations up to the target tick from the same recording and round. Preprocessing is fitted on training data, and each round receives equal total weight.
+- The three candidates were fitted on 18 Rio and Atlanta matches. Porto determined checkpoint selection, with two matches and 44 rounds. The selected checkpoints were then scored on 50 previously observed matches. Cologne remains reserved for calibration. [Temporal protocol](docs/mirage_temporal_experiment.md)
 
-## Results
+## First temporal results
 
-In a retrospective evaluation on 50 additional Mirage matches (1,099 rounds), the fixed V1 model achieved **0.4321 log loss**, **0.1448 Brier score**, and **0.8714 ROC AUC**. The alive-player difference and elapsed-time baseline, trained on the same 34 maps, scored **0.5125 log loss**. See the model comparison, calibration results, and match-level uncertainty in the [results summary](results/README.md).
+| Model | Porto log loss ↓ | Previously observed 50 log loss ↓ |
+| --- | ---: | ---: |
+| Logistic regression | **0.3761** | **0.4420** |
+| Current-snapshot Transformer | 0.3910 | 0.4469 |
+| Up-to-eight-snapshot Transformer | 0.3965 | 0.4474 |
 
-The paper's XGBoost model led on log loss. On this CS2 dataset, the 34-map logistic model had lower log loss than the 34-map XGBoost model (0.4321 versus 0.4435). The studies use different games, features, and evaluation designs. The [results summary](results/README.md) shows the feature comparisons and the matched analysis by round time.
+On the 50 observed matches, adding history changed log loss by **+0.00046** relative to the current-snapshot Transformer. The 95% interval from paired resampling by match was **[−0.00388, +0.00519]**. [Brier, ROC AUC, and error analysis](docs/mirage_temporal_experiment.md#results)
+
+The earlier 34-match V1 logistic model reached 0.4321 log loss on the same observed set, against 0.5125 for its alive-player and elapsed-time reference. Its larger fit set included Porto. [Historical baselines](results/README.md#historical-50-match-evaluation)
 
 ## Conclusion
 
-Player state helped estimate Mirage round outcomes beyond the alive-player and time baseline. The 50-match set was examined during development. Prospective evaluation on an independent event remains open.
+This first comparison used one training seed and one validation event. The estimated effect of adding history remains uncertain. Broader validation across events and seeds is needed before scoring on an unseen event.
+
+## Run the temporal experiment
+
+The comparison uses the optional `temporal` extra on Windows or Linux with a compatible NVIDIA GPU. The first real-data smoke epoch used FP32, ran 99 batches in 1.12 seconds on an RTX 4070 Ti, and peaked at 72.1 MiB allocated by PyTorch. The full run requires the original feature tables and their processed round records. [Archived inputs](data/README.md#archived-temporal-inputs), [run commands](docs/mirage_temporal_experiment.md#cuda-verification-and-reproduction)
 
 ## Reproduce the single-demo pipeline
 
@@ -43,7 +53,7 @@ Expect 18 rounds and 295 sampled ticks, a JSON model, and a Parquet file of win 
 
 ## Local demo
 
-Run `uv run --frozen --extra ml python -m cs2_pipeline.monitor` and open [the training monitor](http://127.0.0.1:8765). It shows training stages, logs, and metrics. Each preset requires its corresponding local dataset. [Monitor guide (中文)](docs/training_ui.md)
+Run `uv run --frozen --extra ml python -m cs2_pipeline.monitor` and open the local training monitor at `http://127.0.0.1:8765`. The dashboard shows training stages, logs, and metrics. The temporal preset uses the CUDA environment and archived inputs described above. [Monitor guide (中文)](docs/training_ui.md)
 
 ## Repository contents
 
@@ -58,7 +68,8 @@ Run `uv run --frozen --extra ml python -m cs2_pipeline.monitor` and open [the tr
 ## References
 
 - Xenopoulos, Doraiswamy, and Silva (2020) used changes in win probability to value actions in CS:GO. This project studies the round-probability estimation step on a separate CS2 corpus. [Valuing Player Actions in Counter-Strike: Global Offensive](https://arxiv.org/abs/2011.01324)
-- Demo parsing uses Awpy, Polars, and PyArrow. The supervised baselines use scikit-learn and XGBoost. [Dependencies](pyproject.toml), [Awpy documentation](https://awpy.readthedocs.io/en/latest/)
+- Vaswani et al. (2017) introduced the Transformer architecture. The comparison uses a two-layer encoder and a binary readout for the round outcome. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+- Demo parsing uses Awpy, Polars, and PyArrow. The baselines use scikit-learn and XGBoost, and the temporal models use PyTorch. [Dependencies](pyproject.toml), [Awpy documentation](https://awpy.readthedocs.io/en/latest/)
 
 ## Acknowledgements
 

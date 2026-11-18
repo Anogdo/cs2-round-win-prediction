@@ -20,6 +20,19 @@ gpu = [
   "xgboost==3.4.1; python_version >= '3.12'",
 ]
 context = ["demoparser2==0.42.1"]
+temporal = [
+  "scikit-learn==1.9.1",
+  "numpy>=2.3,<3",
+  "torch==2.11.0; sys_platform == 'linux' or sys_platform == 'win32'",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
 
 [project.scripts]
 cs2-parse = "cs2_pipeline.parse:main"

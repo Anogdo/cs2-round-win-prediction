@@ -1,0 +1,145 @@
+{
+  "experiment": "Mirage CT round-win probabilities from one or up to eight snapshots",
+  "run_date_utc": "2026-11-18",
+  "evaluation_scope": "Porto validation and previously observed 50-match exploratory evaluation",
+  "weighting": "Each round receives equal total weight",
+  "calibration": "None applied. Cologne was reserved.",
+  "feature_count": 47,
+  "window_lengths": [
+    1,
+    8
+  ],
+  "training_seed": 42,
+  "partitions": {
+    "fit": {
+      "matches": 18,
+      "rounds": 353,
+      "samples": 6333,
+      "first_date": "2026-04-13",
+      "last_date": "2026-05-13",
+      "events": [
+        "iem-atlanta-2026",
+        "iem-rio-2026"
+      ]
+    },
+    "calibration": {
+      "matches": 14,
+      "rounds": 333,
+      "samples": 6087,
+      "first_date": "2026-06-12",
+      "last_date": "2026-06-21",
+      "events": [
+        "iem-cologne-major-2026"
+      ]
+    },
+    "validation": {
+      "matches": 2,
+      "rounds": 44,
+      "samples": 788,
+      "first_date": "2026-09-05",
+      "last_date": "2026-09-06",
+      "events": [
+        "blast-open-porto-2026"
+      ]
+    },
+    "observed_exploration": {
+      "matches": 50,
+      "rounds": 1099,
+      "samples": 20180,
+      "first_date": "2026-09-08",
+      "last_date": "2026-11-14",
+      "events": [
+        "blast-rivals-2026-season-2",
+        "esl-pro-league-season-24",
+        "fissure-playground-3",
+        "starladder-starseries-fall-2026",
+        "thunderpick-world-championship-2026"
+      ]
+    }
+  },
+  "selected_by_porto_log_loss": "logistic",
+  "transformer_checkpoint_epochs": {
+    "snapshot_transformer": 1,
+    "history8_transformer": 1
+  },
+  "results": {
+    "validation": {
+      "logistic": {
+        "log_loss": 0.3760930572124591,
+        "brier_score": 0.12224278370583065,
+        "roc_auc": 0.9067549493769489,
+        "ece_10_bins": 0.0658376219031206
+      },
+      "snapshot_transformer": {
+        "log_loss": 0.3910222463762186,
+        "brier_score": 0.12740852115630838,
+        "roc_auc": 0.8933506850370344,
+        "ece_10_bins": 0.057740851665572294
+      },
+      "history8_transformer": {
+        "log_loss": 0.39654277129333215,
+        "brier_score": 0.12903985549785763,
+        "roc_auc": 0.8910923168362581,
+        "ece_10_bins": 0.04691381404444727
+      }
+    },
+    "observed_exploration": {
+      "logistic": {
+        "log_loss": 0.44197936946886324,
+        "brier_score": 0.14839108618312183,
+        "roc_auc": 0.8660167606304369,
+        "ece_10_bins": 0.029554526001225274
+      },
+      "snapshot_transformer": {
+        "log_loss": 0.44694310152502037,
+        "brier_score": 0.1490108599830709,
+        "roc_auc": 0.8663772467140195,
+        "ece_10_bins": 0.03958838336284194
+      },
+      "history8_transformer": {
+        "log_loss": 0.4474065309213451,
+        "brier_score": 0.1492182399695953,
+        "roc_auc": 0.8665100576644247,
+        "ece_10_bins": 0.044366536711967795
+      }
+    }
+  },
+  "observed_history_minus_current_snapshot": {
+    "delta": {
+      "log_loss": 0.0004634293963247105,
+      "brier_score": 0.00020737998652439749,
+      "roc_auc": 0.0001328109504051822
+    },
+    "paired_match_bootstrap": {
+      "matches": 50,
+      "draws": 2000,
+      "seed": 42,
+      "percentile_95_ci": {
+        "log_loss": [
+          -0.0038768169907386534,
+          0.0051907592130870745
+        ],
+        "brier_score": [
+          -0.0013576355063986071,
+          0.001868690403704086
+        ]
+      }
+    }
+  },
+  "real_data_cuda_smoke_epoch": {
+    "gpu_name": "NVIDIA GeForce RTX 4070 Ti",
+    "torch": "2.11.0+cu130",
+    "dtype": "float32",
+    "steps": 99,
+    "seconds": 1.1220612000033725,
+    "peak_allocated_mib": 72.08642578125,
+    "peak_reserved_mib": 92.0
+  },
+  "input_sha256": {
+    "plan_sha256": "aa68625bc55b5b12053601b899612657aff018c7f54019b77c2a61d32b5c4c8a",
+    "comparison_plan_sha256": "c43313ef3106bd38a8d508af78b6ee189c4c2dea5782fa9beeedc1215fd30cde",
+    "dataset_sha256": "2362f69b53c05560b128d9b91c66afc1a67fb8bc6fcd90d2ac7a7d6f1212d045",
+    "exploratory_dataset_sha256": "be039c540e6138ce3a8e785fe5a0657ce355388898d4a37252a10ea2bb019424",
+    "lock_sha256": "326cddee9fe11cd28596beaf0f211fbe53a09848f9b84fe38a2a6ea68cb64800"
+  }
+}

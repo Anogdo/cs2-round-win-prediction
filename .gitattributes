@@ -1,0 +1,2 @@
+# Frozen plans and manifests are hashed byte for byte during evaluation.
+/configs/*.json -text

@@ -22,6 +22,18 @@ from cs2_pipeline.progress import STAGES
 from cs2_pipeline.schema import PipelineError
 
 PRESETS = {
+    "phase2_temporal": {
+        "name": "Mirage · 时序 Transformer 对照",
+        "dataset": "data/datasets/mirage_expanded_2026_v1",
+        "features": 47,
+        "algorithm": "逻辑回归 / Transformer · CUDA",
+        "regularization_label": "窗口（快照数）",
+        "regularization_value": "1 / 8",
+        "module": "cs2_pipeline.phase2_temporal",
+        "description": "Rio/Atlanta 拟合、Porto 选轮次；Cologne 保留，50 场仅作回顾。",
+        "validation_name": "Porto（按 Log Loss 选择）",
+        "test_name": "已观察 50 场 · Porto 选定模型",
+    },
     "phase2_gpu": {
         "name": "Mirage · RTX CUDA 模型对照",
         "dataset": "data/datasets/mirage_expanded_2026_v1",

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "research_question": "Does recent in-round history improve CT win probabilities over a current snapshot?",
+  "comparison_plan_sha256": "c43313ef3106bd38a8d508af78b6ee189c4c2dea5782fa9beeedc1215fd30cde",
+  "dataset_sha256": "2362f69b53c05560b128d9b91c66afc1a67fb8bc6fcd90d2ac7a7d6f1212d045",
+  "exploratory_dataset_sha256": "be039c540e6138ce3a8e785fe5a0657ce355388898d4a37252a10ea2bb019424",
+  "feature_version": 1,
+  "window_lengths": [1, 8],
+  "transformer": {
+    "layers": 2,
+    "hidden_dim": 64,
+    "heads": 4,
+    "feed_forward_dim": 128,
+    "dropout": 0.1
+  },
+  "logistic_c": 1.0,
+  "training": {
+    "seed": 42,
+    "max_epochs": 20,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "dtype": "float32",
+    "device": "cuda:0"
+  },
+  "selection": "Use uncalibrated Porto log loss. Earliest epoch wins ties; prefer logistic, then single snapshot, then history in cross-model ties. Freeze all three before opening observed exploration.",
+  "calibration": "Cologne is reserved and is used for no fit, selection, calibration, or scoring in this comparison."
+}

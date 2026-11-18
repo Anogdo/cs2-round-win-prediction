@@ -1,15 +1,16 @@
-# CS2 Demo 解析与训练集系统
+# CS2 Mirage 回合胜率预测
 
-本项目直接使用当前目录作为项目根目录，无需再套一层 `cs2-predictor/`。
-已完成 Phase 1 的历史 Demo 获取、解析、Parquet 存储和验证，新增 Phase 2 的训练集构建、
-时间与比赛分组划分、逻辑回归基线及 JSON 模型推理。
-首版单场流程检查、Rio 和 Cologne 试验均已保留。最新扩充数据集包含 **38 场比赛、
-811 回合和 14,630 个 Mirage 采样时点**，统一使用 Awpy 3.3.0 解析，并按赛事隔离训练与评估。
-另外的 **6 场 ESL Pro League Season 24、120 回合**用于固定模型的回顾性赛事留出评估，未参与拟合。
-此后新增的 50 场 Mirage 也已用于固定模型留出评估，详见 [50 场测试记录](docs/holdout_50_results.md)。
-没有市场 API 或交易功能。
+课程项目现在研究同一回合的历史状态能否改善 CT 胜率估计。首轮用相同的 47 维特征和赛事划分对照
+逻辑回归、单快照 Transformer 与最多 8 个快照的 Transformer。Porto 验证集的 log loss 分别是
+**0.3761、0.3910、0.3965**。在已观察的 50 场上，8 帧相对单帧的 log loss 差为 **+0.00046**，
+按比赛配对重采样的 95% 区间为 **[−0.00388, +0.00519]**，目前历史窗口的收益仍不明确。
+[首轮时序实验与复现命令](docs/mirage_temporal_experiment.md)
 
-最新的分段回合审计、人数/时间/下包分组、比赛聚类区间、V1/V2 与 RTX CUDA 对照见
+现有数据管道覆盖职业赛录像获取、解析、Parquet 存储、质量验证和赛事分组评估。38 场主语料包含
+**811 个回合和 14,630 个 Mirage 采样时点**。单场流程检查、Rio 和 Cologne 实验及
+6 场 ESL Pro League Season 24 的回顾性评估可在[结果索引](results/README.md)查看。
+
+此前的分段回合审计、人数/时间/下包分组、比赛聚类区间、V1/V2 与 RTX CUDA 对照见
 [Mirage 审计及模型对照](docs/phase2_mirage_audit_20261117.md)。50 场已经观察过，只能作为探索集；
 `pgl-masters-bucharest-2026` 仍然完全保留。
 
@@ -24,8 +25,9 @@
 .venv\Scripts\python.exe -m cs2_pipeline.monitor
 ```
 
-打开 [本地训练监控](http://127.0.0.1:8765)，可以启动 GPU 对照、多赛事 V1 或历史 Rio V1/V2 训练，
-查看真实阶段、耗时、日志、验证指标与历史记录。训练输出保存到新的独立目录。
+本地训练监控位于 `http://127.0.0.1:8765`，支持时序 Transformer、GPU 树模型、多赛事 V1 和历史
+Rio V1/V2。训练阶段、耗时、日志和指标可在页面查看。时序预设使用可选的 `temporal` 依赖和归档数据。
+[时序训练环境](docs/mirage_temporal_experiment.md#cuda-verification-and-reproduction)
 实验记录也显示 ESL 额外赛事留出评估；该赛事没有加入训练预设。
 50 场批量解析及上下文补充有单独的进度卡片。GPU 预设需要安装以下可选依赖，
 并会核查 XGBoost 的 CUDA 配置和训练时的 GPU 进程；无法确认 GPU 时直接失败，不静默回退：

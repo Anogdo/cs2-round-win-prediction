@@ -39,6 +39,10 @@ uv run --frozen --extra ml --extra context python -m scripts.evaluate_holdout_50
 
 The repository records the source lists, metrics, and audit checks. [Reported scores](../results/README.md), [frozen evaluation plan](../configs/holdout_50_plan.json)
 
+## Archived temporal inputs
+
+The temporal comparison uses the original datasets in `data/datasets/mirage_expanded_2026_v1/` and `data/datasets/mirage_holdout_50_v1/`. Keep their manifests and Parquet tables together with the processed `metadata.json` and `rounds.parquet` referenced by each recording. The loader verifies these files against the digests in the frozen plan. [Temporal plan](../configs/phase2_temporal_plan.json), [training and scoring commands](../docs/mirage_temporal_experiment.md#cuda-verification-and-reproduction)
+
 ## Generated files
 
 - `data/processed/` holds validated Parquet files for rounds, players and sampled player states, plus source metadata.

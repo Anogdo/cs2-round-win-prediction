@@ -1,6 +1,10 @@
 # Results
 
-## 50-match exploratory evaluation
+## First temporal comparison
+
+The 18-match logistic baseline had the lowest Porto log loss of the three candidates. The eight-snapshot Transformer scored 0.4474 on the 50 previously observed matches, compared with 0.4469 for the current-snapshot model. Both Transformer checkpoints were selected using Porto before the exploratory data was scored. [Metrics and limitations](../docs/mirage_temporal_experiment.md#results), [machine-readable scores](mirage_temporal_initial.json)
+
+## Historical 50-match evaluation
 
 All models below were scored on 20,180 observations from the same 1,099 Mirage rounds, with equal total weight per round. Each of the 50 matches was disjoint from the fit data. Some events appeared in earlier evaluation. This set has already been examined during development.
 
@@ -39,3 +43,4 @@ The locked Awpy 3.3 run parsed all nine pinned Rio demos and fit the 47-feature 
 | Expanded corpus and supplementary ESL holdout | [Experiment notes](../docs/phase2_expanded_2026.md) | [Model and data audit](../reports/expanded_2026_model_audit.json) |
 | 50-match evaluation | [Fixed-model evaluation](../docs/holdout_50_results.md) | [Fixed-model audit](../reports/holdout_50_audit_v2.json) |
 | Feature and model comparison | [Data integrity and evaluation notes](../docs/phase2_mirage_audit_20261117.md) | [Comparison report](../reports/phase2_exploration_final.json), [data audit](../reports/phase2_data_audit_v2.json) |
+| Current snapshot vs. up to eight snapshots | [Temporal experiment](../docs/mirage_temporal_experiment.md) | [First temporal comparison](mirage_temporal_initial.json) |
