@@ -1,2 +1,3 @@
 # Frozen plans and manifests are hashed byte for byte during evaluation.
 /configs/*.json -text
+/results/mirage_singapore_freeze_20261121.json -text

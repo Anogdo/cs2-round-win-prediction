@@ -1,0 +1,63 @@
+{
+  "locked_at_utc": "2026-11-21T09:24:19.300510+00:00",
+  "plan_sha256": "60211878e10e26052f8b4884fbac33d1089d627ea8b3466a4401dac576be26ed",
+  "selection_sha256": "91a20542c1553cc45f3f8781d34616402e269007acdf3096f56ae9e907385f33",
+  "split_manifest_sha256": "0c6e374dfd3102431c712bbb20a5de5ea72f35de43155cef527b49b7bdab6b27",
+  "uv_lock_sha256": "326cddee9fe11cd28596beaf0f211fbe53a09848f9b84fe38a2a6ea68cb64800",
+  "scope": "PGL Major Singapore 2026. Use all identity- and score-verified Mirage maps played after freezing the candidate weights and scoring rules. Keep Singapore outside fit and development.",
+  "primary_seed": 42,
+  "sensitivity_seeds": [
+    7,
+    2026
+  ],
+  "primary_epoch": 1,
+  "secondary_development_selected_epoch": {
+    "42": 1,
+    "7": 2,
+    "2026": 7
+  },
+  "primary_metric": "round-weighted Log Loss, Transformer minus matched logistic regression",
+  "secondary_metrics": [
+    "Brier",
+    "ROC AUC"
+  ],
+  "bootstrap": {
+    "unit": "match_id",
+    "draws": 2000,
+    "seed": 42,
+    "confidence": 0.95
+  },
+  "transformer": {
+    "layers": 2,
+    "hidden_dim": 64,
+    "heads": 4,
+    "feed_forward_dim": 128,
+    "dropout": 0.1
+  },
+  "single_snapshot_window": 1,
+  "relative_position_max_length": 8,
+  "inference_batch_size": 64,
+  "device": {
+    "device": "cuda:0",
+    "gpu_name": "NVIDIA GeForce RTX 4070 Ti",
+    "compute_capability": "8.9",
+    "device_total_mib": 12281.5,
+    "torch": "2.11.0+cu130",
+    "torch_cuda_runtime": "13.0",
+    "dtype": "float32",
+    "matmul_precision": "highest",
+    "attention_backend": "math",
+    "deterministic_algorithms": true,
+    "nvidia_driver": "621.01"
+  },
+  "artifacts": {
+    "fit_targets.parquet": "4951f6a2706720788d6d23326d3983ef0bea0c71476d8a9a6f3c4e59e16afaaf",
+    "logistic.json": "4a5bc5b02d61160a8a892d0795db39ce9f757bc6eb6dd78e090f84c3818663bf",
+    "preprocessing.json": "197e1c13b9260edf14eddc3bc36a148dedf1f69a45782f40ae897c5a6f95d13f",
+    "seed_2026_epoch_1.pt": "6a78c015f5b576e5ff92d4d9c7cbdf05fea8b33a058da463f837190234d8166f",
+    "seed_2026_epoch_7.pt": "813adb71481745b324aec5ed24e70bc1c61446c3140663098b2280b826af0123",
+    "seed_42_epoch_1.pt": "affd15f7a610242b01f28b54d94418f7c788562746a817c6b2ed063a32d35aad",
+    "seed_7_epoch_1.pt": "0e8e4af9fcd6c5c7899a4522b013a3db0db512ad13e454eff1a973c09ab27862",
+    "seed_7_epoch_2.pt": "d5cda3cdddbd976d91a517887908cfeef099a50e89b4281334c1744c1cc05de8"
+  }
+}

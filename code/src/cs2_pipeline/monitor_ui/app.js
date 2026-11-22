@@ -75,7 +75,7 @@ function renderHistory() {
     const preset=snapshot.presets.find(p=>p.id===job.preset);
     const label=node("td",job.name);label.append(node("small",job.id+(preset?.test_name ? " · 测试："+preset.test_name : "")));
     const status=node("td");status.append(node("span",names[job.status] || job.status,"badge "+job.status));
-    const score=job.report?.metrics?.test?.model || {};
+    const score=job.report?.metrics?.test?.model || (job.preset==="phase2_temporal_validation" ? job.report?.metrics?.validation?.model : null) || {};
     tr.append(label,status,node("td",format(score.log_loss)),node("td",format(score.brier_score)),node("td",date(job.started_at)));
     tr.onclick=()=>{selectedJob=job.id;renderJob();$("monitor").scrollIntoView({behavior:"smooth"});};return tr;
   });
@@ -83,7 +83,7 @@ function renderHistory() {
   for(const report of snapshot.history || []){
     if(jobPaths.has(report.path))continue;
     const tr=node("tr"), label=node("td",report.name);
-    const detail=report.mode==="smoke_test"?"流程检查 · 无独立评分":report.mode==="additional_event_holdout"?"额外赛事留出评估 · "+report.event:"已观察的历史评估";
+    const detail=report.mode==="smoke_test"?"流程检查 · 无独立评分":report.mode==="additional_event_holdout"?"额外赛事留出评估 · "+report.event:report.mode==="temporal_historical_validation"?"波托选定模型 · 新增历史验证":"已观察的历史评估";
     label.append(node("small",detail));
     const status=node("td");status.append(node("span","历史结果","badge idle"));
     tr.append(label,status,node("td",format(report.scores?.log_loss)),node("td",format(report.scores?.brier_score)),node("td",date(report.created_at)));rows.push(tr);
@@ -91,17 +91,17 @@ function renderHistory() {
   if(!rows.length){const tr=node("tr"),td=node("td","暂无实验记录");td.colSpan=5;tr.append(td);rows.push(tr);}
   tbody.replaceChildren(...rows);
 }
-function renderBatch(){
-  const batch=snapshot.holdout_batch || {}, panel=$("batch-panel");
+function renderBatch(batch={}, prefix="batch"){
+  const item=suffix=>$(prefix+"-"+suffix), panel=item("panel");
   panel.hidden=!batch.total;if(panel.hidden)return;
   const ok=batch.completed?.length || 0, failed=batch.failed?.length || 0, total=batch.total;
-  $("batch-count").textContent=(ok+failed)+" / "+total+" 场已处理";
-  $("batch-progress").style.width=(Math.min(1,(ok+failed)/total)*100)+"%";
+  item("count").textContent=(ok+failed)+" / "+total+" 场已处理";
+  item("progress").style.width=(Math.min(1,(ok+failed)/total)*100)+"%";
   const state=batch.status==="completed"?"已完成":batch.status==="completed_with_errors"?"部分失败":"处理中";
-  $("batch-status").className="badge "+(batch.status==="completed"?"completed":batch.status==="completed_with_errors"?"failed":"running");
-  $("batch-status").textContent=state;
-  $("batch-current").textContent=batch.current?"当前："+batch.current.matchup+" · "+batch.current.id:"数据处理已结束";
-  $("batch-detail").textContent="验证通过 "+ok+" 场 · 待处理 "+Math.max(0,total-ok-failed)+" 场 · 失败 "+failed+" 场 · 最近更新 "+date(batch.updated_at_utc);
+  item("status").className="badge "+(batch.status==="completed"?"completed":batch.status==="completed_with_errors"?"failed":"running");
+  item("status").textContent=state;
+  item("current").textContent=batch.current?"当前："+batch.current.matchup+" · "+batch.current.id:(ok+failed<total?"等待下一场":"数据处理已结束");
+  item("detail").textContent="验证通过 "+ok+" 场 · 待处理 "+Math.max(0,total-ok-failed)+" 场 · 失败 "+failed+" 场 · 最近更新 "+date(batch.updated_at_utc);
 }
 function renderCorpus(){
   const preset=snapshot.presets.find(p=>p.id===$("preset").value) || {}, counts=preset.match_counts || {};
@@ -129,7 +129,7 @@ async function refresh(){
     if(!initialPresets){$("preset").replaceChildren(...snapshot.presets.map(p=>{const option=node("option",p.name+(p.available?"":"（未构建）"));option.value=p.id;option.disabled=!p.available;return option;}));initialPresets=true;}
     $("connection").textContent="本地已连接";$("connection-dot").style.background="var(--accent)";
     $("updated").textContent="更新于 "+new Date().toLocaleTimeString("zh-CN",{hour12:false});
-    renderJob();renderHistory();renderBatch();renderContext();renderCorpus();
+    renderJob();renderHistory();renderBatch(snapshot.holdout_batch);renderBatch(snapshot.historical_validation_batch,"historical");renderContext();renderCorpus();
   }catch(e){$("connection").textContent="连接中断";$("connection-dot").style.background="#e7a17f";$("start").disabled=true;$("cancel").disabled=true;}
 }
 $("preset").onchange=()=>{if(snapshot){renderJob();renderCorpus();}};

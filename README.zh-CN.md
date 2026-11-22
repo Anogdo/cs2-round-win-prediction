@@ -1,14 +1,15 @@
 # CS2 Mirage 回合胜率预测
 
-课程项目现在研究同一回合的历史状态能否改善 CT 胜率估计。首轮用相同的 47 维特征和赛事划分对照
-逻辑回归、单快照 Transformer 与最多 8 个快照的 Transformer。Porto 验证集的 log loss 分别是
-**0.3761、0.3910、0.3965**。在已观察的 50 场上，8 帧相对单帧的 log loss 差为 **+0.00046**，
-按比赛配对重采样的 95% 区间为 **[−0.00388, +0.00519]**，目前历史窗口的收益仍不明确。
-[首轮时序实验与复现命令](docs/mirage_temporal_experiment.md)
+本项目用职业 CS2 Mirage 录像预测 CT 回合胜率，重点是在同一训练集上比较传统模型和 Transformer。
+用相同的 34 场训练数据，在已观察的 50 场比赛上，逻辑回归、单快照 Transformer、最多 8 快照的
+Transformer 和归档 XGBoost 的 log loss 分别为 **0.4322、0.4348、0.4386、0.4435**。
+单快照相对逻辑回归的 95% 配对区间跨 0，加入历史快照的效果随随机种子变化。
+[34 场同数据对照](docs/mirage_temporal_experiment.md#follow-up-identical-34-map-training-set-november-21-2026)
 
-现有数据管道覆盖职业赛录像获取、解析、Parquet 存储、质量验证和赛事分组评估。38 场主语料包含
-**811 个回合和 14,630 个 Mirage 采样时点**。单场流程检查、Rio 和 Cologne 实验及
-6 场 ESL Pro League Season 24 的回顾性评估可在[结果索引](results/README.md)查看。
+后续实验已完成 200 轮训练、16／24／32 场训练规模对比、47 场扩充和 dropout 消融。
+长训练出现过拟合。面向新加坡 Major 的独立评估已冻结，两个模型都使用 **49 场（1,079 个回合、19,460 个时点）**训练。
+主比较采用 seed 42、第 1 轮、dropout 0.10 的单快照 Transformer 和配对逻辑回归。新加坡 Major Mirage 待评分。
+[结果与曲线](results/README.md) · [冻结规则](docs/mirage_temporal_experiment.md#frozen-singapore-evaluation)
 
 此前的分段回合审计、人数/时间/下包分组、比赛聚类区间、V1/V2 与 RTX CUDA 对照见
 [Mirage 审计及模型对照](docs/phase2_mirage_audit_20261117.md)。50 场已经观察过，只能作为探索集；

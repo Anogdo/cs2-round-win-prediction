@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "scope": "Historical development validation on BLAST Bounty and Esports World Cup; no refit, selection or calibration on these matches.",
+  "frozen_run": "models/monitor_runs/20261118T051803-7248d43d",
+  "selection_sha256": "47c7fb00b428361b8a75b4674755b741aa469cacee1212ada315e520bb86e1ba",
+  "historical_source_plan": "configs/phase2_validation_more_20261118.json",
+  "historical_source_sha256": "d30d898c3aa0ab73e14dff7079ad6706689ae695ef16fb5f198b547f8cc8ae8f",
+  "historical_events": ["blast-bounty-2026-season-2-finals", "esports-world-cup-2026"],
+  "seed_sensitivity": {"additional_seeds": [7, 2026], "epochs": 1},
+  "bootstrap": {"unit": "match_id", "draws": 2000, "seed": 42}
+}

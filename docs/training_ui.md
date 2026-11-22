@@ -15,6 +15,7 @@ macOS/Linux 使用 `.venv/bin/python -m cs2_pipeline.monitor`。没有新增运�
 ## 页面可以做什么
 
 - **开始训练**：可选时序 Transformer、多赛事 V1、GPU 树模型或历史 Rio V1/V2，启动对应的 Python 子进程。
+- **固定模型评估**：可以在已观察的 50 场上重跑同 34 场拟合的模型对照，或在 Bounty 和 EWC 上验证 Porto 选定的时序模型。
 - **真实阶段进度**：数据校验 → 模型拟合 → 验证与评估 → 保存并重读。每秒自动刷新。
 - **运行耗时和迭代数**：拟合时显示实际耗时，结束后显示 sklearn 返回的真实优化迭代数。
 - **实时日志与指标**：流式落盘的进程输出、验证集 Log Loss / Brier / AUC / ECE。
@@ -37,6 +38,10 @@ macOS/Linux 使用 `.venv/bin/python -m cs2_pipeline.monitor`。没有新增运�
 时序预设使用 Rio 和 Atlanta 拟合，在 Porto 选取检查点，再评估已经看过的 50 场比赛。
 该预设依赖 `temporal` extra 和归档数据。页面会显示真实的 epoch、耗时与验证指标。
 [时序实验与环境说明](mirage_temporal_experiment.md)
+
+两个固定模型评估预设使用 CUDA 和归档数据。34 场对照复用已保存的检查点，统一评估先前观察过的 50 场比赛。
+Bounty 和 EWC 预设复用首轮 Porto 选定的检查点，在 10 场历史开发数据上评分。
+[34 场对照](mirage_temporal_experiment.md#follow-up-identical-34-map-training-set-november-21-2026) · [历史验证](mirage_historical_validation_20261118.md)
 
 多赛事配置使用 Rio、Atlanta、Cologne、Porto 训练，Beijing 验证、BLAST Rivals 测试。
 ESL 24 的 6 场只用于固定模型的补充回顾性评估，显示在历史记录中，不在训练预设里。
@@ -88,9 +93,9 @@ models/monitor_runs/<运行ID>/
 进度记录不改变模型、HTTP 接口路由及令牌/来源校验、重复端口占用和 ESL 留出评估展示。
 2026 多赛事扩充和 ESL 评估完成后，全部 **112 项测试通过**，Ruff 检查通过。
 50 场测试批次完成后，新增了分段回合恢复、档案校验、进度写入和测试数据展示检查；
-当前全量 **118 项测试通过**，Ruff 检查通过。
+该批次完成后全量 **118 项测试通过**。加入同 34 场对照、历史验证和后续实验代码后，本次发布检查为 **149 项测试通过**，Ruff 检查通过。
 
 ```powershell
 .venv\Scripts\python.exe -m pytest -q
-.venv\Scripts\ruff.exe check src tests scripts
+.venv\Scripts\ruff.exe check code/src scripts tests
 ```

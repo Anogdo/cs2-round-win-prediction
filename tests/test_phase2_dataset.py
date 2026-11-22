@@ -230,6 +230,23 @@ def test_tampered_files_and_cross_match_split_are_rejected(
         read_dataset(out)
 
 
+def test_historical_development_split_cannot_include_fit_rows(
+    phase2_manifest: Path, tmp_path: Path
+) -> None:
+    out = tmp_path / "dataset"
+    build_dataset(phase2_manifest, out)
+    metadata, tables = read_dataset(out)
+    metadata["split_policy"] = {
+        "group_by": "event",
+        "method": "historical_validation_only",
+        "evaluation_ready": False,
+    }
+    with pytest.raises(PipelineError, match="only the validation split"):
+        validate_dataset_tables(tables, metadata)
+    tables["splits"] = tables["splits"].with_columns(pl.lit("validation").alias("split"))
+    validate_dataset_tables(tables, metadata)
+
+
 @pytest.mark.integration
 def test_real_phase1_dataset_builds_without_label_leakage(tmp_path: Path) -> None:
     source = Path("data/processed/match")

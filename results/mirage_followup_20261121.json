@@ -1,0 +1,1989 @@
+{
+  "schema_version": 1,
+  "map": "de_mirage",
+  "target": "Probability that Counter-Terrorists win the current round",
+  "weighting": "Each round has total weight one.",
+  "matched_34": {
+    "created_at_utc": "2026-11-21T07:43:30.719190+00:00",
+    "run_mode": "matched34_retrospective",
+    "scope": "Match all model fit rows, then score the already observed 50 matches as retrospective evaluation only.",
+    "plan_sha256": "d0acf7807e180091746fe655f458389e39cd8886b353265c484bafb99cd0b271",
+    "fit": {
+      "matches": 34,
+      "rounds": 730,
+      "samples": 13208,
+      "first_date": "2026-04-13",
+      "last_date": "2026-09-06",
+      "events": [
+        "blast-open-porto-2026",
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026"
+      ]
+    },
+    "evaluation": {
+      "matches": 50,
+      "rounds": 1099,
+      "samples": 20180,
+      "first_date": "2026-09-08",
+      "last_date": "2026-11-14",
+      "events": [
+        "blast-rivals-2026-season-2",
+        "esl-pro-league-season-24",
+        "fissure-playground-3",
+        "starladder-starseries-fall-2026",
+        "thunderpick-world-championship-2026"
+      ]
+    },
+    "source_report_sha256": "4b031e6aec2e414b29d2ad3ecf515468c1460ed3d0a21678cfadbb7f782d17af",
+    "pooled_scores": {
+      "controlled_logistic": {
+        "log_loss": 0.43220456672065727,
+        "brier_score": 0.14476950810274078,
+        "roc_auc": 0.871327030115775
+      },
+      "frozen_v1": {
+        "log_loss": 0.43211243730899407,
+        "brier_score": 0.1447567362104301,
+        "roc_auc": 0.8713603731904717
+      },
+      "gpu_full34": {
+        "log_loss": 0.4434510571742378,
+        "brier_score": 0.1465439048800804,
+        "roc_auc": 0.8682229214401005
+      },
+      "seed_42_window_1": {
+        "log_loss": 0.434783143000166,
+        "brier_score": 0.14547758676890132,
+        "roc_auc": 0.8694776937886457
+      },
+      "seed_42_window_8": {
+        "log_loss": 0.4385621658349763,
+        "brier_score": 0.1471792901346985,
+        "roc_auc": 0.8669369830586978
+      },
+      "seed_7_window_1": {
+        "log_loss": 0.4468423544667877,
+        "brier_score": 0.14962050978797886,
+        "roc_auc": 0.869788892842922
+      },
+      "seed_7_window_8": {
+        "log_loss": 0.447326747156796,
+        "brier_score": 0.14993466220132765,
+        "roc_auc": 0.8710010059448707
+      },
+      "seed_2026_window_1": {
+        "log_loss": 0.43968831535511366,
+        "brier_score": 0.14721702668407197,
+        "roc_auc": 0.8661020763865266
+      },
+      "seed_2026_window_8": {
+        "log_loss": 0.43650942218618505,
+        "brier_score": 0.14628085118914688,
+        "roc_auc": 0.8666320947498946
+      }
+    },
+    "paired_comparisons": [
+      {
+        "candidate": "seed_42_window_8",
+        "reference": "seed_42_window_1",
+        "delta": {
+          "log_loss": 0.003779022834810297,
+          "brier_score": 0.0017017033657971692
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            2.07874896015134e-05,
+            0.007673390619064773
+          ],
+          "brier_score": [
+            0.00025347070749848005,
+            0.003181655829178832
+          ]
+        }
+      },
+      {
+        "candidate": "seed_7_window_8",
+        "reference": "seed_7_window_1",
+        "delta": {
+          "log_loss": 0.0004843926900082729,
+          "brier_score": 0.00031415241334878385
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.00208262183876209,
+            0.003115544473312611
+          ],
+          "brier_score": [
+            -0.0006725004585431911,
+            0.001296776807050958
+          ]
+        }
+      },
+      {
+        "candidate": "seed_2026_window_8",
+        "reference": "seed_2026_window_1",
+        "delta": {
+          "log_loss": -0.0031788931689286093,
+          "brier_score": -0.0009361754949250845
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.008453742073809924,
+            0.0020563480491545233
+          ],
+          "brier_score": [
+            -0.0030930266497934712,
+            0.0011774043243707492
+          ]
+        }
+      },
+      {
+        "candidate": "seed_42_window_1",
+        "reference": "controlled_logistic",
+        "delta": {
+          "log_loss": 0.0025785762795087486,
+          "brier_score": 0.0007080786661605443
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.003912889055183126,
+            0.009273050760743496
+          ],
+          "brier_score": [
+            -0.0016320616185867443,
+            0.0030575822007636103
+          ]
+        }
+      },
+      {
+        "candidate": "seed_42_window_8",
+        "reference": "controlled_logistic",
+        "delta": {
+          "log_loss": 0.006357599114319046,
+          "brier_score": 0.0024097820319577135
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.0019135463637319258,
+            0.015072954057764475
+          ],
+          "brier_score": [
+            -0.0008753994936494612,
+            0.005573109925832673
+          ]
+        }
+      },
+      {
+        "candidate": "seed_42_window_1",
+        "reference": "frozen_v1",
+        "delta": {
+          "log_loss": 0.0026707056911719484,
+          "brier_score": 0.0007208505584712366
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.0038519162191019236,
+            0.00938988972154962
+          ],
+          "brier_score": [
+            -0.0016220349708367479,
+            0.0030549852297669282
+          ]
+        }
+      },
+      {
+        "candidate": "seed_42_window_8",
+        "reference": "frozen_v1",
+        "delta": {
+          "log_loss": 0.006449728525982246,
+          "brier_score": 0.0024225539242684058
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.001888212576899842,
+            0.015183361261941085
+          ],
+          "brier_score": [
+            -0.0008313117379222155,
+            0.005623857248940213
+          ]
+        }
+      },
+      {
+        "candidate": "seed_42_window_1",
+        "reference": "gpu_full34",
+        "delta": {
+          "log_loss": -0.008667914174071756,
+          "brier_score": -0.0010663181111790765
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.016550261166701344,
+            -0.0004046066226762163
+          ],
+          "brier_score": [
+            -0.003798811295455437,
+            0.001566176201289843
+          ]
+        }
+      },
+      {
+        "candidate": "seed_42_window_8",
+        "reference": "gpu_full34",
+        "delta": {
+          "log_loss": -0.004888891339261459,
+          "brier_score": 0.0006353852546180927
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.014724324841928243,
+            0.005578334418741454
+          ],
+          "brier_score": [
+            -0.002754211078379224,
+            0.004068449159842583
+          ]
+        }
+      }
+    ]
+  },
+  "training_duration": {
+    "created_at_utc": "2026-11-21T08:41:18.008047+00:00",
+    "run_mode": "mirage_snapshot_epoch_retrospective",
+    "scope": "Use the exact previously scored sample IDs and weights after verifying the selection and final-fit receipts. This previously observed cohort is retrospective only.",
+    "plan_sha256": "eb0c052f458366f30cafbcea49a8eaa453349a5c3d9aa57a6f0f58be074ab221",
+    "development_fit": {
+      "matches": 32,
+      "rounds": 686,
+      "samples": 12420,
+      "first_date": "2026-04-13",
+      "last_date": "2026-06-21",
+      "events": [
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026"
+      ]
+    },
+    "development": {
+      "matches": 10,
+      "rounds": 214,
+      "samples": 3945,
+      "first_date": "2026-07-31",
+      "last_date": "2026-08-19",
+      "events": [
+        "blast-bounty-2026-season-2-finals",
+        "esports-world-cup-2026"
+      ]
+    },
+    "final_fit": {
+      "matches": 34,
+      "rounds": 730,
+      "samples": 13208,
+      "first_date": "2026-04-13",
+      "last_date": "2026-09-06",
+      "events": [
+        "blast-open-porto-2026",
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026"
+      ]
+    },
+    "retrospective": {
+      "matches": 50,
+      "rounds": 1099,
+      "samples": 20180,
+      "first_date": "2026-09-08",
+      "last_date": "2026-11-14",
+      "events": [
+        "blast-rivals-2026-season-2",
+        "esl-pro-league-season-24",
+        "fissure-playground-3",
+        "starladder-starseries-fall-2026",
+        "thunderpick-world-championship-2026"
+      ]
+    },
+    "bootstrap": {
+      "unit": "match_id",
+      "draws": 2000,
+      "seed": 42,
+      "confidence": 0.95
+    },
+    "source_report_sha256": "81ba30726f8b72bd047f7a0a4a344ad6608c3c3efbc0c060a190ab268a5c7355",
+    "selected_epochs": {
+      "42": 3,
+      "7": 1,
+      "2026": 2
+    },
+    "development_curve_summary": [
+      {
+        "seed": 42,
+        "role": "epoch_1",
+        "epoch": 1,
+        "training_log_loss": 0.43030427266414173,
+        "development_log_loss": 0.4472924169065758
+      },
+      {
+        "seed": 42,
+        "role": "selected",
+        "epoch": 3,
+        "training_log_loss": 0.403136519357196,
+        "development_log_loss": 0.4339343179349505
+      },
+      {
+        "seed": 42,
+        "role": "epoch_200",
+        "epoch": 200,
+        "training_log_loss": 0.006799522593477964,
+        "development_log_loss": 1.8465653030523466
+      },
+      {
+        "seed": 7,
+        "role": "epoch_1",
+        "epoch": 1,
+        "training_log_loss": 0.4169039951793138,
+        "development_log_loss": 0.4262752954086949
+      },
+      {
+        "seed": 7,
+        "role": "selected",
+        "epoch": 1,
+        "training_log_loss": 0.4169039951793138,
+        "development_log_loss": 0.4262752954086949
+      },
+      {
+        "seed": 7,
+        "role": "epoch_200",
+        "epoch": 200,
+        "training_log_loss": 0.006109808173722035,
+        "development_log_loss": 1.8723595560843453
+      },
+      {
+        "seed": 2026,
+        "role": "epoch_1",
+        "epoch": 1,
+        "training_log_loss": 0.4243739170869593,
+        "development_log_loss": 0.4565722520992542
+      },
+      {
+        "seed": 2026,
+        "role": "selected",
+        "epoch": 2,
+        "training_log_loss": 0.4076786424310886,
+        "development_log_loss": 0.43773276798573224
+      },
+      {
+        "seed": 2026,
+        "role": "epoch_200",
+        "epoch": 200,
+        "training_log_loss": 0.00966805817886649,
+        "development_log_loss": 1.9124667818658894
+      }
+    ],
+    "retrospective_scores": {
+      "logistic": {
+        "log_loss": 0.43220456672065727,
+        "brier_score": 0.14476950810274078,
+        "roc_auc": 0.871327030115775
+      },
+      "seed_42_epoch_1": {
+        "log_loss": 0.434783143000166,
+        "brier_score": 0.14547758676890132,
+        "roc_auc": 0.8694776937886457
+      },
+      "seed_42_selected": {
+        "log_loss": 0.44695316051248857,
+        "brier_score": 0.14934246536294402,
+        "roc_auc": 0.8606941800413672
+      },
+      "seed_42_epoch_200": {
+        "log_loss": 1.6574126459080236,
+        "brier_score": 0.2475981150710429,
+        "roc_auc": 0.8154785101857084
+      },
+      "seed_7_epoch_1": {
+        "log_loss": 0.4468423544667877,
+        "brier_score": 0.14962050978797886,
+        "roc_auc": 0.869788892842922
+      },
+      "seed_7_selected": {
+        "log_loss": 0.4468423544667877,
+        "brier_score": 0.14962050978797886,
+        "roc_auc": 0.869788892842922
+      },
+      "seed_7_epoch_200": {
+        "log_loss": 1.6103013800562487,
+        "brier_score": 0.24735699275886627,
+        "roc_auc": 0.816088163318054
+      },
+      "seed_2026_epoch_1": {
+        "log_loss": 0.43968831535511366,
+        "brier_score": 0.14721702668407197,
+        "roc_auc": 0.8661020763865266
+      },
+      "seed_2026_selected": {
+        "log_loss": 0.4448155066191785,
+        "brier_score": 0.14966795922316312,
+        "roc_auc": 0.8667240534919178
+      },
+      "seed_2026_epoch_200": {
+        "log_loss": 1.5852183526920518,
+        "brier_score": 0.2493663349363443,
+        "roc_auc": 0.8155170855902107
+      }
+    },
+    "paired_comparisons": [
+      {
+        "seed": 42,
+        "comparison": "selected minus logistic",
+        "candidate": "seed_42_selected",
+        "reference": "logistic",
+        "delta": {
+          "log_loss": 0.0147485937918313,
+          "brier_score": 0.0045729572602032365
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            0.0073395063240905166,
+            0.02263108994174451
+          ],
+          "brier_score": [
+            0.0019763362879212016,
+            0.007149523974206464
+          ]
+        }
+      },
+      {
+        "seed": 42,
+        "comparison": "selected minus epoch_1",
+        "candidate": "seed_42_selected",
+        "reference": "seed_42_epoch_1",
+        "delta": {
+          "log_loss": 0.01217001751232255,
+          "brier_score": 0.003864878594042692
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            0.0033230236165589996,
+            0.021770160534840686
+          ],
+          "brier_score": [
+            0.00045084925937252803,
+            0.007564862557597208
+          ]
+        }
+      },
+      {
+        "seed": 42,
+        "comparison": "epoch_200 minus epoch_1",
+        "candidate": "seed_42_epoch_200",
+        "reference": "seed_42_epoch_1",
+        "delta": {
+          "log_loss": 1.2226295029078575,
+          "brier_score": 0.10212052830214158
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            1.1061816631630539,
+            1.3422924362417905
+          ],
+          "brier_score": [
+            0.09186129450819207,
+            0.11303735709134179
+          ]
+        }
+      },
+      {
+        "seed": 7,
+        "comparison": "selected minus logistic",
+        "candidate": "seed_7_selected",
+        "reference": "logistic",
+        "delta": {
+          "log_loss": 0.014637787746130448,
+          "brier_score": 0.004851001685238082
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            0.0059458950991166035,
+            0.023262270956816072
+          ],
+          "brier_score": [
+            0.0015632375928357283,
+            0.008293816157596525
+          ]
+        }
+      },
+      {
+        "seed": 7,
+        "comparison": "selected minus epoch_1",
+        "candidate": "seed_7_selected",
+        "reference": "seed_7_epoch_1",
+        "delta": {
+          "log_loss": 0.0,
+          "brier_score": 0.0
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            0.0,
+            0.0
+          ],
+          "brier_score": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "seed": 7,
+        "comparison": "epoch_200 minus epoch_1",
+        "candidate": "seed_7_epoch_200",
+        "reference": "seed_7_epoch_1",
+        "delta": {
+          "log_loss": 1.163459025589461,
+          "brier_score": 0.09773648297088741
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            1.045714375353117,
+            1.285255159763019
+          ],
+          "brier_score": [
+            0.08664414626133231,
+            0.10959099214013204
+          ]
+        }
+      },
+      {
+        "seed": 2026,
+        "comparison": "selected minus logistic",
+        "candidate": "seed_2026_selected",
+        "reference": "logistic",
+        "delta": {
+          "log_loss": 0.012610939898521245,
+          "brier_score": 0.004898451120422337
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            0.004414726856812444,
+            0.020259570170255863
+          ],
+          "brier_score": [
+            0.0015063681354591304,
+            0.008170210157651582
+          ]
+        }
+      },
+      {
+        "seed": 2026,
+        "comparison": "selected minus epoch_1",
+        "candidate": "seed_2026_selected",
+        "reference": "seed_2026_epoch_1",
+        "delta": {
+          "log_loss": 0.0051271912640648565,
+          "brier_score": 0.0024509325390911496
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            -0.001082415644076226,
+            0.01113671986993172
+          ],
+          "brier_score": [
+            9.651547064594704e-05,
+            0.004736255713326227
+          ]
+        }
+      },
+      {
+        "seed": 2026,
+        "comparison": "epoch_200 minus epoch_1",
+        "candidate": "seed_2026_epoch_200",
+        "reference": "seed_2026_epoch_1",
+        "delta": {
+          "log_loss": 1.1455300373369381,
+          "brier_score": 0.10214930825227234
+        },
+        "match_bootstrap_95_ci": {
+          "log_loss": [
+            1.0423997034970798,
+            1.253956227622106
+          ],
+          "brier_score": [
+            0.0918220488268579,
+            0.11251913877046893
+          ]
+        }
+      }
+    ]
+  },
+  "training_size": {
+    "created_at_utc": "2026-11-21T08:51:51.855552+00:00",
+    "run_mode": "mirage_train_size_historical_development",
+    "scope": "The same 10 previously observed BLAST Bounty and Esports World Cup Mirage matches. All candidates and all contrasts use the identical 3,945 prediction ticks with equal total weight per round.",
+    "plan_sha256": "1b13f7e673a199ce0387b4b4ae23f81c95d167df3f8ff6a325469548f493a902",
+    "bootstrap": {
+      "unit": "match_id",
+      "draws": 2000,
+      "seed": 42,
+      "confidence": 0.95
+    },
+    "epoch_1_gaps": [
+      {
+        "trial": "draw_31415_n16",
+        "subset_seed": 31415,
+        "training_seed": 42,
+        "fit_matches": 16,
+        "fit_rounds": 327,
+        "fit_ticks": 5889,
+        "optimizer_steps_epoch_1": 93,
+        "optimizer_steps_epoch_20": 1860,
+        "logistic_log_loss": 0.45320637753003157,
+        "transformer_epoch_1_log_loss": 0.43735966048172403,
+        "epoch_1_gap": -0.015846717048307535,
+        "ci95_low": -0.032344534970556664,
+        "ci95_high": 0.0020506324038610706
+      },
+      {
+        "trial": "draw_31415_n16",
+        "subset_seed": 31415,
+        "training_seed": 7,
+        "fit_matches": 16,
+        "fit_rounds": 327,
+        "fit_ticks": 5889,
+        "optimizer_steps_epoch_1": 93,
+        "optimizer_steps_epoch_20": 1860,
+        "logistic_log_loss": 0.45320637753003157,
+        "transformer_epoch_1_log_loss": 0.46719102747218133,
+        "epoch_1_gap": 0.013984649942149763,
+        "ci95_low": -0.0060579242080359376,
+        "ci95_high": 0.03739189157000879
+      },
+      {
+        "trial": "draw_31415_n16",
+        "subset_seed": 31415,
+        "training_seed": 2026,
+        "fit_matches": 16,
+        "fit_rounds": 327,
+        "fit_ticks": 5889,
+        "optimizer_steps_epoch_1": 93,
+        "optimizer_steps_epoch_20": 1860,
+        "logistic_log_loss": 0.45320637753003157,
+        "transformer_epoch_1_log_loss": 0.4580112805373836,
+        "epoch_1_gap": 0.004804903007352035,
+        "ci95_low": -0.008588977143472966,
+        "ci95_high": 0.020901783031634938
+      },
+      {
+        "trial": "draw_31415_n24",
+        "subset_seed": 31415,
+        "training_seed": 42,
+        "fit_matches": 24,
+        "fit_rounds": 521,
+        "fit_ticks": 9511,
+        "optimizer_steps_epoch_1": 149,
+        "optimizer_steps_epoch_20": 2980,
+        "logistic_log_loss": 0.43853700162292863,
+        "transformer_epoch_1_log_loss": 0.4462641084541056,
+        "epoch_1_gap": 0.007727106831176944,
+        "ci95_low": -0.007121029250944986,
+        "ci95_high": 0.024720256274825787
+      },
+      {
+        "trial": "draw_31415_n24",
+        "subset_seed": 31415,
+        "training_seed": 7,
+        "fit_matches": 24,
+        "fit_rounds": 521,
+        "fit_ticks": 9511,
+        "optimizer_steps_epoch_1": 149,
+        "optimizer_steps_epoch_20": 2980,
+        "logistic_log_loss": 0.43853700162292863,
+        "transformer_epoch_1_log_loss": 0.4333495777033824,
+        "epoch_1_gap": -0.005187423919546241,
+        "ci95_low": -0.01646939062916531,
+        "ci95_high": 0.006692162481479698
+      },
+      {
+        "trial": "draw_31415_n24",
+        "subset_seed": 31415,
+        "training_seed": 2026,
+        "fit_matches": 24,
+        "fit_rounds": 521,
+        "fit_ticks": 9511,
+        "optimizer_steps_epoch_1": 149,
+        "optimizer_steps_epoch_20": 2980,
+        "logistic_log_loss": 0.43853700162292863,
+        "transformer_epoch_1_log_loss": 0.43883779971031966,
+        "epoch_1_gap": 0.00030079808739102987,
+        "ci95_low": -0.017900971003503692,
+        "ci95_high": 0.019068847569883036
+      },
+      {
+        "trial": "draw_27182_n16",
+        "subset_seed": 27182,
+        "training_seed": 42,
+        "fit_matches": 16,
+        "fit_rounds": 366,
+        "fit_ticks": 6634,
+        "optimizer_steps_epoch_1": 104,
+        "optimizer_steps_epoch_20": 2080,
+        "logistic_log_loss": 0.45284034745051766,
+        "transformer_epoch_1_log_loss": 0.4427570836357411,
+        "epoch_1_gap": -0.010083263814776533,
+        "ci95_low": -0.025080344203914688,
+        "ci95_high": 0.005789282922244832
+      },
+      {
+        "trial": "draw_27182_n16",
+        "subset_seed": 27182,
+        "training_seed": 7,
+        "fit_matches": 16,
+        "fit_rounds": 366,
+        "fit_ticks": 6634,
+        "optimizer_steps_epoch_1": 104,
+        "optimizer_steps_epoch_20": 2080,
+        "logistic_log_loss": 0.45284034745051766,
+        "transformer_epoch_1_log_loss": 0.44571721700144384,
+        "epoch_1_gap": -0.007123130449073811,
+        "ci95_low": -0.02406023192743181,
+        "ci95_high": 0.010130769470942373
+      },
+      {
+        "trial": "draw_27182_n16",
+        "subset_seed": 27182,
+        "training_seed": 2026,
+        "fit_matches": 16,
+        "fit_rounds": 366,
+        "fit_ticks": 6634,
+        "optimizer_steps_epoch_1": 104,
+        "optimizer_steps_epoch_20": 2080,
+        "logistic_log_loss": 0.45284034745051766,
+        "transformer_epoch_1_log_loss": 0.46126094349334407,
+        "epoch_1_gap": 0.008420596042826411,
+        "ci95_low": -0.02821988229136981,
+        "ci95_high": 0.04412405865883479
+      },
+      {
+        "trial": "draw_27182_n24",
+        "subset_seed": 27182,
+        "training_seed": 42,
+        "fit_matches": 24,
+        "fit_rounds": 530,
+        "fit_ticks": 9586,
+        "optimizer_steps_epoch_1": 150,
+        "optimizer_steps_epoch_20": 3000,
+        "logistic_log_loss": 0.44227979386902194,
+        "transformer_epoch_1_log_loss": 0.4351733343141214,
+        "epoch_1_gap": -0.007106459554900524,
+        "ci95_low": -0.025926387311193635,
+        "ci95_high": 0.014910725975186199
+      },
+      {
+        "trial": "draw_27182_n24",
+        "subset_seed": 27182,
+        "training_seed": 7,
+        "fit_matches": 24,
+        "fit_rounds": 530,
+        "fit_ticks": 9586,
+        "optimizer_steps_epoch_1": 150,
+        "optimizer_steps_epoch_20": 3000,
+        "logistic_log_loss": 0.44227979386902194,
+        "transformer_epoch_1_log_loss": 0.4297548719061323,
+        "epoch_1_gap": -0.012524921962889624,
+        "ci95_low": -0.023659803807552157,
+        "ci95_high": -0.00144460894506027
+      },
+      {
+        "trial": "draw_27182_n24",
+        "subset_seed": 27182,
+        "training_seed": 2026,
+        "fit_matches": 24,
+        "fit_rounds": 530,
+        "fit_ticks": 9586,
+        "optimizer_steps_epoch_1": 150,
+        "optimizer_steps_epoch_20": 3000,
+        "logistic_log_loss": 0.44227979386902194,
+        "transformer_epoch_1_log_loss": 0.4282529657338609,
+        "epoch_1_gap": -0.01402682813516104,
+        "ci95_low": -0.026718729167927516,
+        "ci95_high": 0.001789908411703598
+      },
+      {
+        "trial": "full_n32",
+        "subset_seed": null,
+        "training_seed": 42,
+        "fit_matches": 32,
+        "fit_rounds": 686,
+        "fit_ticks": 12420,
+        "optimizer_steps_epoch_1": 195,
+        "optimizer_steps_epoch_20": 3900,
+        "logistic_log_loss": 0.43455373453225704,
+        "transformer_epoch_1_log_loss": 0.4472924169065758,
+        "epoch_1_gap": 0.012738682374318744,
+        "ci95_low": -0.009808085001166988,
+        "ci95_high": 0.036641117463841216
+      },
+      {
+        "trial": "full_n32",
+        "subset_seed": null,
+        "training_seed": 7,
+        "fit_matches": 32,
+        "fit_rounds": 686,
+        "fit_ticks": 12420,
+        "optimizer_steps_epoch_1": 195,
+        "optimizer_steps_epoch_20": 3900,
+        "logistic_log_loss": 0.43455373453225704,
+        "transformer_epoch_1_log_loss": 0.4262752954086949,
+        "epoch_1_gap": -0.008278439123562131,
+        "ci95_low": -0.0223920135819372,
+        "ci95_high": 0.006429713722707658
+      },
+      {
+        "trial": "full_n32",
+        "subset_seed": null,
+        "training_seed": 2026,
+        "fit_matches": 32,
+        "fit_rounds": 686,
+        "fit_ticks": 12420,
+        "optimizer_steps_epoch_1": 195,
+        "optimizer_steps_epoch_20": 3900,
+        "logistic_log_loss": 0.43455373453225704,
+        "transformer_epoch_1_log_loss": 0.4565722520992542,
+        "epoch_1_gap": 0.022018517566997187,
+        "ci95_low": 0.0013811744834582196,
+        "ci95_high": 0.04648036404793125
+      }
+    ],
+    "gap_changes": [
+      {
+        "subset_seed": 31415,
+        "training_seed": 42,
+        "gap_16": -0.015846717048307535,
+        "gap_32": 0.012738682374318744,
+        "gap_change_32_minus_16": 0.02858539942262628,
+        "ci95_low": -0.0056559752002388304,
+        "ci95_high": 0.06039665298595518
+      },
+      {
+        "subset_seed": 31415,
+        "training_seed": 7,
+        "gap_16": 0.013984649942149763,
+        "gap_32": -0.008278439123562131,
+        "gap_change_32_minus_16": -0.022263089065711894,
+        "ci95_low": -0.049064790392652005,
+        "ci95_high": 0.002921241654486131
+      },
+      {
+        "subset_seed": 31415,
+        "training_seed": 2026,
+        "gap_16": 0.004804903007352035,
+        "gap_32": 0.022018517566997187,
+        "gap_change_32_minus_16": 0.017213614559645152,
+        "ci95_low": -0.01500271781598276,
+        "ci95_high": 0.04837798958343959
+      },
+      {
+        "subset_seed": 27182,
+        "training_seed": 42,
+        "gap_16": -0.010083263814776533,
+        "gap_32": 0.012738682374318744,
+        "gap_change_32_minus_16": 0.022821946189095277,
+        "ci95_low": -0.008655426309509289,
+        "ci95_high": 0.051972054355129096
+      },
+      {
+        "subset_seed": 27182,
+        "training_seed": 7,
+        "gap_16": -0.007123130449073811,
+        "gap_32": -0.008278439123562131,
+        "gap_change_32_minus_16": -0.00115530867448832,
+        "ci95_low": -0.015457970085483089,
+        "ci95_high": 0.013294000209595919
+      },
+      {
+        "subset_seed": 27182,
+        "training_seed": 2026,
+        "gap_16": 0.008420596042826411,
+        "gap_32": 0.022018517566997187,
+        "gap_change_32_minus_16": 0.013597921524170775,
+        "ci95_low": -0.03635525218019095,
+        "ci95_high": 0.07067177244432796
+      }
+    ],
+    "curve_summary": [
+      {
+        "trial": "draw_31415_n16",
+        "subset_seed": 31415,
+        "training_seed": 42,
+        "fit_matches": 16,
+        "fit_rounds": 327,
+        "fit_ticks": 5889,
+        "optimizer_steps_epoch_1": 93,
+        "optimizer_steps_epoch_20": 1860,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 93,
+        "development_log_loss_epoch_1": 0.43735966048172403,
+        "minimum_development_log_loss": 0.43735966048172403,
+        "development_log_loss_epoch_20": 0.9097415726077407,
+        "development_log_loss_rise_from_minimum": 0.47238191212601666,
+        "training_log_loss_epoch_1": 0.38604513042193805,
+        "training_log_loss_epoch_20": 0.1527911043420757
+      },
+      {
+        "trial": "draw_31415_n16",
+        "subset_seed": 31415,
+        "training_seed": 7,
+        "fit_matches": 16,
+        "fit_rounds": 327,
+        "fit_ticks": 5889,
+        "optimizer_steps_epoch_1": 93,
+        "optimizer_steps_epoch_20": 1860,
+        "minimum_development_epoch": 2,
+        "optimizer_steps_at_minimum": 186,
+        "development_log_loss_epoch_1": 0.46719102747218133,
+        "minimum_development_log_loss": 0.45979701959292707,
+        "development_log_loss_epoch_20": 0.7188708303690409,
+        "development_log_loss_rise_from_minimum": 0.2590738107761138,
+        "training_log_loss_epoch_1": 0.39232380059671285,
+        "training_log_loss_epoch_20": 0.15765383180959747
+      },
+      {
+        "trial": "draw_31415_n16",
+        "subset_seed": 31415,
+        "training_seed": 2026,
+        "fit_matches": 16,
+        "fit_rounds": 327,
+        "fit_ticks": 5889,
+        "optimizer_steps_epoch_1": 93,
+        "optimizer_steps_epoch_20": 1860,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 93,
+        "development_log_loss_epoch_1": 0.4580112805373836,
+        "minimum_development_log_loss": 0.4580112805373836,
+        "development_log_loss_epoch_20": 0.7788903882285267,
+        "development_log_loss_rise_from_minimum": 0.32087910769114314,
+        "training_log_loss_epoch_1": 0.39718059859604476,
+        "training_log_loss_epoch_20": 0.16519197096720206
+      },
+      {
+        "trial": "draw_31415_n24",
+        "subset_seed": 31415,
+        "training_seed": 42,
+        "fit_matches": 24,
+        "fit_rounds": 521,
+        "fit_ticks": 9511,
+        "optimizer_steps_epoch_1": 149,
+        "optimizer_steps_epoch_20": 2980,
+        "minimum_development_epoch": 5,
+        "optimizer_steps_at_minimum": 745,
+        "development_log_loss_epoch_1": 0.4462641084541056,
+        "minimum_development_log_loss": 0.4444636029986055,
+        "development_log_loss_epoch_20": 0.72535530049544,
+        "development_log_loss_rise_from_minimum": 0.28089169749683446,
+        "training_log_loss_epoch_1": 0.41795984857279095,
+        "training_log_loss_epoch_20": 0.1691361211034045
+      },
+      {
+        "trial": "draw_31415_n24",
+        "subset_seed": 31415,
+        "training_seed": 7,
+        "fit_matches": 24,
+        "fit_rounds": 521,
+        "fit_ticks": 9511,
+        "optimizer_steps_epoch_1": 149,
+        "optimizer_steps_epoch_20": 2980,
+        "minimum_development_epoch": 2,
+        "optimizer_steps_at_minimum": 298,
+        "development_log_loss_epoch_1": 0.4333495777033824,
+        "minimum_development_log_loss": 0.4311407954698827,
+        "development_log_loss_epoch_20": 0.7454749252729891,
+        "development_log_loss_rise_from_minimum": 0.3143341298031064,
+        "training_log_loss_epoch_1": 0.41117307821855514,
+        "training_log_loss_epoch_20": 0.18194238064083204
+      },
+      {
+        "trial": "draw_31415_n24",
+        "subset_seed": 31415,
+        "training_seed": 2026,
+        "fit_matches": 24,
+        "fit_rounds": 521,
+        "fit_ticks": 9511,
+        "optimizer_steps_epoch_1": 149,
+        "optimizer_steps_epoch_20": 2980,
+        "minimum_development_epoch": 2,
+        "optimizer_steps_at_minimum": 298,
+        "development_log_loss_epoch_1": 0.43883779971031966,
+        "minimum_development_log_loss": 0.43288953180125084,
+        "development_log_loss_epoch_20": 0.6389206039295662,
+        "development_log_loss_rise_from_minimum": 0.20603107212831534,
+        "training_log_loss_epoch_1": 0.41697987967538286,
+        "training_log_loss_epoch_20": 0.18895717559465372
+      },
+      {
+        "trial": "draw_27182_n16",
+        "subset_seed": 27182,
+        "training_seed": 42,
+        "fit_matches": 16,
+        "fit_rounds": 366,
+        "fit_ticks": 6634,
+        "optimizer_steps_epoch_1": 104,
+        "optimizer_steps_epoch_20": 2080,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 104,
+        "development_log_loss_epoch_1": 0.4427570836357411,
+        "minimum_development_log_loss": 0.4427570836357411,
+        "development_log_loss_epoch_20": 0.9903885413091646,
+        "development_log_loss_rise_from_minimum": 0.5476314576734236,
+        "training_log_loss_epoch_1": 0.4176655244384508,
+        "training_log_loss_epoch_20": 0.17522111777495164
+      },
+      {
+        "trial": "draw_27182_n16",
+        "subset_seed": 27182,
+        "training_seed": 7,
+        "fit_matches": 16,
+        "fit_rounds": 366,
+        "fit_ticks": 6634,
+        "optimizer_steps_epoch_1": 104,
+        "optimizer_steps_epoch_20": 2080,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 104,
+        "development_log_loss_epoch_1": 0.4457172170014439,
+        "minimum_development_log_loss": 0.4457172170014439,
+        "development_log_loss_epoch_20": 0.7614193802991981,
+        "development_log_loss_rise_from_minimum": 0.3157021632977542,
+        "training_log_loss_epoch_1": 0.4213354409845501,
+        "training_log_loss_epoch_20": 0.2227843538905595
+      },
+      {
+        "trial": "draw_27182_n16",
+        "subset_seed": 27182,
+        "training_seed": 2026,
+        "fit_matches": 16,
+        "fit_rounds": 366,
+        "fit_ticks": 6634,
+        "optimizer_steps_epoch_1": 104,
+        "optimizer_steps_epoch_20": 2080,
+        "minimum_development_epoch": 3,
+        "optimizer_steps_at_minimum": 312,
+        "development_log_loss_epoch_1": 0.46126094349334407,
+        "minimum_development_log_loss": 0.4581102197587982,
+        "development_log_loss_epoch_20": 0.7880872772139201,
+        "development_log_loss_rise_from_minimum": 0.32997705745512196,
+        "training_log_loss_epoch_1": 0.4413771785993442,
+        "training_log_loss_epoch_20": 0.17947380108892805
+      },
+      {
+        "trial": "draw_27182_n24",
+        "subset_seed": 27182,
+        "training_seed": 42,
+        "fit_matches": 24,
+        "fit_rounds": 530,
+        "fit_ticks": 9586,
+        "optimizer_steps_epoch_1": 150,
+        "optimizer_steps_epoch_20": 3000,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 150,
+        "development_log_loss_epoch_1": 0.4351733343141214,
+        "minimum_development_log_loss": 0.4351733343141214,
+        "development_log_loss_epoch_20": 0.9338490561695336,
+        "development_log_loss_rise_from_minimum": 0.4986757218554122,
+        "training_log_loss_epoch_1": 0.41786460193928454,
+        "training_log_loss_epoch_20": 0.1592882767285638
+      },
+      {
+        "trial": "draw_27182_n24",
+        "subset_seed": 27182,
+        "training_seed": 7,
+        "fit_matches": 24,
+        "fit_rounds": 530,
+        "fit_ticks": 9586,
+        "optimizer_steps_epoch_1": 150,
+        "optimizer_steps_epoch_20": 3000,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 150,
+        "development_log_loss_epoch_1": 0.4297548719061323,
+        "minimum_development_log_loss": 0.4297548719061323,
+        "development_log_loss_epoch_20": 0.8476315076004248,
+        "development_log_loss_rise_from_minimum": 0.4178766356942925,
+        "training_log_loss_epoch_1": 0.4141117802975783,
+        "training_log_loss_epoch_20": 0.18876022193968303
+      },
+      {
+        "trial": "draw_27182_n24",
+        "subset_seed": 27182,
+        "training_seed": 2026,
+        "fit_matches": 24,
+        "fit_rounds": 530,
+        "fit_ticks": 9586,
+        "optimizer_steps_epoch_1": 150,
+        "optimizer_steps_epoch_20": 3000,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 150,
+        "development_log_loss_epoch_1": 0.4282529657338609,
+        "minimum_development_log_loss": 0.4282529657338609,
+        "development_log_loss_epoch_20": 0.8145656388654027,
+        "development_log_loss_rise_from_minimum": 0.3863126731315418,
+        "training_log_loss_epoch_1": 0.4179119509987788,
+        "training_log_loss_epoch_20": 0.18638615984833157
+      },
+      {
+        "trial": "full_n32",
+        "subset_seed": null,
+        "training_seed": 42,
+        "fit_matches": 32,
+        "fit_rounds": 686,
+        "fit_ticks": 12420,
+        "optimizer_steps_epoch_1": 195,
+        "optimizer_steps_epoch_20": 3900,
+        "minimum_development_epoch": 3,
+        "optimizer_steps_at_minimum": 585,
+        "development_log_loss_epoch_1": 0.4472924169065758,
+        "minimum_development_log_loss": 0.4339343179349505,
+        "development_log_loss_epoch_20": 0.7781081638740764,
+        "development_log_loss_rise_from_minimum": 0.3441738459391259,
+        "training_log_loss_epoch_1": 0.43030427266414173,
+        "training_log_loss_epoch_20": 0.19125048069641856
+      },
+      {
+        "trial": "full_n32",
+        "subset_seed": null,
+        "training_seed": 7,
+        "fit_matches": 32,
+        "fit_rounds": 686,
+        "fit_ticks": 12420,
+        "optimizer_steps_epoch_1": 195,
+        "optimizer_steps_epoch_20": 3900,
+        "minimum_development_epoch": 1,
+        "optimizer_steps_at_minimum": 195,
+        "development_log_loss_epoch_1": 0.4262752954086949,
+        "minimum_development_log_loss": 0.4262752954086949,
+        "development_log_loss_epoch_20": 0.7723035815982676,
+        "development_log_loss_rise_from_minimum": 0.3460282861895727,
+        "training_log_loss_epoch_1": 0.4169039951793138,
+        "training_log_loss_epoch_20": 0.1923901036509657
+      },
+      {
+        "trial": "full_n32",
+        "subset_seed": null,
+        "training_seed": 2026,
+        "fit_matches": 32,
+        "fit_rounds": 686,
+        "fit_ticks": 12420,
+        "optimizer_steps_epoch_1": 195,
+        "optimizer_steps_epoch_20": 3900,
+        "minimum_development_epoch": 2,
+        "optimizer_steps_at_minimum": 390,
+        "development_log_loss_epoch_1": 0.4565722520992542,
+        "minimum_development_log_loss": 0.43773276798573224,
+        "development_log_loss_epoch_20": 0.7696471865451916,
+        "development_log_loss_rise_from_minimum": 0.33191441855945936,
+        "training_log_loss_epoch_1": 0.4243739170869593,
+        "training_log_loss_epoch_20": 0.19570926004575565
+      }
+    ],
+    "source_report_sha256": "61bfa10799185e6c11146df4ef0f68e137a6064a84f1a1d7df6a3dea5463568e",
+    "development": {
+      "matches": 10,
+      "rounds": 214,
+      "samples": 3945,
+      "first_date": "2026-07-31",
+      "last_date": "2026-08-19",
+      "events": [
+        "blast-bounty-2026-season-2-finals",
+        "esports-world-cup-2026"
+      ]
+    }
+  },
+  "training_expansion": {
+    "created_at_utc": "2026-11-21T09:24:19.425564+00:00",
+    "run_mode": "mirage_train_expansion_historical_development",
+    "reference_fit": {
+      "matches": 32,
+      "rounds": 686,
+      "samples": 12420,
+      "first_date": "2026-04-13",
+      "last_date": "2026-06-21",
+      "events": [
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026"
+      ]
+    },
+    "supplement": {
+      "matches": 15,
+      "rounds": 349,
+      "samples": 6252,
+      "first_date": "2026-03-18",
+      "last_date": "2026-05-11",
+      "events": [
+        "blast-open-rotterdam-2026",
+        "pgl-astana-2026"
+      ]
+    },
+    "development_fit": {
+      "matches": 47,
+      "rounds": 1035,
+      "samples": 18672,
+      "first_date": "2026-03-18",
+      "last_date": "2026-06-21",
+      "events": [
+        "blast-open-rotterdam-2026",
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026",
+        "pgl-astana-2026"
+      ]
+    },
+    "development": {
+      "matches": 10,
+      "rounds": 214,
+      "samples": 3945,
+      "first_date": "2026-07-31",
+      "last_date": "2026-08-19",
+      "events": [
+        "blast-bounty-2026-season-2-finals",
+        "esports-world-cup-2026"
+      ]
+    },
+    "final_fit": {
+      "matches": 49,
+      "rounds": 1079,
+      "samples": 19460,
+      "first_date": "2026-03-18",
+      "last_date": "2026-09-06",
+      "events": [
+        "blast-open-porto-2026",
+        "blast-open-rotterdam-2026",
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026",
+        "pgl-astana-2026"
+      ]
+    },
+    "missing_match_ids": [
+      "hltv:2394133"
+    ],
+    "selected_epochs": {
+      "42": 1,
+      "7": 2,
+      "2026": 7
+    },
+    "development_scores": [
+      {
+        "fit": "full_n32",
+        "model": "logistic",
+        "seed": null,
+        "log_loss": 0.43455373453225704,
+        "brier_score": 0.14690378953788524,
+        "roc_auc": 0.8660482177337793
+      },
+      {
+        "fit": "full_n32",
+        "model": "snapshot_epoch_1",
+        "seed": 42,
+        "log_loss": 0.4472924169065758,
+        "brier_score": 0.15140649914241008,
+        "roc_auc": 0.8601092532330109,
+        "tf_minus_logistic": 0.012738682374318744,
+        "ci95_low": -0.009808085001166988,
+        "ci95_high": 0.036641117463841216
+      },
+      {
+        "fit": "full_n32",
+        "model": "snapshot_epoch_1",
+        "seed": 7,
+        "log_loss": 0.4262752954086949,
+        "brier_score": 0.1432221873351864,
+        "roc_auc": 0.8733329511501855,
+        "tf_minus_logistic": -0.008278439123562131,
+        "ci95_low": -0.0223920135819372,
+        "ci95_high": 0.006429713722707658
+      },
+      {
+        "fit": "full_n32",
+        "model": "snapshot_epoch_1",
+        "seed": 2026,
+        "log_loss": 0.4565722520992542,
+        "brier_score": 0.15419802505376684,
+        "roc_auc": 0.8636194703191568,
+        "tf_minus_logistic": 0.022018517566997187,
+        "ci95_low": 0.0013811744834582196,
+        "ci95_high": 0.04648036404793125
+      },
+      {
+        "fit": "expanded",
+        "model": "logistic",
+        "seed": null,
+        "log_loss": 0.4212429084990472,
+        "brier_score": 0.14100985496456045,
+        "roc_auc": 0.8761838027318244
+      },
+      {
+        "fit": "expanded",
+        "model": "snapshot_epoch_1",
+        "seed": 42,
+        "log_loss": 0.4175276949285506,
+        "brier_score": 0.13898314387235183,
+        "roc_auc": 0.8832203815308238,
+        "tf_minus_logistic": -0.003715213570496645,
+        "ci95_low": -0.018695598963483447,
+        "ci95_high": 0.011527378939326666,
+        "expansion_change_in_gap": -0.01645389594481539,
+        "change_ci95_low": -0.041967330216866085,
+        "change_ci95_high": 0.010522052379567673
+      },
+      {
+        "fit": "expanded",
+        "model": "snapshot_epoch_1",
+        "seed": 7,
+        "log_loss": 0.41946638479231696,
+        "brier_score": 0.13956286478390612,
+        "roc_auc": 0.8814775437425817,
+        "tf_minus_logistic": -0.0017765237067302597,
+        "ci95_low": -0.013031578320184676,
+        "ci95_high": 0.00867941965059456,
+        "expansion_change_in_gap": 0.006501915416831872,
+        "change_ci95_low": -0.005506530592395983,
+        "change_ci95_high": 0.01957794786296227
+      },
+      {
+        "fit": "expanded",
+        "model": "snapshot_epoch_1",
+        "seed": 2026,
+        "log_loss": 0.4472558986987662,
+        "brier_score": 0.14727960499439124,
+        "roc_auc": 0.873381204894967,
+        "tf_minus_logistic": 0.026012990199718977,
+        "ci95_low": 0.017952072045721183,
+        "ci95_high": 0.03603672060701663,
+        "expansion_change_in_gap": 0.0039944726327217905,
+        "change_ci95_low": -0.017398923304656807,
+        "change_ci95_high": 0.023994792067264476
+      }
+    ],
+    "prospective_freeze_sha256": "ff4833d6e19850d222e70bff02c341213c6bebb222517a609e3a89db293013a9",
+    "source_report_sha256": "0a1914e1d98aa525e0d13ff9f8f9ee287539af542dea339ecd3ab50f9a529608"
+  },
+  "dropout": {
+    "created_at_utc": "2026-11-21T15:49:16.296037+00:00",
+    "run_mode": "mirage_dropout_historical_development",
+    "scope": "Previously observed Bounty and EWC development data support candidate selection. Singapore Mirage is reserved for independent evaluation after candidate and scoring freeze. The prior 50 matches retain their retrospective role. Bucharest stays sealed.",
+    "plan_sha256": "491ca27f76071f71bdaab3dc9e3ca5b90b59d49527f7edfd22c9a105ac05503a",
+    "development_fit": {
+      "matches": 47,
+      "rounds": 1035,
+      "samples": 18672,
+      "first_date": "2026-03-18",
+      "last_date": "2026-06-21",
+      "events": [
+        "blast-open-rotterdam-2026",
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026",
+        "pgl-astana-2026"
+      ]
+    },
+    "development": {
+      "matches": 10,
+      "rounds": 214,
+      "samples": 3945,
+      "first_date": "2026-07-31",
+      "last_date": "2026-08-19",
+      "events": [
+        "blast-bounty-2026-season-2-finals",
+        "esports-world-cup-2026"
+      ]
+    },
+    "planned_final_fit": {
+      "matches": 49,
+      "rounds": 1079,
+      "samples": 19460,
+      "first_date": "2026-03-18",
+      "last_date": "2026-09-06",
+      "events": [
+        "blast-open-porto-2026",
+        "blast-open-rotterdam-2026",
+        "iem-atlanta-2026",
+        "iem-cologne-major-2026",
+        "iem-rio-2026",
+        "pgl-astana-2026"
+      ]
+    },
+    "bootstrap": {
+      "unit": "match_id",
+      "draws": 2000,
+      "seed": 42,
+      "confidence": 0.95
+    },
+    "adopt_d020": false,
+    "shared_epochs": {
+      "d010": 2,
+      "d020": 2
+    },
+    "gate": [
+      {
+        "cohort": "pooled",
+        "d010_mean_log_loss": 0.4209100123031572,
+        "d020_mean_log_loss": 0.4207717170968355,
+        "delta": -0.00013829520632174797,
+        "improved": true
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "d010_mean_log_loss": 0.43089891012935294,
+        "d020_mean_log_loss": 0.42945321031111033,
+        "delta": -0.0014456998182426073,
+        "improved": true
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "d010_mean_log_loss": 0.4171077866789923,
+        "d020_mean_log_loss": 0.4174671487120471,
+        "delta": 0.00035936203305481085,
+        "improved": false
+      }
+    ],
+    "scores": [
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "epoch_1",
+        "seed": 42,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.4175276949285506,
+        "d020_log_loss": 0.41662172326813,
+        "d020_minus_d010": -0.000905971660420557,
+        "d020_minus_d010_ci95_low": -0.005357090562821481,
+        "d020_minus_d010_ci95_high": 0.002235496703008228,
+        "d010_minus_logistic": -0.003715213570496645,
+        "d010_minus_logistic_ci95_low": -0.018695598963483447,
+        "d010_minus_logistic_ci95_high": 0.011527378939326666,
+        "d020_minus_logistic": -0.004621185230917202,
+        "d020_minus_logistic_ci95_low": -0.017632247680133856,
+        "d020_minus_logistic_ci95_high": 0.00787082178892229
+      },
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "epoch_1",
+        "seed": 7,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.41946638479231696,
+        "d020_log_loss": 0.42156161768930356,
+        "d020_minus_d010": 0.0020952328969865985,
+        "d020_minus_d010_ci95_low": 0.0003246738647216613,
+        "d020_minus_d010_ci95_high": 0.00399801174115798,
+        "d010_minus_logistic": -0.0017765237067302597,
+        "d010_minus_logistic_ci95_low": -0.013031578320184676,
+        "d010_minus_logistic_ci95_high": 0.00867941965059456,
+        "d020_minus_logistic": 0.0003187091902563388,
+        "d020_minus_logistic_ci95_low": -0.009789103956435693,
+        "d020_minus_logistic_ci95_high": 0.009775847913268522
+      },
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "epoch_1",
+        "seed": 2026,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.4472558986987662,
+        "d020_log_loss": 0.4437856933625358,
+        "d020_minus_d010": -0.003470205336230381,
+        "d020_minus_d010_ci95_low": -0.007482199440076433,
+        "d020_minus_d010_ci95_high": 0.001246830829574952,
+        "d010_minus_logistic": 0.026012990199718977,
+        "d010_minus_logistic_ci95_low": 0.017952072045721183,
+        "d010_minus_logistic_ci95_high": 0.03603672060701663,
+        "d020_minus_logistic": 0.022542784863488596,
+        "d020_minus_logistic_ci95_low": 0.015192367676149916,
+        "d020_minus_logistic_ci95_high": 0.031230731911177315
+      },
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "epoch_1",
+        "seed": null,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.42808332613987793,
+        "d020_log_loss": 0.42732301143998974,
+        "d020_minus_d010": -0.0007603146998881871,
+        "d020_minus_d010_ci95_low": -0.0019826166060014265,
+        "d020_minus_d010_ci95_high": 0.0005482717611801417,
+        "d010_minus_logistic": 0.006840417640830709,
+        "d010_minus_logistic_ci95_low": -0.0016910842603503422,
+        "d010_minus_logistic_ci95_high": 0.01531153120837432,
+        "d020_minus_logistic": 0.006080102940942522,
+        "d020_minus_logistic_ci95_low": -0.0017080678805711485,
+        "d020_minus_logistic_ci95_high": 0.01348410917585928
+      },
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "selected",
+        "seed": 42,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.42040584481939763,
+        "d020_log_loss": 0.41800994154450516,
+        "d020_minus_d010": -0.0023959032748924747,
+        "d020_minus_d010_ci95_low": -0.006621653261235587,
+        "d020_minus_d010_ci95_high": 0.0025349361186658968,
+        "d010_minus_logistic": -0.0008370636796495856,
+        "d010_minus_logistic_ci95_low": -0.01238738194092533,
+        "d010_minus_logistic_ci95_high": 0.00999578396655421,
+        "d020_minus_logistic": -0.0032329669545420603,
+        "d020_minus_logistic_ci95_low": -0.013202416405064532,
+        "d020_minus_logistic_ci95_high": 0.007102252374772292
+      },
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "selected",
+        "seed": 7,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.41709008334360353,
+        "d020_log_loss": 0.4173090810645577,
+        "d020_minus_d010": 0.0002189977209541838,
+        "d020_minus_d010_ci95_low": -0.0020483886771519217,
+        "d020_minus_d010_ci95_high": 0.00193433940527352,
+        "d010_minus_logistic": -0.004152825155443685,
+        "d010_minus_logistic_ci95_low": -0.01508682181008637,
+        "d010_minus_logistic_ci95_high": 0.006399585996089887,
+        "d020_minus_logistic": -0.003933827434489501,
+        "d020_minus_logistic_ci95_low": -0.014731524270432348,
+        "d020_minus_logistic_ci95_high": 0.006472653043753681
+      },
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "selected",
+        "seed": 2026,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.4252341087464704,
+        "d020_log_loss": 0.42699612868144365,
+        "d020_minus_d010": 0.001762019934973269,
+        "d020_minus_d010_ci95_low": -0.0010666366008059106,
+        "d020_minus_d010_ci95_high": 0.004890923047462373,
+        "d010_minus_logistic": 0.003991200247423166,
+        "d010_minus_logistic_ci95_low": -0.011562186024959566,
+        "d010_minus_logistic_ci95_high": 0.018006165503680966,
+        "d020_minus_logistic": 0.005753220182396435,
+        "d020_minus_logistic_ci95_low": -0.0089990964955579,
+        "d020_minus_logistic_ci95_high": 0.019347675103978865
+      },
+      {
+        "cohort": "pooled",
+        "matches": 10,
+        "rounds": 214,
+        "samples": 3945,
+        "comparison": "selected",
+        "seed": null,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4212429084990472,
+        "d010_log_loss": 0.4209100123031572,
+        "d020_log_loss": 0.4207717170968355,
+        "d020_minus_d010": -0.00013829520632174797,
+        "d020_minus_d010_ci95_low": -0.0019118628004312203,
+        "d020_minus_d010_ci95_high": 0.0022161136943089155,
+        "d010_minus_logistic": -0.00033289619588999786,
+        "d010_minus_logistic_ci95_low": -0.011127982671464335,
+        "d010_minus_logistic_ci95_high": 0.010322863894342154,
+        "d020_minus_logistic": -0.0004711914022117458,
+        "d020_minus_logistic_ci95_low": -0.010602455267278908,
+        "d020_minus_logistic_ci95_high": 0.009886927858166172
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "epoch_1",
+        "seed": 42,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.4137089762869926,
+        "d020_log_loss": 0.41214209177872474,
+        "d020_minus_d010": -0.0015668845082678629,
+        "d020_minus_d010_ci95_low": -0.00840414662521094,
+        "d020_minus_d010_ci95_high": 0.002333588943826348,
+        "d010_minus_logistic": -0.019101909135683215,
+        "d010_minus_logistic_ci95_low": -0.04836837053143134,
+        "d010_minus_logistic_ci95_high": 0.005251810198498963,
+        "d020_minus_logistic": -0.020668793643951078,
+        "d020_minus_logistic_ci95_low": -0.04603478158760499,
+        "d020_minus_logistic_ci95_high": -0.003152336426711977
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "epoch_1",
+        "seed": 7,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.4160256860509572,
+        "d020_log_loss": 0.4203335359059551,
+        "d020_minus_d010": 0.004307849854997936,
+        "d020_minus_d010_ci95_low": 0.001612095898362198,
+        "d020_minus_d010_ci95_high": 0.006518816801895977,
+        "d010_minus_logistic": -0.01678519937171863,
+        "d010_minus_logistic_ci95_low": -0.02772374390276955,
+        "d010_minus_logistic_ci95_high": 0.0007313817165828795,
+        "d020_minus_logistic": -0.012477349516720693,
+        "d020_minus_logistic_ci95_low": -0.02611164800440735,
+        "d020_minus_logistic_ci95_high": 0.005926716754404537
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "epoch_1",
+        "seed": 2026,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.46213619376041853,
+        "d020_log_loss": 0.4573450168196902,
+        "d020_minus_d010": -0.004791176940728337,
+        "d020_minus_d010_ci95_low": -0.012930948583226243,
+        "d020_minus_d010_ci95_high": 0.0012326409413326855,
+        "d010_minus_logistic": 0.029325308337742717,
+        "d010_minus_logistic_ci95_low": 0.016642149561712782,
+        "d010_minus_logistic_ci95_high": 0.05927601607484978,
+        "d020_minus_logistic": 0.02453413139701438,
+        "d020_minus_logistic_ci95_low": 0.012664598088314605,
+        "d020_minus_logistic_ci95_high": 0.04634506749162354
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "epoch_1",
+        "seed": null,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.4306236186994561,
+        "d020_log_loss": 0.42994021483479,
+        "d020_minus_d010": -0.0006834038646660878,
+        "d020_minus_d010_ci95_low": -0.002102110598424689,
+        "d020_minus_d010_ci95_high": -1.0622210403266052e-05,
+        "d010_minus_logistic": -0.0021872667232197274,
+        "d010_minus_logistic_ci95_low": -0.019816654957496016,
+        "d010_minus_logistic_ci95_high": 0.01670943276805037,
+        "d020_minus_logistic": -0.002870670587885815,
+        "d020_minus_logistic_ci95_low": -0.019827277167899282,
+        "d020_minus_logistic_ci95_high": 0.01460732216962568
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "selected",
+        "seed": 42,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.4337452288601199,
+        "d020_log_loss": 0.43104890715741745,
+        "d020_minus_d010": -0.0026963217027024533,
+        "d020_minus_d010_ci95_low": -0.007341158825359406,
+        "d020_minus_d010_ci95_high": 0.005474054279107354,
+        "d010_minus_logistic": 0.0009343434374440851,
+        "d010_minus_logistic_ci95_low": -0.015095161521544886,
+        "d010_minus_logistic_ci95_high": 0.02658642733164507,
+        "d020_minus_logistic": -0.0017619782652583682,
+        "d020_minus_logistic_ci95_low": -0.021629905431111818,
+        "d020_minus_logistic_ci95_high": 0.019245268506285662
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "selected",
+        "seed": 7,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.43020541350223956,
+        "d020_log_loss": 0.427940708302482,
+        "d020_minus_d010": -0.0022647051997575773,
+        "d020_minus_d010_ci95_low": -0.00830273384451774,
+        "d020_minus_d010_ci95_high": 0.0016580757483946051,
+        "d010_minus_logistic": -0.002605471920436253,
+        "d010_minus_logistic_ci95_low": -0.014713898958729543,
+        "d010_minus_logistic_ci95_high": 0.020042637616580317,
+        "d020_minus_logistic": -0.00487017712019383,
+        "d020_minus_logistic_ci95_low": -0.016839829129295103,
+        "d020_minus_logistic_ci95_high": 0.019804955477755293
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "selected",
+        "seed": 2026,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.4287460880256992,
+        "d020_log_loss": 0.4293700154734314,
+        "d020_minus_d010": 0.0006239274477322088,
+        "d020_minus_d010_ci95_low": -0.0019428042040783855,
+        "d020_minus_d010_ci95_high": 0.0036566426968882015,
+        "d010_minus_logistic": -0.004064797396976627,
+        "d010_minus_logistic_ci95_low": -0.0240800861501555,
+        "d010_minus_logistic_ci95_high": 0.041451226099778804,
+        "d020_minus_logistic": -0.0034408699492444184,
+        "d020_minus_logistic_ci95_low": -0.022983357254748593,
+        "d020_minus_logistic_ci95_high": 0.04182890598025868
+      },
+      {
+        "cohort": "blast-bounty-2026-season-2-finals",
+        "matches": 3,
+        "rounds": 59,
+        "samples": 1067,
+        "comparison": "selected",
+        "seed": null,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.4328108854226758,
+        "d010_log_loss": 0.43089891012935294,
+        "d020_log_loss": 0.42945321031111033,
+        "d020_minus_d010": -0.0014456998182426073,
+        "d020_minus_d010_ci95_low": -0.0024003870279014627,
+        "d020_minus_d010_ci95_high": 0.00027598771049264226,
+        "d010_minus_logistic": -0.0019119752933228762,
+        "d010_minus_logistic_ci95_low": -0.016949871176981546,
+        "d010_minus_logistic_ci95_high": 0.02936009701600134,
+        "d020_minus_logistic": -0.0033576751115654835,
+        "d020_minus_logistic_ci95_low": -0.019223028632065153,
+        "d020_minus_logistic_ci95_high": 0.026959709988099878
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "epoch_1",
+        "seed": 42,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.4189812717017887,
+        "d020_log_loss": 0.4183268733189358,
+        "d020_minus_d010": -0.0006543983828529165,
+        "d020_minus_d010_ci95_low": -0.006140325935934167,
+        "d020_minus_d010_ci95_high": 0.0029444984065243847,
+        "d010_minus_logistic": 0.0021416576446388613,
+        "d010_minus_logistic_ci95_low": -0.013661012799728204,
+        "d010_minus_logistic_ci95_high": 0.020804671499359818,
+        "d020_minus_logistic": 0.0014872592617859448,
+        "d020_minus_logistic_ci95_low": -0.012028495871626192,
+        "d020_minus_logistic_ci95_high": 0.015346839817202407
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "epoch_1",
+        "seed": 7,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.4207760701196733,
+        "d020_log_loss": 0.42202908107780396,
+        "d020_minus_d010": 0.0012530109581306847,
+        "d020_minus_d010_ci95_low": -0.0006304639864634504,
+        "d020_minus_d010_ci95_high": 0.0034104697467359163,
+        "d010_minus_logistic": 0.003936456062523408,
+        "d010_minus_logistic_ci95_low": -0.008710663404591978,
+        "d010_minus_logistic_ci95_high": 0.01593729048670367,
+        "d020_minus_logistic": 0.005189467020654093,
+        "d020_minus_logistic_ci95_low": -0.0058107774009716895,
+        "d020_minus_logistic_ci95_high": 0.015735061104437342
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "epoch_1",
+        "seed": 2026,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.441591786384976,
+        "d020_log_loss": 0.43862440249819973,
+        "d020_minus_d010": -0.0029673838867762536,
+        "d020_minus_d010_ci95_low": -0.00799768972366194,
+        "d020_minus_d010_ci95_high": 0.00245234665696048,
+        "d010_minus_logistic": 0.024752172327826116,
+        "d010_minus_logistic_ci95_low": 0.015935320540743755,
+        "d010_minus_logistic_ci95_high": 0.036038812790849625,
+        "d020_minus_logistic": 0.021784788441049863,
+        "d020_minus_logistic_ci95_low": 0.013350386533619875,
+        "d020_minus_logistic_ci95_high": 0.03197116367053032
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "epoch_1",
+        "seed": null,
+        "epoch_d010": 1,
+        "epoch_d020": 1,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.42711637606881264,
+        "d020_log_loss": 0.42632678563164655,
+        "d020_minus_d010": -0.0007895904371660878,
+        "d020_minus_d010_ci95_low": -0.0025643013555813913,
+        "d020_minus_d010_ci95_high": 0.0009895397192959344,
+        "d010_minus_logistic": 0.010276762011662777,
+        "d010_minus_logistic_ci95_low": 0.0011208594939996486,
+        "d010_minus_logistic_ci95_high": 0.01999613064546234,
+        "d020_minus_logistic": 0.009487171574496689,
+        "d020_minus_logistic_ci95_low": 0.0019038877872219876,
+        "d020_minus_logistic_ci95_high": 0.01762205206183761
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "selected",
+        "seed": 42,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.4153282728297033,
+        "d020_log_loss": 0.41304672237571927,
+        "d020_minus_d010": -0.002281550453984038,
+        "d020_minus_d010_ci95_low": -0.008404327126051488,
+        "d020_minus_d010_ci95_high": 0.0038675856049807836,
+        "d010_minus_logistic": -0.001511341227446561,
+        "d010_minus_logistic_ci95_low": -0.015135745105882226,
+        "d010_minus_logistic_ci95_high": 0.011033348831104689,
+        "d020_minus_logistic": -0.003792891681430599,
+        "d020_minus_logistic_ci95_low": -0.015273102938190009,
+        "d020_minus_logistic_ci95_high": 0.008029393270221296
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "selected",
+        "seed": 7,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.41209779637999366,
+        "d020_log_loss": 0.4132622035997994,
+        "d020_minus_d010": 0.0011644072198057631,
+        "d020_minus_d010_ci95_low": -0.00044589903778680107,
+        "d020_minus_d010_ci95_high": 0.0026608706970910347,
+        "d010_minus_logistic": -0.0047418176771562015,
+        "d010_minus_logistic_ci95_low": -0.01772428563233355,
+        "d010_minus_logistic_ci95_high": 0.008258985971644097,
+        "d020_minus_logistic": -0.0035774104573504384,
+        "d020_minus_logistic_ci95_low": -0.01586267496643673,
+        "d020_minus_logistic_ci95_high": 0.009081789502223216
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "selected",
+        "seed": 2026,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.42389729082728,
+        "d020_log_loss": 0.4260925201606225,
+        "d020_minus_d010": 0.0021952293333424855,
+        "d020_minus_d010_ci95_low": -0.0015623721418565107,
+        "d020_minus_d010_ci95_high": 0.006145853546849489,
+        "d010_minus_logistic": 0.007057676770130139,
+        "d010_minus_logistic_ci95_low": -0.010243705429273083,
+        "d010_minus_logistic_ci95_high": 0.01945430754500641,
+        "d020_minus_logistic": 0.009252906103472625,
+        "d020_minus_logistic_ci95_low": -0.0071714133530138,
+        "d020_minus_logistic_ci95_high": 0.020744134648698898
+      },
+      {
+        "cohort": "esports-world-cup-2026",
+        "matches": 7,
+        "rounds": 155,
+        "samples": 2878,
+        "comparison": "selected",
+        "seed": null,
+        "epoch_d010": 2,
+        "epoch_d020": 2,
+        "logistic_log_loss": 0.41683961405714987,
+        "d010_log_loss": 0.4171077866789923,
+        "d020_log_loss": 0.4174671487120471,
+        "d020_minus_d010": 0.00035936203305481085,
+        "d020_minus_d010_ci95_low": -0.002243420117636001,
+        "d020_minus_d010_ci95_high": 0.003164866532783306,
+        "d010_minus_logistic": 0.00026817262184242185,
+        "d010_minus_logistic_ci95_low": -0.011370976582852799,
+        "d010_minus_logistic_ci95_high": 0.011530941772000706,
+        "d020_minus_logistic": 0.0006275346548972327,
+        "d020_minus_logistic_ci95_low": -0.010714837807938584,
+        "d020_minus_logistic_ci95_high": 0.011021649111814469
+      }
+    ],
+    "chosen_prospective_freeze_sha256": "ff4833d6e19850d222e70bff02c341213c6bebb222517a609e3a89db293013a9",
+    "source_report_sha256": "f87f529792a96c881beca65f0a329e1bc44d9ccc80a4de0c05d98d7441789f82",
+    "three_seed_mean_development_log_loss_at_epoch_20": {
+      "d010": 0.58638163031535,
+      "d020": 0.49265493604014465
+    }
+  },
+  "singapore": {
+    "status": "pending_prospective_evaluation",
+    "locked_at_utc": "2026-11-21T09:24:19.300510+00:00",
+    "freeze_receipt": "mirage_singapore_freeze_20261121.json",
+    "freeze_sha256": "ff4833d6e19850d222e70bff02c341213c6bebb222517a609e3a89db293013a9"
+  }
+}

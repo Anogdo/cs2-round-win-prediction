@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "purpose": "Additional historical development validation only. No fit, calibration, or prospective blind-test claim.",
+  "map_name": "de_mirage",
+  "roster_policy": "Use all distinct supplied archives in this batch. Exclude byte-identical archive copies.",
+  "archives": [
+    {
+      "match_id": "hltv:2396016",
+      "matchup": "FaZe vs The MongolZ",
+      "event": "blast-bounty-2026-season-2-finals",
+      "match_date": "2026-07-31",
+      "map_index": 2,
+      "expected_score": {"FaZe": 7, "The MongolZ": 13},
+      "url": "https://www.hltv.org/matches/2396016/faze-vs-the-mongolz-blast-bounty-2026-season-2-finals",
+      "archive": "blast-bounty-2026-season-2-finals-faze-vs-the-mongolz-bo3-b2L-S-M66PuWmkc84ScFDY.rar",
+      "archive_sha256": "a3bba47a22fa952e32271e78e3e31973ca2eb77f5ff46d19cb4b9db59cf5d2a1"
+    },
+    {
+      "match_id": "hltv:2396019",
+      "matchup": "Astralis vs MOUZ",
+      "event": "blast-bounty-2026-season-2-finals",
+      "match_date": "2026-08-01",
+      "map_index": 2,
+      "expected_score": {"Astralis": 9, "MOUZ": 13},
+      "url": "https://www.hltv.org/matches/2396019/astralis-vs-mouz-blast-bounty-2026-season-2-finals",
+      "score_url": "https://www.hltv.org/stats/matches/mapstatsid/234177/astralis-vs-mouz",
+      "archive": "blast-bounty-2026-season-2-finals-astralis-vs-mouz-bo3-GL6fIr97PN55FAkr3XSu7F.rar",
+      "archive_sha256": "2ceccadd41558709af44e85aecfab015f556177844a810bedd34270a9643782c"
+    },
+    {
+      "match_id": "hltv:2396021",
+      "matchup": "Spirit vs MOUZ",
+      "event": "blast-bounty-2026-season-2-finals",
+      "match_date": "2026-08-02",
+      "map_index": 2,
+      "expected_score": {"Spirit": 4, "MOUZ": 13},
+      "url": "https://www.hltv.org/matches/2396021/spirit-vs-mouz-blast-bounty-2026-season-2-finals",
+      "archive": "blast-bounty-2026-season-2-finals-spirit-vs-mouz-bo5--wn1awkp4iFRmswi58ug57.rar",
+      "archive_sha256": "1c3b8f17a722fa10cfb3f8c86d58a6f986e4be490b15ffacd10b452da9f79ef4"
+    },
+    {
+      "match_id": "hltv:2396572",
+      "matchup": "magic vs The MongolZ",
+      "event": "esports-world-cup-2026",
+      "match_date": "2026-08-12",
+      "map_index": 1,
+      "expected_score": {"magic": 7, "The MongolZ": 13},
+      "url": "https://www.hltv.org/matches/2396572/magic-vs-the-mongolz-esports-world-cup-2026",
+      "archive": "esports-world-cup-2026-magic-vs-the-mongolz-mirage-gK3stYADd7kuyOGYvbczKD.rar",
+      "archive_sha256": "b9eba140f5cdba49bca61835297187c791ad23e01bc60077b838aad592f8abbd",
+      "single_map_bo1_entry": "magic-vs-the-mongolz-mirage.dem"
+    },
+    {
+      "match_id": "hltv:2396583",
+      "matchup": "B8 vs Vitality",
+      "event": "esports-world-cup-2026",
+      "match_date": "2026-08-14",
+      "map_index": 1,
+      "expected_score": {"B8": 12, "Vitality": 16},
+      "url": "https://www.hltv.org/matches/2396583/b8-vs-vitality-esports-world-cup-2026",
+      "score_url": "https://www.hltv.org/stats/matches/mapstatsid/235074/vitality-vs-b8",
+      "archive": "esports-world-cup-2026-b8-vs-vitality-bo3-N4CDgIbMarl-Be8034f4a_.rar",
+      "archive_sha256": "e08aff3dffed7ab43fed6812858aabaee08a1f08fc6511014f095adf18df81fc"
+    },
+    {
+      "match_id": "hltv:2396584",
+      "matchup": "FUT vs MOUZ",
+      "event": "esports-world-cup-2026",
+      "match_date": "2026-08-14",
+      "map_index": 3,
+      "expected_score": {"FUT": 13, "MOUZ": 11},
+      "url": "https://www.hltv.org/matches/2396584/fut-vs-mouz-esports-world-cup-2026",
+      "archive": "esports-world-cup-2026-fut-vs-mouz-bo3-y2tUP23LPdKvpCZCEKG3KK.rar",
+      "archive_sha256": "a0b565eb1665c7bbac6093324804e3de08a27ef4b853937e897a1a609393f26d"
+    },
+    {
+      "match_id": "hltv:2396587",
+      "matchup": "The MongolZ vs Natus Vincere",
+      "event": "esports-world-cup-2026",
+      "match_date": "2026-08-15",
+      "map_index": 3,
+      "expected_score": {"The MongolZ": 8, "Natus Vincere": 13},
+      "url": "https://www.hltv.org/matches/2396587/the-mongolz-vs-natus-vincere-esports-world-cup-2026",
+      "score_url": "https://www.hltv.org/stats/matches/mapstatsid/235180/natus-vincere-vs-the-mongolz",
+      "archive": "esports-world-cup-2026-the-mongolz-vs-natus-vincere-bo3-ct-JWjqzxi_o-NdDSoaCro.rar",
+      "archive_sha256": "9059ea853c7cf30485217aa76b21a59b7f980f5c875c54f9ffbe5a47e3acd076"
+    },
+    {
+      "match_id": "hltv:2396592",
+      "matchup": "JiJieHao vs Aurora",
+      "event": "esports-world-cup-2026",
+      "match_date": "2026-08-15",
+      "map_index": 1,
+      "expected_score": {"JiJieHao": 6, "Aurora": 13},
+      "url": "https://www.hltv.org/matches/2396592/jijiehao-vs-aurora-esports-world-cup-2026",
+      "archive": "esports-world-cup-2026-jijiehao-vs-aurora-bo3-jdG3xKfqAS7bfc68cdpSKO.rar",
+      "archive_sha256": "c789e81735bd21ccdd0bb9d4adad4fa9601c4350c1a8536efd62d2070ff03d3f",
+      "possible_duplicate": "esports-world-cup-2026-jijiehao-vs-aurora-bo3-jdG3xKfqAS7bfc68cdpSKO (1).rar"
+    },
+    {
+      "match_id": "hltv:2396600",
+      "matchup": "FURIA vs Aurora",
+      "event": "esports-world-cup-2026",
+      "match_date": "2026-08-19",
+      "map_index": 3,
+      "expected_score": {"FURIA": 13, "Aurora": 9},
+      "url": "https://www.hltv.org/matches/2396600/furia-vs-aurora-esports-world-cup-2026",
+      "score_url": "https://www.hltv.org/stats/matches/mapstatsid/235500/aurora-vs-furia",
+      "archive": "esports-world-cup-2026-furia-vs-aurora-bo3-8ElLAnsM7OHWsN1oO6LDhA.rar",
+      "archive_sha256": "0e67f7b044b3f14949ed5da5cc8856aa499d4b07c411cfaf15a70b3dcaea13fe"
+    },
+    {
+      "match_id": "hltv:2396601",
+      "matchup": "FUT vs magic",
+      "event": "esports-world-cup-2026",
+      "match_date": "2026-08-19",
+      "map_index": 3,
+      "expected_score": {"FUT": 13, "magic": 8},
+      "url": "https://www.hltv.org/matches/2396601/fut-vs-magic-esports-world-cup-2026",
+      "score_url": "https://www.hltv.org/stats/matches/129454/fut-vs-magic",
+      "archive": "esports-world-cup-2026-fut-vs-magic-bo3-U3dR87uWbdlmsFV_0KMbjQ.rar",
+      "archive_sha256": "bbbe44dc285dfcd1b4d1eebae89338eeed15b40ea620f009d42767cfe97a8700"
+    }
+  ]
+}

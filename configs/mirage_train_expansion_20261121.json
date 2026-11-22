@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "map_name": "de_mirage",
+  "research_question": "Does adding previously unused training events change the epoch-1 single-snapshot Transformer gap to matched logistic regression?",
+  "raw_directory": "data/raw/mirage_train_expand",
+  "roster_policy": "Import every verified archive from the 16 listed matches. Finalize the available roster once, before training; report any missing or failed archives. A later addition requires a new fit receipt.",
+  "roles": {
+    "development_fit": "The original 32 Rio, Atlanta and Cologne matches plus the verified new Rotterdam and Astana matches.",
+    "development": "The same 10 previously observed BLAST Bounty and Esports World Cup matches, round-weighted and aligned by sample ID.",
+    "final_fit": "Add the original two Porto matches and refit the locked candidates from scratch.",
+    "prospective": "PGL Major Singapore 2026. Use all identity- and score-verified Mirage maps played after freezing the candidate weights and scoring rules. Keep Singapore outside fit and development.",
+    "excluded_event": "pgl-masters-bucharest-2026"
+  },
+  "candidates": [
+    "Matched logistic regression with C=1.0",
+    "Single-snapshot Transformer, epoch 1",
+    "Single-snapshot Transformer, earliest development Log Loss minimum as a secondary diagnostic"
+  ],
+  "primary_seed": 42,
+  "sensitivity_seeds": [
+    7,
+    2026
+  ],
+  "epochs": 20,
+  "final_epochs": "For each seed refit from scratch through its locked development-selected epoch, retaining epoch 1 as the primary checkpoint. Stop each trajectory once both prespecified roles have been saved.",
+  "preprocessing": "Use the previously frozen V1 feature list and FP32 Transformer training protocol. Fit medians and round-weighted scaling on the corresponding fit population. Both classes share the exact same features, weights and target rows.",
+  "primary_comparison": "Epoch-1 Transformer minus matched logistic Log Loss, then the expanded-fit gap minus the archived 32-map fit gap. The new matches also change the event mix.",
+  "bootstrap": {
+    "unit": "match_id",
+    "draws": 2000,
+    "seed": 42,
+    "confidence": 0.95
+  },
+  "source_run": "models/mirage_train_size_20261121",
+  "source_fit_sha256": "48f27125cfaa87b8314696dec5396dfd3e071faddb0bab423c5f3a738b19cbdb",
+  "matches": [
+    {
+      "match_id": "hltv:2390812",
+      "matchup": "Natus Vincere vs B8",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-18",
+      "map_index": 1,
+      "expected_score": {
+        "Natus Vincere": 13,
+        "B8": 9
+      },
+      "url": "https://www.hltv.org/matches/2390812/natus-vincere-vs-b8-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2390814",
+      "matchup": "FURIA vs TYLOO",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-18",
+      "map_index": 1,
+      "expected_score": {
+        "FURIA": 13,
+        "TYLOO": 8
+      },
+      "url": "https://www.hltv.org/matches/2390814/furia-vs-tyloo-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2390815",
+      "matchup": "PARIVISION vs Ninjas in Pyjamas",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-19",
+      "map_index": 2,
+      "expected_score": {
+        "PARIVISION": 6,
+        "Ninjas in Pyjamas": 13
+      },
+      "url": "https://www.hltv.org/matches/2390815/parivision-vs-ninjas-in-pyjamas-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2390816",
+      "matchup": "Spirit vs Liquid",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-19",
+      "map_index": 1,
+      "expected_score": {
+        "Spirit": 13,
+        "Liquid": 8
+      },
+      "url": "https://www.hltv.org/matches/2390816/spirit-vs-liquid-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2391756",
+      "matchup": "FaZe vs TYLOO",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-20",
+      "map_index": 1,
+      "expected_score": {
+        "FaZe": 11,
+        "TYLOO": 13
+      },
+      "url": "https://www.hltv.org/matches/2391756/faze-vs-tyloo-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2391757",
+      "matchup": "Falcons vs Natus Vincere",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-20",
+      "map_index": 1,
+      "expected_score": {
+        "Falcons": 13,
+        "Natus Vincere": 9
+      },
+      "url": "https://www.hltv.org/matches/2391757/falcons-vs-natus-vincere-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2391759",
+      "matchup": "Ninjas in Pyjamas vs Liquid",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-21",
+      "map_index": 2,
+      "expected_score": {
+        "Ninjas in Pyjamas": 17,
+        "Liquid": 19
+      },
+      "url": "https://www.hltv.org/matches/2391759/ninjas-in-pyjamas-vs-liquid-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2391762",
+      "matchup": "The MongolZ vs Vitality",
+      "event": "blast-open-rotterdam-2026",
+      "match_date": "2026-03-21",
+      "map_index": 1,
+      "expected_score": {
+        "The MongolZ": 4,
+        "Vitality": 13
+      },
+      "url": "https://www.hltv.org/matches/2391762/the-mongolz-vs-vitality-blast-open-rotterdam-2026"
+    },
+    {
+      "match_id": "hltv:2394119",
+      "matchup": "The MongolZ vs magic",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-09",
+      "map_index": 1,
+      "expected_score": {
+        "The MongolZ": 25,
+        "magic": 23
+      },
+      "url": "https://www.hltv.org/matches/2394119/the-mongolz-vs-magic-pgl-astana-2026"
+    },
+    {
+      "match_id": "hltv:2394118",
+      "matchup": "MOUZ vs Gentle Mates",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-09",
+      "map_index": 2,
+      "expected_score": {
+        "MOUZ": 4,
+        "Gentle Mates": 13
+      },
+      "url": "https://www.hltv.org/matches/2394118/mouz-vs-gentle-mates-pgl-astana-2026"
+    },
+    {
+      "match_id": "hltv:2394124",
+      "matchup": "MOUZ vs G2",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-10",
+      "map_index": 2,
+      "expected_score": {
+        "MOUZ": 13,
+        "G2": 10
+      },
+      "url": "https://www.hltv.org/matches/2394124/mouz-vs-g2-pgl-astana-2026"
+    },
+    {
+      "match_id": "hltv:2394129",
+      "matchup": "PARIVISION vs Fisher College",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-10",
+      "map_index": 1,
+      "expected_score": {
+        "PARIVISION": 13,
+        "Fisher College": 5
+      },
+      "url": "https://www.hltv.org/matches/2394129/parivision-vs-fisher-college-pgl-astana-2026"
+    },
+    {
+      "match_id": "hltv:2394128",
+      "matchup": "FURIA vs HEROIC",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-10",
+      "map_index": 1,
+      "expected_score": {
+        "FURIA": 13,
+        "HEROIC": 4
+      },
+      "url": "https://www.hltv.org/matches/2394128/furia-vs-heroic-pgl-astana-2026"
+    },
+    {
+      "match_id": "hltv:2394130",
+      "matchup": "Falcons vs 9z",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-10",
+      "map_index": 2,
+      "expected_score": {
+        "Falcons": 13,
+        "9z": 9
+      },
+      "url": "https://www.hltv.org/matches/2394130/falcons-vs-9z-pgl-astana-2026"
+    },
+    {
+      "match_id": "hltv:2394133",
+      "matchup": "HEROIC vs Gentle Mates",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-11",
+      "map_index": 2,
+      "expected_score": {
+        "HEROIC": 6,
+        "Gentle Mates": 13
+      },
+      "url": "https://www.hltv.org/matches/2394133/heroic-vs-gentle-mates-pgl-astana-2026"
+    },
+    {
+      "match_id": "hltv:2394137",
+      "matchup": "K27 vs magic",
+      "event": "pgl-astana-2026",
+      "match_date": "2026-05-11",
+      "map_index": 1,
+      "expected_score": {
+        "K27": 9,
+        "magic": 13
+      },
+      "url": "https://www.hltv.org/matches/2394137/k27-vs-magic-pgl-astana-2026"
+    }
+  ]
+}

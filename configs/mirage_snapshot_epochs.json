@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "research_question": "Does training the matched single-snapshot Mirage Transformer longer improve retrospective round-win prediction relative to logistic regression?",
+  "temporal_plan_sha256": "aa68625bc55b5b12053601b899612657aff018c7f54019b77c2a61d32b5c4c8a",
+  "feature_version": 1,
+  "feature_count": 47,
+  "window_length": 1,
+  "epochs": 200,
+  "candidates": [
+    "Single-snapshot Transformer after epoch 1",
+    "Single-snapshot Transformer at the earliest development log-loss minimum",
+    "Single-snapshot Transformer after epoch 200",
+    "Matched logistic regression with the original C=1.0"
+  ],
+  "primary_seed": 42,
+  "sensitivity_seeds": [7, 2026],
+  "development_fit": {
+    "events": ["iem-rio-2026", "iem-atlanta-2026", "iem-cologne-major-2026"],
+    "counts": {"matches": 32, "rounds": 686, "samples": 12420}
+  },
+  "development": {
+    "dataset": "data/datasets/mirage_validation_more_v1",
+    "dataset_sha256": "f2cbadea249c6383d2b0472fdafbf970d5e69018037acd1e7ddaf389dc02edcb",
+    "events": ["blast-bounty-2026-season-2-finals", "esports-world-cup-2026"],
+    "counts": {"matches": 10, "rounds": 214, "samples": 3945}
+  },
+  "selection": "Run all 200 epochs on a single trajectory for each seed. At the end of every epoch, compute round-weighted log loss on all 10 development matches in evaluation mode. Select each seed's earliest epoch at the minimum using unrounded scores. Lock all selected epochs before refitting and before reading the observed 50-match data. Seed 42 remains primary regardless of scores.",
+  "final_fit": {
+    "events": ["iem-rio-2026", "iem-atlanta-2026", "iem-cologne-major-2026", "blast-open-porto-2026"],
+    "counts": {"matches": 34, "rounds": 730, "samples": 13208},
+    "policy": "Use the exact original 34-map train IDs. Start each seed from scratch and take all three checkpoints from one uninterrupted 200-epoch trajectory."
+  },
+  "preprocessing": "Unweighted training medians and round-weighted scaling as in the matched 34-map experiment. Fit anew on the respective fit split and share final preprocessing with logistic regression.",
+  "optimizer": {"name": "AdamW", "learning_rate": 0.001, "weight_decay": 0.01, "foreach": false, "fused": false},
+  "batch_size": 64,
+  "precision": "float32",
+  "logistic_c": 1.0,
+  "calibration": "none",
+  "reserved_event": "pgl-masters-bucharest-2026",
+  "retrospective": {
+    "dataset": "data/datasets/mirage_holdout_50_v1",
+    "counts": {"matches": 50, "rounds": 1099, "samples": 20180},
+    "policy": "Use the exact previously scored sample IDs and weights after verifying the selection and final-fit receipts. This previously observed cohort is retrospective only."
+  },
+  "weighting": "Each recorded round has total weight one in fitting and scoring.",
+  "metrics": ["log_loss", "brier_score", "roc_auc"],
+  "comparisons": [["logistic", "selected"], ["epoch_1", "selected"], ["epoch_1", "epoch_200"]],
+  "bootstrap": {"unit": "match_id", "draws": 2000, "seed": 42, "confidence": 0.95}
+}

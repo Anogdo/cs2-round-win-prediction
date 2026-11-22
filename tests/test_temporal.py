@@ -163,3 +163,27 @@ def test_padded_tokens_cannot_affect_current_prediction_and_parameters_match():
         torch.testing.assert_close(
             single(padded[:1, -1:], mask[:1, -1:]), history(padded[:1], mask[:1])
         )
+
+
+@pytest.mark.skipif(importlib.util.find_spec("sklearn") is None, reason="requires the ml extra")
+def test_historical_replay_rejects_altered_checkpoint_or_selection_receipt(tmp_path):
+    import json
+
+    from cs2_pipeline.parse import sha256_file
+    from cs2_pipeline.phase2_temporal_validation import FROZEN_FILES, verify_frozen_run
+
+    hashes = {}
+    for name in FROZEN_FILES:
+        path = tmp_path / name
+        path.write_text(name, encoding="utf-8")
+        hashes[name] = sha256_file(path)
+    receipt = tmp_path / "selection.json"
+    receipt.write_text(json.dumps({"pre_exploration_sha256": hashes}), encoding="utf-8")
+    selection_hash = sha256_file(receipt)
+    assert verify_frozen_run(tmp_path, selection_hash)["pre_exploration_sha256"] == hashes
+    (tmp_path / "history8_transformer.pt").write_bytes(b"different checkpoint")
+    with pytest.raises(PipelineError, match="history8_transformer.pt"):
+        verify_frozen_run(tmp_path, selection_hash)
+    receipt.write_text("{}", encoding="utf-8")
+    with pytest.raises(PipelineError, match="selection receipt"):
+        verify_frozen_run(tmp_path, selection_hash)

@@ -22,6 +22,29 @@ from cs2_pipeline.progress import STAGES
 from cs2_pipeline.schema import PipelineError
 
 PRESETS = {
+    "matched34_score": {
+        "name": "Mirage · 同 34 场模型对照",
+        "dataset": "data/datasets/mirage_holdout_50_v1",
+        "features": 47,
+        "algorithm": "逻辑回归 / XGBoost / Transformer",
+        "regularization_label": "Transformer 窗口",
+        "regularization_value": "1 / 8",
+        "module": "cs2_pipeline.matched34_score",
+        "description": "同一 34 场拟合，在已观察 50 场统一评分；不重训模型。",
+        "validation_name": "已观察 50 场（回顾性）",
+        "test_name": "已观察 50 场 · 统一 Log Loss",
+    },
+    "phase2_temporal_validation": {
+        "name": "Mirage · 冻结模型跨赛事验证",
+        "dataset": "data/datasets/mirage_validation_more_v1",
+        "features": 47,
+        "algorithm": "逻辑回归 / Transformer · CUDA 评分",
+        "regularization_label": "窗口（快照数）",
+        "regularization_value": "1 / 8",
+        "module": "cs2_pipeline.phase2_temporal_validation",
+        "description": "验证 BLAST Bounty 与 Esports World Cup；复用 Porto 选定模型。",
+        "validation_name": "新增历史验证（Porto 选定模型）",
+    },
     "phase2_temporal": {
         "name": "Mirage · 时序 Transformer 对照",
         "dataset": "data/datasets/mirage_expanded_2026_v1",
@@ -299,6 +322,8 @@ class TrainingMonitor:
                 )
                 if "calibrated" in scores:
                     scores = scores["calibrated"]
+                if report.get("run_mode") == "temporal_historical_validation":
+                    scores = report["metrics"]["validation"]["model"]
                 history.append(
                     {
                         "name": path.parent.name,
@@ -320,6 +345,9 @@ class TrainingMonitor:
                 "history": history[:30],
                 "corpus": read_json(self.root / "reports/cologne_experiment.json"),
                 "holdout_batch": read_json(self.root / "runs/holdout_50/progress.json"),
+                "historical_validation_batch": read_json(
+                    self.root / "runs/phase2_validation_more_v1/progress.json"
+                ),
                 "context_batch": read_json(self.root / "runs/context_audit/progress.json"),
             }
 

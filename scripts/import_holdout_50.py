@@ -41,11 +41,14 @@ TEAM_ALIASES = {
     "team spirit": "Spirit",
     "team vitality": "Vitality",
     "aurora gaming": "Aurora",
+    "b8 esports": "B8",
     "betboom team": "BETBOOM",
+    "fut esports": "FUT",
     "g2 esports": "G2",
     "g2.esports": "G2",
     "9zglobant": "9z",
     "9z globant": "9z",
+    "mongolz": "The MongolZ",
     "themongolz_": "The MongolZ",
     "pvision": "PARIVISION",
 }
@@ -101,7 +104,9 @@ def find_archive(item: dict[str, Any]) -> Path:
     return matches[0]
 
 
-def list_entries(archive: Path, map_index: int) -> list[str]:
+def list_entries(
+    archive: Path, map_index: int, *, single_map_bo1_entry: str | None = None
+) -> list[str]:
     result = subprocess.run(
         [str(UNRAR), "lb", "-p-", "--", str(archive)],
         capture_output=True,
@@ -111,14 +116,20 @@ def list_entries(archive: Path, map_index: int) -> list[str]:
     if result.returncode:
         raise PipelineError(f"无法读取压缩包 {archive.name}：{result.stderr or result.stdout}")
     pattern = re.compile(rf"-m{map_index}-mirage(?:-p(\d+))?\.dem$", re.I)
+    listed = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+    if single_map_bo1_entry is not None and (
+        map_index != 1
+        or listed != [single_map_bo1_entry]
+        or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*-mirage\.dem", single_map_bo1_entry)
+    ):
+        raise PipelineError(f"单地图 Bo1 压缩包成员与固定清单不符：{archive.name}")
     found = []
-    for line in result.stdout.splitlines():
-        entry = line.strip()
+    for entry in listed:
         match = pattern.search(entry)
-        if match:
+        if match or single_map_bo1_entry == entry:
             if Path(entry).name != entry or "/" in entry or "\\" in entry or entry.startswith("-"):
                 raise PipelineError("压缩包成员必须是无路径的普通文件名。")
-            found.append((int(match.group(1)) if match.group(1) else 0, entry))
+            found.append((int(match.group(1)) if match and match.group(1) else 0, entry))
     found.sort()
     indices = [number for number, _ in found]
     if not (indices == [0] or (indices and indices == list(range(1, len(indices) + 1)))):
@@ -126,10 +137,16 @@ def list_entries(archive: Path, map_index: int) -> list[str]:
     return [entry for _, entry in found]
 
 
-def extract(archive: Path, item: dict[str, Any]) -> tuple[str, list[dict[str, Any]]]:
+def extract(
+    archive: Path, item: dict[str, Any], *, extracted_root: Path = EXTRACTED
+) -> tuple[str, list[dict[str, Any]]]:
     archive_sha = sha256_file(archive)
-    entries = list_entries(archive, item["map_index"])
-    folder = EXTRACTED / item["match_id"].replace(":", "-")
+    if item.get("archive_sha256", archive_sha) != archive_sha:
+        raise PipelineError(f"压缩包与固定 SHA256 不符：{archive.name}")
+    entries = list_entries(
+        archive, item["map_index"], single_map_bo1_entry=item.get("single_map_bo1_entry")
+    )
+    folder = extracted_root / item["match_id"].replace(":", "-")
     folder.mkdir(parents=True, exist_ok=True)
     receipt = folder / "extraction.json"
     if receipt.exists():
@@ -218,6 +235,8 @@ def recover_multipart(
     archive_sha: str,
     extracted: list[dict[str, Any]],
     paths: list[Path],
+    *,
+    processed_root: Path = PROCESSED,
 ) -> dict[str, Any]:
     """Recover an initial incomplete recording only after matching Awpy on its companion."""
     if len(paths) != 2:
@@ -245,7 +264,7 @@ def recover_multipart(
         "与 Awpy 的边界、胜方和原因逐项一致。",
         flush=True,
     )
-    out = PROCESSED / item["match_id"].replace(":", "-")
+    out = processed_root / item["match_id"].replace(":", "-")
     maps = out / "maps"
     maps.mkdir(parents=True, exist_ok=True)
     manifest = out / "sources.json"
@@ -452,14 +471,27 @@ def repair_observed_team_switch(
 
 def import_one(item: dict[str, Any], ref: dict[str, Any]) -> dict[str, Any]:
     archive = find_archive(item)
-    archive_sha, extracted = extract(archive, item)
-    raw_dir = EXTRACTED / item["match_id"].replace(":", "-")
+    return import_archive(archive, item, ref)
+
+
+def import_archive(
+    archive: Path,
+    item: dict[str, Any],
+    ref: dict[str, Any],
+    *,
+    extracted_root: Path = EXTRACTED,
+    processed_root: Path = PROCESSED,
+) -> dict[str, Any]:
+    archive_sha, extracted = extract(archive, item, extracted_root=extracted_root)
+    raw_dir = extracted_root / item["match_id"].replace(":", "-")
     paths = [raw_dir / part["entry"] for part in extracted]
     try:
         native = Demo(paths if len(paths) > 1 else paths[0])
     except ValueError as exc:
         if len(paths) == 2 and "part 0 has no completed match rounds" in str(exc):
-            return recover_multipart(item, ref, archive, archive_sha, extracted, paths)
+            return recover_multipart(
+                item, ref, archive, archive_sha, extracted, paths, processed_root=processed_root
+            )
         raise
     native.load("rounds")
     native_rounds = native.rounds["round_num"].to_list()
@@ -478,7 +510,7 @@ def import_one(item: dict[str, Any], ref: dict[str, Any]) -> dict[str, Any]:
             round_lists.append(part.rounds["round_num"].to_list())
             del part
         check_round_sequence(round_lists, ref["expected_rounds"])
-    out = PROCESSED / item["match_id"].replace(":", "-")
+    out = processed_root / item["match_id"].replace(":", "-")
     out.mkdir(parents=True, exist_ok=True)
     local_manifest = out / "local.json"
     local = {

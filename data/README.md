@@ -43,6 +43,8 @@ The repository records the source lists, metrics, and audit checks. [Reported sc
 
 The temporal comparison uses the original datasets in `data/datasets/mirage_expanded_2026_v1/` and `data/datasets/mirage_holdout_50_v1/`. Keep their manifests and Parquet tables together with the processed `metadata.json` and `rounds.parquet` referenced by each recording. The loader verifies these files against the digests in the frozen plan. [Temporal plan](../configs/phase2_temporal_plan.json), [training and scoring commands](../docs/mirage_temporal_experiment.md#cuda-verification-and-reproduction)
 
+The follow-ups also use the 10-map Bounty and Esports World Cup dataset in `data/datasets/mirage_validation_more_v1/`. The expansion importer verifies the supplemental Rotterdam and Astana archives listed in the roster before building the 47-map development fit and 49-map final fit. Exact repeats of the follow-up comparisons require the archived datasets and the verified receipts from earlier runs. Singapore is reserved for scoring the frozen candidates. [Historical development sources and import](../docs/mirage_historical_validation_20261118.md) · [Expansion roster](../configs/mirage_train_expansion_20261121.json) · [Follow-up reproduction](../docs/mirage_temporal_experiment.md#follow-up-reproduction)
+
 ## Generated files
 
 - `data/processed/` holds validated Parquet files for rounds, players and sampled player states, plus source metadata.

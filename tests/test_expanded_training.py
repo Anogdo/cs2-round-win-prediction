@@ -127,12 +127,13 @@ def test_score_verification_keeps_team_identity_through_side_change() -> None:
 
 
 @pytest.mark.parametrize("smoke_test", [False, True])
+@pytest.mark.parametrize("method", ["holdout_only", "historical_validation_only"])
 def test_holdout_is_never_accepted_as_training_input(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, smoke_test: bool
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, smoke_test: bool, method: str
 ) -> None:
     monkeypatch.setattr(
         "cs2_pipeline.train.read_dataset",
-        lambda _: ({"split_policy": {"method": "holdout_only"}}, {}),
+        lambda _: ({"split_policy": {"method": method}}, {}),
     )
     with pytest.raises(PipelineError, match="留出数据集不能用于训练"):
         train_baseline(tmp_path / "holdout", tmp_path / "output", smoke_test=smoke_test)

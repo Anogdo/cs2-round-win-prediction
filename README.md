@@ -1,38 +1,39 @@
 # CS2 Mirage Round Win Prediction
 
-A STAT UN3108 project on estimating the Counter-Terrorist (CT) side's chance of winning a round from professional Counter-Strike 2 replays. The current study tests whether recent game states improve predictions at a given tick.
+A STAT UN3108 study of Counter-Terrorist (CT) round win probabilities in professional Counter-Strike 2 Mirage replays. It compares logistic regression, XGBoost, and small Transformers trained on the same maps.
 
-[中文项目文档](README.zh-CN.md) · [Temporal experiment](docs/mirage_temporal_experiment.md) · [Data and setup](data/README.md) · [Results](results/README.md)
+[中文项目文档](README.zh-CN.md) · [Experimental design](docs/mirage_temporal_experiment.md) · [Data and setup](data/README.md) · [Results](results/README.md)
 
 ## Study target
 
-Do recent snapshots help a small Transformer estimate CT round win probabilities? We compare the same architecture with one or up to eight snapshots, alongside a logistic regression baseline. Table II and Figure 6 of the earlier CS:GO study motivate the probability estimates and analysis by round time. [Xenopoulos, Doraiswamy, and Silva (2020)](https://arxiv.org/abs/2011.01324)
+How do traditional models and small Transformers compare when they are fitted on the same Mirage data? The original CS:GO study used changes in round win probability to value in-game actions. This project investigates its probability estimation step and the improvement in prediction as a round progresses, motivated by Table II and Figure 6. The Transformer experiments also test recent history, training duration, training set size, and dropout. [Xenopoulos, Doraiswamy, and Silva (2020)](https://arxiv.org/abs/2011.01324)
 
 ## Approach
 
-- Awpy, Polars, and PyArrow parse professional demos into five-second snapshots. The expanded corpus contains 38 Mirage maps, 811 rounds, and 14,630 snapshots.
-- The temporal models use the same 47 V1 features and target ticks. Windows contain observations up to the target tick from the same recording and round. Preprocessing is fitted on training data, and each round receives equal total weight.
-- The three candidates were fitted on 18 Rio and Atlanta matches. Porto determined checkpoint selection, with two matches and 44 rounds. The selected checkpoints were then scored on 50 previously observed matches. Cologne remains reserved for calibration. [Temporal protocol](docs/mirage_temporal_experiment.md)
+- Awpy, Polars, and PyArrow turn professional demos into five-second snapshots. The matched historical fit uses 34 Mirage maps, 730 rounds, and 13,208 prediction ticks. The two-layer Transformer takes one snapshot or up to eight from the same round, ending at the prediction tick.
+- Logistic regression and both Transformers share the 47 V1 features, fit-only imputation and scaling, and targets. The archived XGBoost reference uses the same 34 fit maps. Every round has equal total weight. Log loss is the primary metric, with Brier score and ROC AUC as secondary metrics.
+- The matched comparison reuses 50 previously observed maps for retrospective scoring. Later checkpoint and dropout experiments use 10 historical development maps from BLAST Bounty and the Esports World Cup. [Data splits and controls](docs/mirage_temporal_experiment.md)
 
-## First temporal results
+## Matched historical results
 
-| Model | Porto log loss ↓ | Previously observed 50 log loss ↓ |
-| --- | ---: | ---: |
-| Logistic regression | **0.3761** | **0.4420** |
-| Current-snapshot Transformer | 0.3910 | 0.4469 |
-| Up-to-eight-snapshot Transformer | 0.3965 | 0.4474 |
+| Model | Log loss ↓ | Brier score ↓ | ROC AUC ↑ |
+| --- | ---: | ---: | ---: |
+| Matched logistic regression | **0.4322** | **0.1448** | **0.8713** |
+| Single-snapshot Transformer, seed 42 | 0.4348 | 0.1455 | 0.8695 |
+| Up-to-eight-snapshot Transformer, seed 42 | 0.4386 | 0.1472 | 0.8669 |
+| Archived CUDA XGBoost | 0.4435 | 0.1465 | 0.8682 |
 
-On the 50 observed matches, adding history changed log loss by **+0.00046** relative to the current-snapshot Transformer. The 95% interval from paired resampling by match was **[−0.00388, +0.00519]**. [Brier, ROC AUC, and error analysis](docs/mirage_temporal_experiment.md#results)
+On those 50 maps, the single-snapshot Transformer minus logistic regression log loss was **+0.00258**, with a 95% paired match-bootstrap interval of **[−0.00391, +0.00927]**. The effect of adding history varied by seed. The study also reproduced the direction of the original paper's time trend. On the same 906 rounds sampled at both times, the earlier V1 logistic model's log loss fell from 0.6392 at the start of the round to 0.4021 at 60 seconds. [Matched comparison](docs/mirage_temporal_experiment.md#follow-up-identical-34-map-training-set-november-21-2026) · [Timing and error analysis](results/README.md#timing-and-error-analysis)
 
-The earlier 34-match V1 logistic model reached 0.4321 log loss on the same observed set, against 0.5125 for its alive-player and elapsed-time reference. Its larger fit set included Porto. [Historical baselines](results/README.md#historical-50-match-evaluation)
+## Current conclusion
 
-## Conclusion
+With 32 training maps, longer Transformer training lowered training loss and raised development loss. After refitting on 34 maps, all three development-selected checkpoints had higher retrospective log loss than matched logistic regression. Expanding to 47 training maps lowered both candidates' development log loss for seed 42, with uncertainty around the gap. Dropout 0.20 reduced late overfitting and missed the prespecified requirement to improve mean log loss in every development cohort. [Follow-up experiments](docs/mirage_temporal_experiment.md#training-duration)
 
-This first comparison used one training seed and one validation event. The estimated effect of adding history remains uncertain. Broader validation across events and seeds is needed before scoring on an unseen event.
+The prospective PGL Major Singapore 2026 comparison uses 49 fit maps for both logistic regression and the single-snapshot Transformer. The candidate weights and scoring rules were frozen on November 21, 2026. Singapore scoring is pending. [Evaluation scope and frozen settings](docs/mirage_temporal_experiment.md#frozen-singapore-evaluation)
 
 ## Run the temporal experiment
 
-The comparison uses the optional `temporal` extra on Windows or Linux with a compatible NVIDIA GPU. The first real-data smoke epoch used FP32, ran 99 batches in 1.12 seconds on an RTX 4070 Ti, and peaked at 72.1 MiB allocated by PyTorch. The full run requires the original feature tables and their processed round records. [Archived inputs](data/README.md#archived-temporal-inputs), [run commands](docs/mirage_temporal_experiment.md#cuda-verification-and-reproduction)
+The comparison uses the optional `temporal` extra on Windows or Linux with a compatible NVIDIA GPU. The first real-data smoke epoch used FP32, ran 99 batches in 1.12 seconds on an RTX 4070 Ti, and peaked at 72.1 MiB allocated by PyTorch. The matched and follow-up runs use archived feature tables, processed round records, and verified artifacts from earlier stages. [Archived inputs](data/README.md#archived-temporal-inputs) · [Run commands](docs/mirage_temporal_experiment.md#follow-up-reproduction)
 
 ## Reproduce the single-demo pipeline
 
@@ -53,7 +54,7 @@ Expect 18 rounds and 295 sampled ticks, a JSON model, and a Parquet file of win 
 
 ## Local demo
 
-Run `uv run --frozen --extra ml python -m cs2_pipeline.monitor` and open the local training monitor at `http://127.0.0.1:8765`. The dashboard shows training stages, logs, and metrics. The temporal preset uses the CUDA environment and archived inputs described above. [Monitor guide (中文)](docs/training_ui.md)
+After installing the dependencies above, run `uv run --frozen --no-sync python -m cs2_pipeline.monitor` and open `http://127.0.0.1:8765`. The dashboard shows training stages, logs, and metrics. The temporal and matched evaluation presets use the CUDA environment and archived inputs described above. [Monitor guide (中文)](docs/training_ui.md)
 
 ## Repository contents
 
@@ -61,7 +62,7 @@ Run `uv run --frozen --extra ml python -m cs2_pipeline.monitor` and open the loc
 | --- | --- |
 | [`code/`](code/README.md) | Python implementation and links to the experiment manifests, scripts, and tests |
 | [`data/`](data/README.md) | Source attribution, download and import instructions, and dataset layout |
-| [`results/`](results/README.md) | Model comparison and links to the machine-readable results under `reports/` |
+| [`results/`](results/README.md) | Model comparisons, machine-readable scores, and learning curves |
 | [`docs/`](docs/) | Detailed experiment notes, source provenance, and monitor documentation |
 | [`poster/`](poster/) and [`report/`](report/) | Locations for the course presentation and summary PDFs |
 

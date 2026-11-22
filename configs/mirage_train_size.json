@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "research_question": "Does a larger training set narrow the single-snapshot Transformer gap to matched logistic regression and delay the rise in development log loss?",
+  "source_run": "models/mirage_snapshot_epochs_20261121",
+  "source_selection_sha256": "0cd3f17c514a4a1e364c3a112601f069b29a61911bc0a62cc9402a74e4c53edf",
+  "sample_unit": "match_id",
+  "sampling": "Sort match IDs within each event, then use one NumPy default_rng stream per draw. Permute each event in the stated event order and take prefixes for each size. Use the same complete 32-match split for both draws.",
+  "event_order": ["iem-rio-2026", "iem-atlanta-2026", "iem-cologne-major-2026"],
+  "subset_seeds": [31415, 27182],
+  "event_counts_by_size": {"16": [8, 1, 7], "24": [12, 1, 11], "32": [17, 1, 14]},
+  "primary_training_seed": 42,
+  "sensitivity_training_seeds": [7, 2026],
+  "learning_curve_epochs": 20,
+  "candidates": ["Matched logistic regression, fixed C=1.0", "Single-snapshot Transformer, epoch 1"],
+  "training": "Inherit the frozen 47-feature, FP32, AdamW, constant learning rate, 64-snapshot batch, and single-snapshot architecture from the matched epoch experiment. Fit the same median imputer and round-weighted scaler for both models within each fit subset. Keep one total weight per recorded round.",
+  "primary_comparison": "Transformer epoch 1 minus logistic Log Loss within each draw and training size, then the 32-match gap minus the 16-match gap within each draw. Negative gap change indicates a narrower loss disadvantage when the 16-match gap is positive.",
+  "curve_policy": "Plot both fit and development Log Loss after every epoch through epoch 20. Record the earliest development minimum and the epoch-20 loss minus that minimum as descriptions. Retain epoch 1 as the scoring comparison across all sizes and training seeds.",
+  "reuse": "Reuse the exact 32-match epoch-1 weights and probabilities and the first 20 curve rows per training seed from the frozen development run. Fit one new matched logistic model on those 32 matches.",
+  "development_scope": "The same 10 previously observed BLAST Bounty and Esports World Cup Mirage matches. All candidates and all contrasts use the identical 3,945 prediction ticks with equal total weight per round.",
+  "bootstrap": {"unit": "match_id", "draws": 2000, "seed": 42, "confidence": 0.95},
+  "reserved_event": "pgl-masters-bucharest-2026"
+}

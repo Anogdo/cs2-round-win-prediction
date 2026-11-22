@@ -180,6 +180,21 @@ def test_temporal_preset_launches_full_experiment_with_progress(manager: tuple):
     assert job["id"] in progress and "--smoke-test" not in command
 
 
+def test_monitor_keeps_historical_development_batch_separate(manager: tuple):
+    monitor, spawned = manager
+    dataset = monitor.root / "data/datasets/mirage_validation_more_v1/dataset.json"
+    dataset.parent.mkdir(parents=True)
+    dataset.write_text("{}", encoding="utf-8")
+    progress = monitor.root / "runs/phase2_validation_more_v1/progress.json"
+    progress.parent.mkdir(parents=True)
+    write_json(progress, {"status": "running", "total": 10, "completed": []})
+    monitor.start("phase2_temporal_validation")
+    assert spawned[0][1][1:4] == ["-u", "-m", "cs2_pipeline.phase2_temporal_validation"]
+    state = monitor.snapshot()
+    assert not state["holdout_batch"]
+    assert state["historical_validation_batch"]["total"] == 10
+
+
 def test_two_monitors_cannot_listen_on_same_port(tmp_path: Path):
     first = make_server(tmp_path, 0)
     try:

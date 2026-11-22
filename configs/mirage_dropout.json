@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "question": "Does increasing dropout from 0.10 to 0.20 improve a single-snapshot Mirage Transformer on the fixed expansion development split?",
+  "source_run": "models/mirage_train_expansion_20261121",
+  "source_intake": "runs/mirage_train_expansion_20261121/mirage_train_expand_20261121_intake.json",
+  "source_hashes": {
+    "prospective_freeze.json": "ff4833d6e19850d222e70bff02c341213c6bebb222517a609e3a89db293013a9",
+    "development_predictions.parquet": "418dc97e68f79e38e41c8576b8ac6fa123715f25f60d47a8bf22046a19c7c409",
+    "development/fit_targets.parquet": "5914627a7cac3a08dc60842981faf33e86418417dc90d1596bc86f9365dd9fbb"
+  },
+  "fit_matches": 47,
+  "development_matches": 10,
+  "final_fit_matches": 49,
+  "dropout": {"d010": 0.1, "d020": 0.2},
+  "primary_seed": 42,
+  "sensitivity_seeds": [7, 2026],
+  "epochs": 20,
+  "configuration": "Only Transformer dropout varies. Inherit the 47 V1 features, single snapshot, fit-only imputation and scaling, FP32 implementation, architecture, AdamW settings, batch size and round weights. Match the logistic reference with C=1.0.",
+  "logistic_c": 1.0,
+  "fixed_epoch": 1,
+  "epoch_selection": "For each dropout setting, take the earliest epoch from 1 to 20 with the lowest unrounded arithmetic mean of the three seeds' pooled round-weighted development Log Loss. All seeds of that setting share this epoch.",
+  "required_cohorts_for_adoption": ["pooled", "blast-bounty-2026-season-2-finals", "esports-world-cup-2026"],
+  "adoption": "Adopt 0.20 only if its three-seed mean Log Loss at its own selected epoch is strictly lower than 0.10 at its own selected epoch in all three listed cohorts. Equality or an increase in any cohort retains the existing prospective freeze. The epoch-1 comparison and match-bootstrap intervals are reported separately.",
+  "finalization": "On adoption only, start each seed from scratch on the exact existing 49-match fit rows, train to the 0.20 shared selected epoch, and freeze inference settings and weights separately. Preserve and identify the original prospective model as the comparator.",
+  "scope": "Previously observed Bounty and EWC development data support candidate selection. Singapore Mirage is reserved for independent evaluation after candidate and scoring freeze. The prior 50 matches retain their retrospective role. Bucharest stays sealed.",
+  "bootstrap": {"unit": "match_id", "draws": 2000, "seed": 42, "confidence": 0.95}
+}

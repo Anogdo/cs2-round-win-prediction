@@ -63,6 +63,25 @@ def test_score_audit_uses_real_teams_across_side_switch(tmp_path: Path) -> None:
         published_score([tmp_path], {"9z": 1, "MIBR": 2})
 
 
+def test_single_map_bo1_requires_exact_and_only_mirage_entry(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    entry = "magic-vs-the-mongolz-mirage.dem"
+    listed = f"{entry}\n"
+
+    def fake_run(*args: object, **kwargs: object) -> CompletedProcess:
+        return CompletedProcess([], 0, listed, "")
+
+    monkeypatch.setattr("scripts.import_holdout_50.subprocess.run", fake_run)
+    archive = Path("source.rar")
+    assert list_entries(archive, 1, single_map_bo1_entry=entry) == [entry]
+    with pytest.raises(PipelineError, match="固定清单"):
+        list_entries(archive, 2, single_map_bo1_entry=entry)
+    listed += "extra-m1-mirage.dem\n"
+    with pytest.raises(PipelineError, match="固定清单"):
+        list_entries(archive, 1, single_map_bo1_entry=entry)
+
+
 def test_progress_retries_a_transient_windows_file_lock(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

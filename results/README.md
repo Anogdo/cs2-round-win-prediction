@@ -1,5 +1,19 @@
 # Results
 
+## Matched model comparison and follow-ups
+
+The matched 34-map fit produced retrospective log losses of **0.4322** for logistic regression, **0.4348** for the single-snapshot Transformer, **0.4386** for the history Transformer, and **0.4435** for the archived CUDA XGBoost reference. All models use the same 50 previously observed evaluation maps. The Transformer results shown here use seed 42. [Matched results and paired intervals](../docs/mirage_temporal_experiment.md#follow-up-identical-34-map-training-set-november-21-2026)
+
+| Follow-up | Evaluation and evidence |
+| --- | --- |
+| Training duration | The 200-epoch runs overfit. The development-selected checkpoints scored worse than matched logistic regression on the retrospective cohort across all three seeds. [Results](../docs/mirage_temporal_experiment.md#training-duration) · [Learning curves](figures/mirage-training-duration.png) |
+| Training set size | On the 10-map historical development set, the 16-to-32-map comparison showed no consistent improvement in the Transformer gap to logistic regression. [Results](../docs/mirage_temporal_experiment.md#training-set-size-and-event-expansion) · [Learning curves](figures/mirage-training-size.png) |
+| Training expansion | Both models improved on the same 10 development maps when trained with the 15 additional Rotterdam and Astana maps. The difference between models varied with seed. [Results](../docs/mirage_temporal_experiment.md#training-set-size-and-event-expansion) |
+| Dropout | Dropout 0.20 reduced late overfitting and missed the event-level adoption rule. [Results](../docs/mirage_temporal_experiment.md#dropout-ablation) · [Learning curves](figures/mirage-dropout.png) |
+| Singapore Major | Candidate weights and scoring rules are frozen for the 49-map fit. Prospective scoring is pending. [Evaluation design](../docs/mirage_temporal_experiment.md#frozen-singapore-evaluation) · [Freeze receipt](mirage_singapore_freeze_20261121.json) |
+
+The [machine-readable follow-up results](mirage_followup_20261121.json) include data counts, scores, paired intervals, and checksums of the archived reports.
+
 ## First temporal comparison
 
 The 18-match logistic baseline had the lowest Porto log loss of the three candidates. The eight-snapshot Transformer scored 0.4474 on the 50 previously observed matches, compared with 0.4469 for the current-snapshot model. Both Transformer checkpoints were selected using Porto before the exploratory data was scored. [Metrics and limitations](../docs/mirage_temporal_experiment.md#results), [machine-readable scores](mirage_temporal_initial.json)
@@ -44,3 +58,4 @@ The locked Awpy 3.3 run parsed all nine pinned Rio demos and fit the 47-feature 
 | 50-match evaluation | [Fixed-model evaluation](../docs/holdout_50_results.md) | [Fixed-model audit](../reports/holdout_50_audit_v2.json) |
 | Feature and model comparison | [Data integrity and evaluation notes](../docs/phase2_mirage_audit_20261117.md) | [Comparison report](../reports/phase2_exploration_final.json), [data audit](../reports/phase2_data_audit_v2.json) |
 | Current snapshot vs. up to eight snapshots | [Temporal experiment](../docs/mirage_temporal_experiment.md) | [First temporal comparison](mirage_temporal_initial.json) |
+| Two additional historical events | [Frozen temporal validation, seed sensitivity, and bomb-state ablation](../docs/mirage_historical_validation_20261118.md) | Local reports and reproduction commands listed in the experiment notes |

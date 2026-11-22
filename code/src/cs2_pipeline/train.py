@@ -13,7 +13,7 @@ from typing import Any
 
 import polars as pl
 
-from cs2_pipeline.dataset import read_dataset, write_json
+from cs2_pipeline.dataset import HISTORICAL_VALIDATION_ONLY, read_dataset, write_json
 from cs2_pipeline.features import feature_columns
 from cs2_pipeline.parse import sha256_file
 from cs2_pipeline.predict import predict_probabilities
@@ -211,7 +211,7 @@ def train_baseline(
         raise PipelineError(f"模型输出目录已存在：{out}；请使用新的 --out。")
     metadata, tables = read_dataset(dataset)
     columns = feature_columns(metadata.get("feature_version", 1))
-    if metadata["split_policy"].get("method") == "holdout_only":
+    if metadata["split_policy"].get("method") in ("holdout_only", HISTORICAL_VALIDATION_ONLY):
         raise PipelineError("独立留出数据集不能用于训练，包含 smoke test。")
     if not smoke_test and not metadata["split_policy"]["evaluation_ready"]:
         raise PipelineError(

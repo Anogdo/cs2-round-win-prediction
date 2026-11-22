@@ -24,6 +24,7 @@ from cs2_pipeline.split import PARTITIONS, chronological_split, frozen_split
 from cs2_pipeline.validate import validate_directory
 
 EXCLUDED_EVENT = "pgl-masters-bucharest-2026"
+HISTORICAL_VALIDATION_ONLY = "historical_validation_only"
 TABLE_NAMES = ("samples", "nodes", "features", "labels", "splits")
 
 
@@ -240,6 +241,12 @@ def validate_dataset_tables(tables: dict[str, pl.DataFrame], metadata: dict[str,
     ):
         raise PipelineError("标签必须是 UInt8 的 0/1，CT 胜为 1。")
     policy = metadata["split_policy"]
+    if policy.get("method") == HISTORICAL_VALIDATION_ONLY and (
+        policy.get("group_by") != "event"
+        or policy.get("evaluation_ready") is not False
+        or set(splits["split"].to_list()) != {"validation"}
+    ):
+        raise PipelineError("Historical validation data must contain only the validation split.")
     partitions = (
         PARTITIONS if policy.get("method") == "frozen_four_way" else ("train", "validation", "test")
     )

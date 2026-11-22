@@ -1,4 +1,4 @@
-# Does recent in-round history improve Mirage round predictions?
+# Mirage model comparisons and temporal experiments
 
 Initial experiment, November 18, 2026. At each sampled tick, the task is to estimate the probability that CT wins the current Mirage round. The controlled comparison asks whether recent snapshots help a small Transformer relative to the same architecture restricted to the current snapshot. Logistic regression establishes the current-state baseline.
 
@@ -58,3 +58,98 @@ uv run --frozen --no-sync ruff check code/src scripts tests
 Add `--extra gpu` to `uv sync` if retaining the separate XGBoost experiment in the same environment. To launch from the dashboard, run `uv run --frozen --no-sync python -m cs2_pipeline.monitor` and select **Mirage · 时序 Transformer 对照**. The existing dashboard records epochs through its progress stream.
 
 The original local run is in `models/monitor_runs/20261118T051803-7248d43d/`. Its report contains split counts, preprocessing, scores, epoch timings, and hashes. The separate smoke report is in `models/phase2_temporal_cuda_smoke_20261118/`. Verification checked target IDs, labels, ticks, weights and window lengths before recomputing the metrics from the saved predictions. [Public run summary](../results/mirage_temporal_initial.json)
+
+## Follow-up: identical 34-map training set (November 21, 2026)
+
+The 18-map experiment isolates window length. This follow-up tests the algorithm comparison at the traditional V1 training size. The fitted logistic regression and both Transformer variants use the exact archived training IDs: **34 matches, 730 rounds, 13,208 targets**, from Rio (17), Atlanta (1), Cologne (14) and Porto (2). Logistic and Transformers use identical fit-only imputation and scaling, the same 47 V1 channels, and one total weight per round. The frozen V1 logistic regression and CUDA XGBoost are additional references fit on the same rows, with their original preprocessing and hyperparameters. Cologne and Porto are in training for this experiment, so neither is used for calibration or evaluation here.
+
+Both Transformers kept their original architecture. They were trained for one epoch, as selected in the earlier 18-match Porto comparison, with seed 42 as the primary result and seeds 7 and 2026 as sensitivity checks. All six fits ran in FP32 on the RTX 4070 Ti and were saved before the scoring process read the evaluation set. The evaluation comprises the previously observed 50 matches, 1,099 rounds and 20,180 aligned targets. The match IDs, event IDs and recording hashes do not overlap the fit rows. This is a retrospective comparison; `pgl-masters-bucharest-2026` remains reserved.
+
+| Model (all 34 fit maps) | Log Loss | Brier | ROC AUC |
+| --- | ---: | ---: | ---: |
+| Matched logistic regression | 0.4322 | 0.1448 | 0.8713 |
+| Single-snapshot Transformer, seed 42 | 0.4348 | 0.1455 | 0.8695 |
+| Up-to-eight-snapshot Transformer, seed 42 | 0.4386 | 0.1472 | 0.8669 |
+| Original frozen V1 logistic (reference) | 0.4321 | 0.1448 | 0.8714 |
+| Original CUDA XGBoost (reference) | 0.4435 | 0.1465 | 0.8682 |
+
+The primary single-snapshot and history models had higher point-estimate log loss than the matched logistic regression by +0.00258 and +0.00636. Their respective 95% paired match-bootstrap intervals were [−0.00391, +0.00927] and [−0.00191, +0.01507]. The single-snapshot Transformer had lower log loss than the archived XGBoost model in this cohort (difference −0.00867; interval [−0.01655, −0.00040]). These are within-cohort intervals, not estimates of between-event uncertainty, and no claim is made about the relative performance of other architectures or tuning settings.
+
+History minus single-snapshot log loss was +0.00378 for seed 42, +0.00048 for seed 7, and −0.00318 for seed 2026. The 34-match comparison gives no stable reason to prefer the historical window. Its conclusion is limited to these features, train size and training schedule. A future increase in training volume should apply equally to every model; a prospective evaluation should use an event held outside fitting and model selection for all models.
+
+Reproduce with fresh paths using the CUDA installation above:
+
+```sh
+uv run --frozen --no-sync python -m scripts.fit_matched34_transformers --out models/matched34_fit_recheck --progress-file runs/matched34_fit_recheck/progress.jsonl
+uv run --frozen --no-sync python -m cs2_pipeline.matched34_score --fit-dir models/matched34_fit_recheck --dataset data/datasets/mirage_holdout_50_v1 --out models/matched34_score_recheck --progress-file runs/matched34_score_recheck/progress.jsonl
+```
+
+The local receipts are `models/matched34_transformers_fit_v1/fit.json` and `models/matched34_observed50_v1/report.json`. The latter records per-event scores, paired intervals, and the hash of the saved prediction table. The pooled scores and intervals are in the [published results](../results/mirage_followup_20261121.json).
+
+## Training duration
+
+We ran 200 epochs per seed on 32 Rio, Atlanta, and Cologne maps (686 rounds and 12,420 targets). We selected the earliest minimum of round-weighted development log loss for each seed using 10 previously observed BLAST Bounty and Esports World Cup maps (214 rounds and 3,945 targets). We then added the two Porto maps and refitted on the same 34 maps for both models. Selection was frozen before refitting and before loading the previous 50-map cohort for retrospective scoring. [Historical development data](mirage_historical_validation_20261118.md) · [Epoch plan](../configs/mirage_snapshot_epochs.json)
+
+| Seed | Selected epoch | Epoch 1 log loss | Selected log loss | Epoch 200 log loss | Selected minus logistic, 95% CI |
+| ---: | ---: | ---: | ---: | ---: | --- |
+| 42 | 3 | 0.43478 | 0.44695 | 1.65741 | +0.01475 [+0.00734, +0.02263] |
+| 7 | 1 | 0.44684 | 0.44684 | 1.61030 | +0.01464 [+0.00595, +0.02326] |
+| 2026 | 2 | 0.43969 | 0.44482 | 1.58522 | +0.01261 [+0.00441, +0.02026] |
+
+The matched logistic baseline scored **0.43220** on the same 50 maps. In the development fit, seed 42's training loss fell from 0.43030 at epoch 1 to 0.00680 at epoch 200, while its development loss rose from 0.43393 at its epoch-3 minimum to 1.84657 at epoch 200. All three seeds showed this divergence, and the three selected checkpoints had higher retrospective log loss than logistic regression. The intervals use 2,000 paired resamples of whole matches and describe variation within the observed cohort.
+
+![Training and development log loss through 200 epochs for seed 42](../results/figures/mirage-training-duration.png)
+
+## Training set size and event expansion
+
+Two event-stratified draws used nested 16- and 24-map subsets of the same 32-map fit. Each draw and seed was scored on the same 10 development maps. From 16 to 32 maps, logistic regression's log loss fell in both draws. All six paired intervals for the change in the epoch-1 Transformer gap to logistic regression included zero. Each of the 15 trajectories had lower training loss and higher development loss at epoch 20 than at epoch 1. A fixed batch size gives larger fits more optimizer steps per epoch. [Training size plan](../configs/mirage_train_size.json) · [Learning curves](../results/figures/mirage-training-size.png)
+
+The expansion added 15 verified Rotterdam and Astana maps to the 32-map fit. One of the 16 planned archives was unavailable (`hltv:2394133`). The larger fit had 47 maps, 1,035 rounds, and 18,672 targets, and used the same development data and features for both candidates. [Expansion roster and protocol](../configs/mirage_train_expansion_20261121.json)
+
+| Candidate | 32-map fit log loss | 47-map fit log loss |
+| --- | ---: | ---: |
+| Matched logistic regression | 0.43455 | 0.42124 |
+| Single-snapshot Transformer, epoch 1, seed 42 | 0.44729 | 0.41753 |
+| Single-snapshot Transformer, epoch 1, seed 7 | 0.42628 | 0.41947 |
+| Single-snapshot Transformer, epoch 1, seed 2026 | 0.45657 | 0.44726 |
+
+With 47 fit maps, the seed-42 gap to logistic regression was **−0.00372** (95% CI [−0.01870, +0.01153]). The gap varied across seeds, and all three intervals for the change in gap from 32 to 47 maps included zero. The expansion changes the training event mix as well as the sample size.
+
+## Dropout ablation
+
+Dropout 0.10 and 0.20 were compared on the 47-map fit and the same 10 development maps. Both settings selected epoch 2 by minimum mean development log loss across seeds 42, 7, and 2026. The adoption rule required improvement in the pooled cohort and each of the two events. [Dropout plan](../configs/mirage_dropout.json) · [Learning curves](../results/figures/mirage-dropout.png)
+
+| Cohort | Dropout 0.10 | Dropout 0.20 | Change from 0.10 to 0.20, 95% CI |
+| --- | ---: | ---: | --- |
+| Pooled (10 maps) | 0.42091 | 0.42077 | −0.00014 [−0.00191, +0.00222] |
+| BLAST Bounty (3 maps) | 0.43090 | 0.42945 | −0.00145 [−0.00240, +0.00028] |
+| Esports World Cup (7 maps) | 0.41711 | 0.41747 | +0.00036 [−0.00224, +0.00316] |
+
+At epoch 20, the three-seed mean development loss was 0.58638 for dropout 0.10 and 0.49265 for dropout 0.20. The higher dropout reduced late overfitting. Its increase in Esports World Cup log loss at the selected epoch failed the adoption rule, so the prospective candidate retains dropout 0.10.
+
+## Frozen Singapore evaluation
+
+On November 21, 2026, the final comparison was frozen after adding Porto back to the 47-map fit. Both models used **49 maps, 1,079 rounds, and 19,460 targets**. The primary candidate is the single-snapshot Transformer with seed 42, epoch 1, and dropout 0.10. The baseline is matched logistic regression with `C=1.0`. Sensitivity fits use seeds 7 and 2026. The development-selected checkpoints at epochs 1, 2, and 7 for seeds 42, 7, and 2026 are secondary diagnostics.
+
+The evaluation will use all identity- and score-verified PGL Major Singapore 2026 Mirage maps played after the freeze. Singapore is outside fitting and development. The primary contrast is round-weighted log loss for Transformer minus logistic, with 2,000 paired bootstrap draws by match. Brier score and ROC AUC are secondary. Scoring is pending. Bucharest remains excluded. The receipt identifies the locked configuration and checkpoint hashes. [Freeze receipt](../results/mirage_singapore_freeze_20261121.json)
+
+## Follow-up reproduction
+
+Use the CUDA environment above and the original [archived inputs](../data/README.md#archived-temporal-inputs). The fit and score steps below share an output directory within each run. Start each experiment in a fresh directory.
+
+| Experiment | Entry points from the repository root | Previous local artifacts |
+| --- | --- | --- |
+| Matched 34 maps | [Fit and score commands](#follow-up-identical-34-map-training-set-november-21-2026) | The original Porto selection, training dataset, and traditional reference predictions |
+| Training duration | [`scripts.fit_mirage_snapshot_epochs both`](../scripts/fit_mirage_snapshot_epochs.py), then [`scripts.score_mirage_snapshot_epochs`](../scripts/score_mirage_snapshot_epochs.py) | The matched 34-map predictions and 10-map development dataset |
+| Training set size | [`scripts.fit_mirage_train_size`](../scripts/fit_mirage_train_size.py), then [`scripts.score_mirage_train_size`](../scripts/score_mirage_train_size.py) | The frozen 32-map fit and development fingerprints from the epoch experiment |
+| Training expansion | [`scripts.import_mirage_train_expansion`](../scripts/import_mirage_train_expansion.py), then [`scripts.fit_mirage_train_expansion`](../scripts/fit_mirage_train_expansion.py) with `--intake` | The frozen size experiment and supplemental replay archives listed in the expansion plan |
+| Dropout | [`scripts.fit_mirage_dropout`](../scripts/fit_mirage_dropout.py), then [`scripts.score_mirage_dropout`](../scripts/score_mirage_dropout.py) | The original expansion freeze, intake receipt, and archived development curves |
+
+For example, repeat the training-duration run from the repository root with the verified inputs in place.
+
+```sh
+uv run --frozen --no-sync python -m scripts.fit_mirage_snapshot_epochs both --out models/mirage_epochs_recheck --progress-file runs/mirage_epochs_recheck/progress.jsonl
+uv run --frozen --no-sync python -m scripts.score_mirage_snapshot_epochs --out models/mirage_epochs_recheck --progress-file runs/mirage_epochs_recheck/progress.jsonl
+```
+
+The plans pin hashes of the original intermediate runs, so downstream stages require the named archived inputs. The published tables, figures, and aggregate scores are available in the [results index](../results/README.md).

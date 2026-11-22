@@ -310,7 +310,14 @@ def write_outputs(
             json.dumps(metadata, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8"
         )
         # Invalid datasets remain inspectable with validation.passed=false and CLI exit 2.
-        stage.rename(out)
+        for attempt in range(20):
+            try:
+                stage.rename(out)
+                break
+            except PermissionError:
+                if sys.platform != "win32" or out.exists() or attempt == 19:
+                    raise
+                time.sleep(0.05)
     return report
 
 
